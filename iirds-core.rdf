@@ -1,0 +1,2137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xml:base="http://iirds.tekom.de/iirds#" xml:lang="en" xmlns:iirds="http://iirds.tekom.de/iirds#"  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:schema="http://schema.org/">
+
+<!--
+© 2020 Gesellschaft für Technische Kommunikation – tekom Deutschland e.V. All rights reserved.
+This work is licensed under a Creative Commons Attribution-NoDerivatives 4.0 International License (https://creativecommons.org/licenses/by-nd/4.0/).
+-->
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Action">
+		<rdfs:label xml:lang="de">Handlung</rdfs:label>
+		<rdfs:label xml:lang="en">Action</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#FunctionalMetadata"/>
+		<iirds:description xml:lang="en">Use the relates-to-action property to create a reference from an information unit to an action.</iirds:description>
+		<rdfs:comment xml:lang="en">Class for atomic actions performed by users that are described in technical documentation.</rdfs:comment>
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#AdministrativeMetadata">
+		<rdfs:label xml:lang="de">Verwaltungsmetadaten</rdfs:label>
+		<rdfs:label xml:lang="en">Administrative metadata</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses instead.</iirds:description>
+		<rdfs:comment xml:lang="en">Parent class for administrative metadata, such as status and identifier. </rdfs:comment>
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#AfterUse">
+		<rdfs:label xml:lang="de">Nutzungsende</rdfs:label>
+		<rdfs:label xml:lang="en">After use</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#ProductLifeCyclePhase"/>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses instead. For lifecycle phases not covered by the iiRDS standard subclasses, define custom subclasses.</iirds:description>
+		<rdfs:comment xml:lang="en">Parent class for iiRDS standard definitions of product lifecycle phases that occur after the active use of the product. </rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Collection">
+		<rdfs:label xml:lang="de">Zusammenstellung</rdfs:label>
+		<rdfs:label xml:lang="en">Collection</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#InformationSubject"/>
+		<iirds:description xml:lang="en">Not intented to be used directly. Use the subclasses instead. For collection subjects not covered by the iiRDS standard subclasses, define custom subclasses.</iirds:description>
+		<rdfs:comment xml:lang="en">Parent class for information subjects representing collections of specific information, such as list of spare parts or maintenance plan.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Component">
+		<rdfs:label xml:lang="de">Komponente</rdfs:label>
+		<rdfs:label xml:lang="en">Component</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#ProductMetadata"/>
+		<iirds:description xml:lang="en">Components may have relations to other components so that iiRDS Generators can build up a simple component hierarchy with iiRDS structures. The iirds#Component may also be used as a docking point for external component definitions.</iirds:description>
+		<rdfs:comment xml:lang="en">Describes a component of the technical system that the documentation refers to.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Concept">
+		<rdfs:label xml:lang="de">Beschreibung</rdfs:label>
+		<rdfs:label xml:lang="en">Concept</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#TopicType"/>
+		<iirds:description xml:lang="en">Conceptual information helps users to map their existing knowledge to tasks and other essential information about a product or system.
+		</iirds:description>
+		<rdfs:comment xml:lang="en">Class of topic types that provide background that helps readers understand essential information about a product, interface, or task.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Conformity">
+		<rdfs:label xml:lang="de">Konformität</rdfs:label>
+		<rdfs:label xml:lang="en">Conformity</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#InformationSubject"/>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses instead. For information subjects not covered by the iiRDS standard subclasses, define custom subclasses.</iirds:description>
+		<rdfs:comment xml:lang="en">Parent class for information subjects that describe content related to applicable standards or the conformity of the product.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#DesignAndRealization">
+		<rdfs:label xml:lang="de">Produktentstehung</rdfs:label>
+		<rdfs:label xml:lang="en">Design and realization</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#ProductLifeCyclePhase"/>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses instead. For lifecycle phases not covered by the iiRDS standard subclasses, define custom subclasses.</iirds:description>
+		<rdfs:comment xml:lang="en">Parent class for subclasses that describe product lifecycle phases related to the design, construction, and realization of a product.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#DirectoryNode">
+		<rdfs:label xml:lang="de">Verzeichnisknoten</rdfs:label>
+		<rdfs:label xml:lang="en">Directory node</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+		<iirds:description xml:lang="en">A directory is a tree-like, ordered collection of information units. Directory nodes are the entries in the directory. Directories help the user to navigate through the information units. A table of contents is a typical example of a directory. </iirds:description>
+		<iirds:description xml:lang="de">Ein Verzeichnis ist eine baumartig organisierte und geordnete Zusammenstellung von Informationseinheiten. Verzeichnisknoten sind die Einträge in dem Baum. Verzeichnisse dienen dem Benutzer als Navigationshilfe über die Informationseinheiten. Ein Inhaltsverzeichnis eines Dokuments ist ein typisches Beispiel eines Verzeichnisses.</iirds:description>
+		<rdfs:comment xml:lang="en">A node in a directory</rdfs:comment>
+		<rdfs:comment xml:lang="de">Ein Eintrag in einem Verzeichnis</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: optional</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#DirectoryNodeType">
+		<rdfs:label xml:lang="de">Verzeichnistyp</rdfs:label>
+		<rdfs:label xml:lang="en">Directory node type</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#InformationType"/>
+		<iirds:description xml:lang="en">A directory represented by a directory root node and its sub nodes has a type such as 'table of contens' or 'list of figures'.</iirds:description>
+		<iirds:description xml:lang="de">Ein Verzeichnis, das durch einen Wurzelknoten und seine untergeordneten Knoten aufgespannt wird, hat einen Typ wie 'Inhaltsverzeichnis' oder 'Abbildungsverzeichnis'.</iirds:description>
+		<rdfs:comment xml:lang="en">Directory type</rdfs:comment>
+		<rdfs:comment xml:lang="de">Verzeichnistyp</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Document">
+		<rdfs:label xml:lang="de">Dokument</rdfs:label>
+		<rdfs:label xml:lang="en">Document</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<iirds:description xml:lang="en">A document consists of one or more files. It can consist of topics. The resource is either a blank node (when there is no file representing the document) or a file in the iiRDS package.</iirds:description>
+		<rdfs:comment xml:lang="en">A unit of information in an iiRDS package that represents a complete document.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#DocumentationMetadata">
+		<rdfs:label xml:lang="de">Metadaten der Dokumentation</rdfs:label>
+		<rdfs:label xml:lang="en">Documentation metadata</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses instead.</iirds:description>
+		<rdfs:comment xml:lang="en">Parent class for functional metadata and product metadata.</rdfs:comment>
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#DocumentType">
+		<rdfs:label xml:lang="de">Dokumentart</rdfs:label>
+		<rdfs:label xml:lang="en">Document type</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#InformationType"/>
+		<iirds:description xml:lang="en">Document types define the intended purpose of a document.</iirds:description>
+		<rdfs:comment xml:lang="en">The type of a document.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#DownTime">
+		<rdfs:label xml:lang="de">Stillstandzeit</rdfs:label>
+		<rdfs:label xml:lang="en">Down time</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#PlanningTime"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Type of planning time: Period of time during which a technical system is stopped, especially during setup for an operation or when making repairs.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: optional</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Event">
+		<rdfs:label xml:lang="de">Ereignis</rdfs:label>
+		<rdfs:label xml:lang="en">Event</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#FunctionalMetadata"/>
+		<iirds:description xml:lang="en">Examples are errors, malfunctions, and warnings. 
+Use the relates-to-event property to create a reference from an information unit to an event.</iirds:description>
+		<rdfs:comment xml:lang="en">Describes events that happen in the technical system</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#ContentLifeCycleStatus">
+		<rdfs:label xml:lang="de">Lebenszyklus-Status einer Informationseinheit</rdfs:label>
+		<rdfs:label xml:lang="en">Information unit lifecycle status</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#AdministrativeMetadata"/>
+		<iirds:description xml:lang="en">The status value is referenced using has-content-lifecycle-status-value. </iirds:description>
+		<rdfs:comment xml:lang="en">Content lifecycle status of an information unit.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: optional</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#ContentLifeCycleStatusValue">
+		<rdfs:label xml:lang="de">Wert des Lebenszyklus-Status einer Informationseinheit</rdfs:label>
+		<rdfs:label xml:lang="en">Value of the information unit lifecycle status</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#AdministrativeMetadata"/>
+		<iirds:description xml:lang="en">The value refers to the content status, for example whether it is approved or withdrawn.</iirds:description>
+		<rdfs:comment xml:lang="en">Value of an information unit's lifecycle status. The value is set by involved parties, such as the manufacturer or supplier.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Identity">
+		<rdfs:label xml:lang="de">Identität</rdfs:label>
+		<rdfs:label xml:lang="en">Identity</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#AdministrativeMetadata"/>
+		<iirds:description xml:lang="en">Complex identifiers may be assigned to information objects, information units, product variants, and components. Typically, identities are used to provide IDs from other systems. Examples: serial numbers for components and module IDs from content management systems for topics.</iirds:description>
+		<rdfs:comment xml:lang="en">Complex identifier of an iiRDS domain entity. Each identifier must be related to the identity domain within which it is unambiguous.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: optional</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#IdentityDomain">
+		<rdfs:label xml:lang="de">Identitäts-Domäne</rdfs:label>
+		<rdfs:label xml:lang="en">Identity domain</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#AdministrativeMetadata"/>
+		<iirds:description xml:lang="en">An identity domain relates to a party, meaning a company or organization. The party is the owner or custodian of the domain.</iirds:description>
+		<rdfs:comment xml:lang="en">Domain of an identifier that is assigned to an iiRDS domain entity.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#IdentityType">
+		<rdfs:label xml:lang="de">Identitäts-Typ</rdfs:label>
+		<rdfs:label xml:lang="en">Identity type</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#AdministrativeMetadata"/>
+		<iirds:description xml:lang="en">The type of identity contained by the domain.</iirds:description>
+		<rdfs:comment xml:lang="en">Type of an identifier that is assigned to an iiRDS domain entity.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Form">
+		<rdfs:label xml:lang="de">Formular</rdfs:label>
+		<rdfs:label xml:lang="en">Form</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#TopicType"/>
+		<iirds:description xml:lang="en">Examples of forms are service reports, field reports, and user feedback.</iirds:description>
+		<rdfs:comment xml:lang="en">Class of topic types that contain information in pre-defined form fields.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Formality">
+		<rdfs:label xml:lang="de">Formalität</rdfs:label>
+		<rdfs:label xml:lang="en">Formality</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#InformationSubject"/>
+		<iirds:description xml:lang="en">Examples of formality subjects are license terms and warranty conditions.</iirds:description>
+		<rdfs:comment xml:lang="en">Parent class for information subjects that describe content related to official or legal documents.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Fragment">
+		<rdfs:label xml:lang="de">Fragment</rdfs:label>
+		<rdfs:label xml:lang="en">Fragment</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<iirds:description xml:lang="en">Sections, tables, lists, paragraphs, and hazard statements are examples of fragments. Fragments assign metadata to parts of topic or document files in an iiRDS package. The parts are identified by a fragment selector.</iirds:description>
+		<rdfs:comment xml:lang="en">A piece of information within a document or topic.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#FragmentSelector">
+		<rdfs:label xml:lang="de">Fragmentselektor</rdfs:label>
+		<rdfs:label xml:lang="en">Fragment selector</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#Selector"/>
+		<rdfs:comment xml:lang="en">Points to a fragment in a physical resource.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Verweist auf Fragment in einer physikalischen Ressource.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: optional</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Functionality">
+		<rdfs:label xml:lang="de">Funktionalität</rdfs:label>
+		<rdfs:label xml:lang="en">Functionality</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#InformationSubject"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Parent class for information subjects that describe content related to specific functionalities of the product.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#FunctionalMetadata">
+		<rdfs:label xml:lang="de">Funktionale Metadaten</rdfs:label>
+		<rdfs:label xml:lang="en">Functional metadata</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#DocumentationMetadata"/>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses instead.</iirds:description>
+		<rdfs:comment xml:lang="en">Parent class for metadata supporting advanced content delivery scenarios and content assemblies for specific purposes.</rdfs:comment>
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#iirdsDomainEntity">
+		<rdfs:label xml:lang="de">iirdsDomainEntity</rdfs:label>
+		<rdfs:label xml:lang="en">iirdsDomainEntity</rdfs:label>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses instead.</iirds:description>
+		<rdfs:comment xml:lang="en">An entity of the iiRDS domain</rdfs:comment>
+		<rdfs:comment xml:lang="de">Eine Entität der iiRDS-Domäne</rdfs:comment>
+	</rdfs:Class>	
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#InformationObject">
+		<rdfs:label xml:lang="de">Informationsobjekt</rdfs:label>
+		<rdfs:label xml:lang="en">Information object</rdfs:label>		
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+		<iirds:description xml:lang="en">Only used if a version/language-independent equivalent to an information unit is required. The versioned information unit references the information object.</iirds:description>
+		<rdfs:comment xml:lang="en">A version-independent and language-independent equivalent to an information unit.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#InformationSubject">
+		<rdfs:label xml:lang="de">Informationsthema</rdfs:label>
+		<rdfs:label xml:lang="en">Information subject</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#InformationType"/>
+		<iirds:description xml:lang="en">Not intented to be used directly. Use the subclasses instead.</iirds:description>
+		<rdfs:comment xml:lang="en">Type of information. Abstract base class of subjects that an information unit covers.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#InformationType">
+		<rdfs:label xml:lang="de">Informationsart</rdfs:label>
+		<rdfs:label xml:lang="en">Information type</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+		<iirds:description xml:lang="en">Not intented to be used directly.</iirds:description>
+		<rdfs:comment xml:lang="en">Type of information. Abstract base class of document and topic type.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#InformationUnit">
+		<rdfs:label xml:lang="de">Informationseinheit</rdfs:label>
+		<rdfs:label xml:lang="en">Information unit</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses Package, Document, Topic, and Fragment instead.</iirds:description>
+		<rdfs:comment xml:lang="en">A unit of information. Abstract base class for specific information units.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Learning">
+		<rdfs:label xml:lang="de">Lernen</rdfs:label>
+		<rdfs:label xml:lang="en">Learning</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#TopicType"/>
+		<iirds:description xml:lang="en">Learning content may comprise learning plans, learning objectives, learning content details, summaries, and assessments.</iirds:description>
+		<rdfs:comment xml:lang="en">Class of topic types for learning. Learning content may comprise learning plans, learning objectives, learning content details, summaries, and assessments.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#MaintenanceInterval">
+		<rdfs:label xml:lang="de">Wartungsintervall</rdfs:label>
+		<rdfs:label xml:lang="en">Maintenance interval</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#PlanningTime"/>
+		<iirds:description xml:lang="en">Instances have a maintenance frequency and an optional maintenance duration.</iirds:description>
+		<rdfs:comment xml:lang="en">Type of planning time: Fixed time interval for the scheduled maintenance of a technical system or its parts.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: optional</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#nil">
+		<rdfs:label xml:lang="de">Ende einer Verzeichnisstruktur</rdfs:label>
+		<rdfs:label xml:lang="en">End of Directory node</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#DirectoryNode"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">The end in a chain of directory nodes</rdfs:comment>
+		<rdfs:comment xml:lang="de">Das Ende in einer verketteten Liste von Verzeichnisknoten </rdfs:comment>
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Package">
+		<rdfs:label xml:lang="de">Paket</rdfs:label>
+		<rdfs:label xml:lang="en">Package</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<iirds:description xml:lang="en">There is exactly one Package instance within an iiRDS package. It holds general metadata on the overall iiRDS package.</iirds:description>
+		<rdfs:comment xml:lang="en">A set of information in terms of documents and topics with their metadata.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Party">
+		<rdfs:label xml:lang="de">Akteur</rdfs:label>
+		<rdfs:label xml:lang="en">Party</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#AdministrativeMetadata"/>
+		<iirds:description xml:lang="en">Detailed information about a party may be specified in a vCard.</iirds:description>
+		<rdfs:comment xml:lang="en">Party related to an iiRDS domain entity. </rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#PartyRole">
+		<rdfs:label xml:lang="de">Akteursrolle</rdfs:label>
+		<rdfs:label xml:lang="en">Party role</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#AdministrativeMetadata"/>
+		<iirds:description xml:lang="en">Examples of party roles: manufacturer, author, inspector.</iirds:description>
+		<rdfs:comment xml:lang="en">Role of a party related to an iiRDS domain entity.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#PlanningTime">
+		<rdfs:label xml:lang="de">Planungszeit</rdfs:label>
+		<rdfs:label xml:lang="en">Planning time</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#FunctionalMetadata"/>
+		<iirds:description xml:lang="en">Not intended to be used directly.  Use the subclasses instead.</iirds:description>
+		<rdfs:comment xml:lang="en">Parent class for different types of planning time that may be referenced in technical documentation. Planning times describe periods of time required for or resulting from specific working tasks.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: optional</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Process">
+		<rdfs:label xml:lang="de">Prozess</rdfs:label>
+		<rdfs:label xml:lang="en">Process</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#InformationSubject"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Information subject for process-related information</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#ProductFeature">
+		<rdfs:label xml:lang="de">Produktmerkmal</rdfs:label>
+		<rdfs:label xml:lang="en">Product feature</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#ProductMetadata"/>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses instead.</iirds:description>
+		<rdfs:comment xml:lang="en">Parent class for characteristics and functions of a product or component.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#ProductProperty">
+		<rdfs:label xml:lang="de">Produkteigenschaft</rdfs:label>
+		<rdfs:label xml:lang="en">Product property</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#ProductFeature"/>
+		<iirds:description xml:lang="en">Examples: dimensions, voltage, power, weight.</iirds:description>
+		<rdfs:comment xml:lang="en">A characteristic of a product or component.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#ProductFunction">
+		<rdfs:label xml:lang="de">Produktfunktion</rdfs:label>
+		<rdfs:label xml:lang="en">Product function</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#ProductFeature"/>
+		<iirds:description xml:lang="en">Examples: starting a phone call, ending a phone call, ringing.</iirds:description>
+		<rdfs:comment xml:lang="en">A function that a product or component provides or implements.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#ProductLifeCyclePhase">
+		<rdfs:label xml:lang="de">Produktlebenszyklusphase</rdfs:label>
+		<rdfs:label xml:lang="en">Phase of product lifecycle</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#ProductMetadata"/>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses instead. </iirds:description>
+		<rdfs:comment xml:lang="en">Parent class for standardized product lifecycle phases that technical documentation may refer to.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#ProductMetadata">
+		<rdfs:label xml:lang="de">Produktmetadaten</rdfs:label>
+		<rdfs:label xml:lang="en">ProductMetadata</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#DocumentationMetadata"/>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses instead.</iirds:description>
+		<rdfs:comment xml:lang="en">Parent class for product-related metadata.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#ProductVariant">
+		<rdfs:label xml:lang="de">Produktvariante</rdfs:label>
+		<rdfs:label xml:lang="en">Product variant</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#ProductMetadata"/>
+		<iirds:description xml:lang="en">Examples: a specific model in a series or an individually manufactured good.</iirds:description>
+		<rdfs:comment xml:lang="en">A variation of a product with some specific characteristics or features. </rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#PuttingToUse">
+		<rdfs:label xml:lang="de">In Nutzung nehmen</rdfs:label>
+		<rdfs:label xml:lang="en">Putting to use</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#ProductLifeCyclePhase"/>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses instead. For lifecycle phases not covered by the iiRDS standard subclasses, define custom subclasses.</iirds:description>
+		<rdfs:comment xml:lang="en">Parent class for subclasses that describe product lifecycle phases related to putting a product or technical system to use.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Qualification">
+		<rdfs:label xml:lang="de">Qualifikation</rdfs:label>
+		<rdfs:label xml:lang="en">Qualification</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#FunctionalMetadata"/>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses instead. </iirds:description>
+		<rdfs:comment xml:lang="en">Parent class for different types of skills and roles required for working tasks described in technical documentation. </rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#RangeSelector">
+		<rdfs:label xml:lang="de">Bereichsselektor</rdfs:label>
+		<rdfs:label xml:lang="en">Range selector</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#Selector"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Points to a range in a physical resource. Has a start and end point.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Verweist auf einen Bereich in einer physikalischen Ressource. Hat einen Start- und einen Endpunkt.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: optional</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Reference">
+		<rdfs:label xml:lang="de">Referenz</rdfs:label>
+		<rdfs:label xml:lang="en">Reference</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#TopicType"/>
+		<iirds:description xml:lang="de">Examples are parameter lists, tables with technical data, UI control overviews, and parts lists. 
+		</iirds:description>
+		<rdfs:comment xml:lang="de">Class of topic types that contain information that supports users as they perform a task, meaning data that is looked up rather than memorized.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Rendition">
+		<rdfs:label xml:lang="de">Inhaltsausprägung</rdfs:label>
+		<rdfs:label xml:lang="en">Rendition</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Content of an information unit in a specific format</rdfs:comment>
+		<rdfs:comment xml:lang="de">Inhalt einer Informationseinheit in einem bestimmten Format</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: optional</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Role">
+		<rdfs:label xml:lang="de">Rolle</rdfs:label>
+		<rdfs:label xml:lang="en">Role</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#Qualification"/>
+		<iirds:description xml:lang="en">Describes a set of connected behaviors, privileges and obligations associated with users (humans, software processes or devices) of a system.</iirds:description>
+		<iirds:description xml:lang="de">Menge von zusammenhängenden Verhaltensweisen, Berechtigungen und Verpflichtungen, die Nutzern (Menschen, Softwareprozesse oder Geräte) eines Systems zugeordnet sind.</iirds:description>
+		<rdfs:comment xml:lang="en">Docking point for custom roles for users of the technical system and the associated technical information.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Andockpunkt für unternehmensspezifische Rollen für Anwender des technischen Systems und der dazugehörigen Informationen.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Safety">
+		<rdfs:label xml:lang="de">Sicherheit</rdfs:label>
+		<rdfs:label xml:lang="en">Safety</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#InformationSubject"/>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses instead.</iirds:description>
+		<rdfs:comment xml:lang="en">Information subject. Abstract base class for safety subjects.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#WarningMessage">
+		<rdfs:label xml:lang="de">Warnhinweis</rdfs:label>
+		<rdfs:label xml:lang="en">Warning message</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#Safety"/>
+		<iirds:description xml:lang="en">Warning messages usually consist of a hazard alert symbol, a signal word (such as "Danger", "Warning", "Caution", "Notice"),  
+a description of the potential hazard, and hints how to avoid the hazard.</iirds:description>
+		<rdfs:comment xml:lang="en">Information subject. Description of situations where a potential hazard can occur.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Selector">
+		<rdfs:label xml:lang="de">Selektor</rdfs:label>
+		<rdfs:label xml:lang="en">Selector</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<iirds:description xml:lang="de"></iirds:description>
+		<rdfs:comment xml:lang="en">Pointer to a physical resource.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Verweis auf eine physikalische Ressource.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: optional</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#SkillLevel">
+		<rdfs:label xml:lang="de">Kenntnisstufe</rdfs:label>
+		<rdfs:label xml:lang="en">Skill level</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#Qualification"/>
+		<iirds:description xml:lang="en">Describe the levels of ability required to carry out a specific task described in the technical documentation.</iirds:description>
+		<rdfs:comment xml:lang="en">Docking point for custom skill levels that the users of the technical system and the associated technical information require.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Supply">
+		<rdfs:label xml:lang="de">Hilfsmittel</rdfs:label>
+		<rdfs:label xml:lang="en">Supply</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#FunctionalMetadata"/>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses instead. </iirds:description>
+		<rdfs:comment xml:lang="en">Parent class for different types of supplies required for working tasks described in technical documentation.
+</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Task">
+		<rdfs:label xml:lang="de">Aufgabe</rdfs:label>
+		<rdfs:label xml:lang="en">Task</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#TopicType"/>
+		<iirds:description xml:lang="en">Tasks provide instructions and may contain information on other aspects, such as requirements that must be fulfilled or safety instructions.
+		</iirds:description>
+		<rdfs:comment xml:lang="en">Class of topic types that contains procedural information for work activities.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#TechnicalData">
+		<rdfs:label xml:lang="de">Technische Daten</rdfs:label>
+		<rdfs:label xml:lang="en">Technical data</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#InformationSubject"/>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use instances of this class instead.</iirds:description>
+		<rdfs:comment xml:lang="en">Information subject class. Information that describes the technical characteristics of a product or component in sufficient detail for assembly, integration, operation, and maintenance.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#TechnicalOverview">
+		<rdfs:label xml:lang="de">Technische Übersicht</rdfs:label>
+		<rdfs:label xml:lang="en">Technical overview</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#InformationSubject"/>
+		<iirds:description xml:lang="en">Examples are circuit diagrams, flow diagrams, software interface overviews, and pneumatic diagrams.</iirds:description>
+		<rdfs:comment xml:lang="en">Parent class for information subjects describing content related to technical plans, diagrams, or the technical architecture of the product.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Topic">
+		<rdfs:label xml:lang="de">Topic</rdfs:label>
+		<rdfs:label xml:lang="en">Topic</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<iirds:description xml:lang="en">The resource of a topic is a file in the iiRDS package.</iirds:description>
+		<rdfs:comment xml:lang="en">A topic is a unit of information covering a single subject.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#TopicType">
+		<rdfs:label xml:lang="de">Topictyp</rdfs:label>
+		<rdfs:label xml:lang="en">Topic type</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#InformationType"/>
+		<iirds:description xml:lang="en">Possible types include task, learning, and concept. Information units that represent topics may have one or more has-topic-type properties that define the topic's information type. Topics without a has-topic-type property are generic topics, with no specific type.</iirds:description>
+		<rdfs:comment xml:lang="en">Defines the information type of an iiRDS topic.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Troubleshooting">
+		<rdfs:label xml:lang="de">Störungsbeseitigung</rdfs:label>
+		<rdfs:label xml:lang="en">Troubleshooting </rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#TopicType"/>
+		<iirds:description xml:lang="en">Typical troubleshooting topics contain sections with a description of the system's behavior or symptom, the cause for the error, and a remedy for the error.</iirds:description>
+		<rdfs:comment xml:lang="en">Class of topic types. Troubleshooting topics contain corrective action information that helps to fix an error or remove a malfunction.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Use">
+		<rdfs:label xml:lang="de">Nutzung</rdfs:label>
+		<rdfs:label xml:lang="en">Use</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#ProductLifeCyclePhase"/>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses instead. For lifecycle phases not covered by the iiRDS standard subclasses, define custom subclasses.</iirds:description>
+		<rdfs:comment xml:lang="en">Parent class for subclasses that describe product lifecycle phases related to using a product or technical system.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Produktlebenszyklusphase: Oberklasse für den Gebrauch eines Produkts.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: required</iirds:description> 
+	</rdfs:Class>
+	<rdfs:Class rdf:about="http://iirds.tekom.de/iirds#WorkingTime">
+		<rdfs:label xml:lang="de">Arbeitszeit</rdfs:label>
+		<rdfs:label xml:lang="en">Working time</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#PlanningTime"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Type of planning time: Period of time that is required for a specific working task.</rdfs:comment>
+		<iirds:description xml:lang="en">IRI: optional</iirds:description> 
+	</rdfs:Class>
+
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#dateOfCreation">
+		<rdfs:label xml:lang="de">Erstellungsdatum</rdfs:label>
+		<rdfs:label xml:lang="en">Date of Creation</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/created"/>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsAttribute"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Date of creation of the information unit</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#dateOfEffect">
+		<rdfs:label xml:lang="de">Gültigkeitsbeginn</rdfs:label>
+		<rdfs:label xml:lang="en">Effective date</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsAttribute"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#ContentLifeCycleStatus"/>		
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Date and time on which the given content lifecycle status becomes valid.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Datum und Uhrzeit, an dem der vergebene Status gültig wird.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#ContentLifeCycleStatus"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#ContentLifeCycleStatus [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#dateOfExpiry">
+		<rdfs:label xml:lang="de">Auslaufdatum</rdfs:label>
+		<rdfs:label xml:lang="en">Expiry date</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsAttribute"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#ContentLifeCycleStatus"/>		
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Date and time on which the given content lifecycle status becomes invalid.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Datum und Uhrzeit, an dem der vergebene Status ungültig wird.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#ContentLifeCycleStatus"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#ContentLifeCycleStatus [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#dateOfLastModification">
+		<rdfs:label xml:lang="de">Letztes Änderungsdatum</rdfs:label>
+		<rdfs:label xml:lang="en">Date of last modification</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsAttribute"/>	
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Specifies the date and time on which the information unit was last changed.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#dateOfStatus">
+		<rdfs:label xml:lang="de">Vergabedatum</rdfs:label>
+		<rdfs:label xml:lang="en">Status date</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsAttribute"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#ContentLifeCycleStatus"/>		
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Specifies the date and time on which content lifecycle status was changed.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#ContentLifeCycleStatus"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#ContentLifeCycleStatus [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#description">
+		<rdfs:label xml:lang="de">Beschreibung</rdfs:label>
+		<rdfs:label xml:lang="en">Description</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/description"/>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsAttribute"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en">Typically a free-text acount of the resource</iirds:description>
+		<rdfs:comment xml:lang="en">An account of the resource.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#iirdsDomainEntity [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#duration">
+		<rdfs:label xml:lang="de">Dauer</rdfs:label>
+		<rdfs:label xml:lang="en">Duration</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsAttribute"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#PlanningTime"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">A span of time.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Dauer</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#PlanningTime"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#PlanningTime [1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#format">
+		<rdfs:label xml:lang="de">Format</rdfs:label>
+		<rdfs:label xml:lang="en">Format</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/format"/>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsAttribute"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#Rendition"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Media type (MIME type) of the rendition</rdfs:comment>
+		<rdfs:comment xml:lang="de">Medientyp (MIME-Type) der Inhaltsausprägung</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#Rendition"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#Rendition [1]</iirds:description>
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#formatRestriction">
+		<rdfs:label xml:lang="de">Formateinschränkung</rdfs:label>
+		<rdfs:label xml:lang="en">Format Restriction</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsAttribute"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#Package"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en">Value "A" means that the package uses a restricted set of media formats ("iiRDS/A").</iirds:description>
+		<rdfs:comment xml:lang="en">Restriction to the media formats used in the package.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#Package"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#Package [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#frequency">
+		<rdfs:label xml:lang="de">Wartungsfrequenz</rdfs:label>
+		<rdfs:label xml:lang="en">Maintenance frequency</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsAttribute"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#MaintenanceInterval"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Maintenance frequency</rdfs:comment>
+		<rdfs:comment xml:lang="de">Wartungsfrequenz</rdfs:comment>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#MaintenanceInterval [1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#identifier">
+		<rdfs:label xml:lang="de">Bezeichner</rdfs:label>
+		<rdfs:label xml:lang="en">Identifier</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/identifier"/>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsAttribute"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#Identity"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en">Recommended best practice is to identify the resource by means of a string conforming to a formal identification system.</iirds:description>
+		<rdfs:comment xml:lang="en">An unambiguous reference to the resource within a given context.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Eine eindeutige Referenz auf die Resource in einem gegebenen Kontext.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#Identity"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#Identity [1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#iirdsAttribute">
+		<rdfs:label xml:lang="de">iirdsAttribute</rdfs:label>
+		<rdfs:label xml:lang="en">iirdsAttribute</rdfs:label>
+		<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses instead.</iirds:description>
+		<rdfs:comment xml:lang="en">Property type. Abstract base class of all properties with literal values.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#iiRDSVersion">
+		<rdfs:label xml:lang="de">iiRDS Version</rdfs:label>
+		<rdfs:label xml:lang="en">iiRDS version</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsAttribute"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#Package"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en">Current version is 1.0.</iirds:description>
+		<rdfs:comment xml:lang="en">iiRDS version to which the iiRDS package complies.</rdfs:comment>
+		<rdfs:comment xml:lang="de">iiRDS-Version, die das iiRDS-Paket erfüllt.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#Package"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#Package [1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#language">
+		<rdfs:label xml:lang="de">Sprache</rdfs:label>
+		<rdfs:label xml:lang="en">Language</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/language"/>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsAttribute"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en">Controlled vocabulary according to RFC 4646.</iirds:description>
+		<rdfs:comment xml:lang="en">A language of the resource.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#revision">
+		<rdfs:label xml:lang="de">Revision</rdfs:label>
+		<rdfs:label xml:lang="en">Revision</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsAttribute"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Version of the information unit.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#rights">
+		<rdfs:label xml:lang="de">Rechte</rdfs:label>
+		<rdfs:label xml:lang="en">Rights</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/rights"/>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsAttribute"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Information about rights held in and over the resource.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#statusComment">
+		<rdfs:label xml:lang="de">Kommentar zum Status</rdfs:label>
+		<rdfs:label xml:lang="en">Status comment</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsAttribute"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#ContentLifeCycleStatus"/>		
+		<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Comment describing the status change.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Anmerkungen im Zusammenhang mit der Vergabe des Status</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#ContentLifeCycleStatus"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#ContentLifeCycleStatus [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#source">
+		<rdfs:label xml:lang="de">Quelle</rdfs:label>
+		<rdfs:label xml:lang="en">Source</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsAttribute"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#Rendition"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="de">The path is relative to the root directory of the package, e.g., "content/overview.html".</iirds:description>
+		<rdfs:comment xml:lang="en">Relative path to the file containing the content of a rendition.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#Rendition"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#Rendition [1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#synonym">
+		<rdfs:label xml:lang="de">Synonym</rdfs:label>
+		<rdfs:label xml:lang="en">Synonym</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsAttribute"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">A word or phrase that means exactly or nearly the same as another word or phrase in the same language.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#iirdsDomainEntity [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#title">
+		<rdfs:label xml:lang="de">Titel</rdfs:label>
+		<rdfs:label xml:lang="en">Title</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/title"/>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsAttribute"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en">Typically, a title will be a name by which the information unit is formally known.</iirds:description>
+		<rdfs:comment xml:lang="en">A name given to the information unit.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#is-applicable-for-document-type">
+		<rdfs:label xml:lang="de">geeignet für Dokumentart</rdfs:label>
+		<rdfs:label xml:lang="en">applicable for document type</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#has-information-type"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#DocumentType"/>
+		<iirds:description xml:lang="en">Example: topics that are suitable for the installation instructions.</iirds:description>
+		<rdfs:comment xml:lang="en">Specifies that the information unit is suitable and can be used for specific types of documents.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#DocumentType"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-abstract">
+		<rdfs:label xml:lang="de">hat Zusammenfassung</rdfs:label>
+		<rdfs:label xml:lang="en">has abstract</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/abstract"/>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Relates to a literal or information unit that provides an abstract/summary for the information unit.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-component">
+		<rdfs:label xml:lang="de">hat Komponente</rdfs:label>
+		<rdfs:label xml:lang="en">has component</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#Component"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#Component"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Relates to a component that is part of another component.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Verweist auf eine Kompoente, die Teil einer anderen Komponente ist.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#Component"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#Component"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#Component [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-content-lifecycle-status">
+		<rdfs:label xml:lang="de">hat Beziehung zu Bearbeitungsstatus</rdfs:label>
+		<rdfs:label xml:lang="en">relates to content lifecycle status</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#relates-to-administrative-metadata"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#ContentLifeCycleStatus"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">References the content lifecycle status of the information unit.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#ContentLifeCycleStatus"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-content-lifecycle-status-value">
+		<rdfs:label xml:lang="de">hat Statuswert</rdfs:label>
+		<rdfs:label xml:lang="en">has status value</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#ContentLifeCycleStatus"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#ContentLifeCycleStatusValue"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">References the content lifecycle status value.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#ContentLifeCycleStatus"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#ContentLifeCycleStatusValue"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#ContentLifeCycleStatus [1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-directory-structure-type">
+		<rdfs:label xml:lang="de">hat Verzeichnisstrukturtyp</rdfs:label>
+		<rdfs:label xml:lang="en">has directory structure type</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#DirectoryNode"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#DirectoryNodeType"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">The nature of the directory.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Die Natur des Verzeichnisses</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#DirectoryNode"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#DirectoryNodeType"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#DirectoryNode [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-document-type">
+		<rdfs:label xml:lang="de">hat Dokumentart</rdfs:label>
+		<rdfs:label xml:lang="en">has document type</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#has-information-type"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#Document"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#DocumentType"/>
+		<iirds:description xml:lang="en">Documents have one or more document types. Documents without document types are unspecific documents.</iirds:description>
+		<rdfs:comment xml:lang="en">The type of a document.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#Document"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#DocumentType"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#Document [1..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-end-selector">
+		<rdfs:label xml:lang="de">hat Endselektor</rdfs:label>
+		<rdfs:label xml:lang="en">has end selector</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#has-selector"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#RangeSelector"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#FragmentSelector"/>
+		<iirds:description xml:lang="en">A range selector must reference one start and one end selector.</iirds:description>
+		<rdfs:comment xml:lang="en">References the end of a range in a file.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#RangeSelector"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#FragmentSelector"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#RangeSelector [1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-event-code">
+		<rdfs:label xml:lang="de">hat Ereigniscode</rdfs:label>
+		<rdfs:label xml:lang="en">has event code</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#Event"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">References the code of the event.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#Event"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#Event [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-event-type">
+		<rdfs:label xml:lang="de">hat Ereignistyp</rdfs:label>
+		<rdfs:label xml:lang="en">has event type</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#Event"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">References the type of the event.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#Event"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#Event [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-first-child">
+		<rdfs:label xml:lang="de">hat als erstes Kindelement</rdfs:label>
+		<rdfs:label xml:lang="en">has first child</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#DirectoryNode"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#DirectoryNode"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">References the first directory node on the next sub level.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Verweist auf den ersten Verzeichniseintrag in der nächsten Unterebene.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#DirectoryNode"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#DirectoryNode"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#DirectoryNode [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-identity">
+		<rdfs:label xml:lang="de">hat komplexen Identifier</rdfs:label>
+		<rdfs:label xml:lang="en">has complex identifier</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#relates-to-administrative-metadata"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#Identity"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">References a complex identifier.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#Component"/>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationObject"/>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#ProductVariant"/>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#Rendition"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#Identity"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#Component [0..*]</iirds:description>		
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationObject [0..*]</iirds:description>		
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#ProductVariant [0..*]</iirds:description>		
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#Rendition [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-identity-domain">
+		<rdfs:label xml:lang="de">hat Identifier-Domain</rdfs:label>
+		<rdfs:label xml:lang="en">has identifier domain</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#Identity"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#IdentityDomain"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">References the domain that an identifier is valid for.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#Identity"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#IdentityDomain"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#Identity [1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-identity-type">
+		<rdfs:label xml:lang="de">hat Identifier-Typ</rdfs:label>
+		<rdfs:label xml:lang="en">has identifier type</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#IdentityDomain"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#IdentityType"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Type of the identities in a domain.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#IdentityDomain"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#IdentityType"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#IdentityDomain [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-information-type">
+		<rdfs:label xml:lang="de">hat Informationsart</rdfs:label>
+		<rdfs:label xml:lang="en">has information type</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#InformationType"/>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the child properties instead, such as has-document-type for documents and has-topic-type for topics.</iirds:description>
+		<rdfs:comment xml:lang="en">The nature and subject of an information unit.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationType"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-next-sibling">
+		<rdfs:label xml:lang="de">hat als nächstes Element</rdfs:label>
+		<rdfs:label xml:lang="en">has next sibling</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#DirectoryNode"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#DirectoryNode"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">References the following directory node at the same hierarchy level in a directory structure.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Verweist auf den folgenden Verzeichniseintrag einer Verzeichnisstruktur auf gleicher Ebene.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#DirectoryNode"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#DirectoryNode"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#DirectoryNode [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-party-role">
+		<rdfs:label xml:lang="de">hat administrative Rolle</rdfs:label>
+		<rdfs:label xml:lang="en">has administrative role</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#Party"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#PartyRole"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">References the role that the party has with respect to an entity referencing the party.</rdfs:comment>
+		<rdfs:comment xml:lang="de"></rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#Party"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#PartyRole"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#Party [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-planning-time">
+		<rdfs:label xml:lang="de">hat Zeit</rdfs:label>
+		<rdfs:label xml:lang="en">has time</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#relates-to-functional-metadata"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#PlanningTime"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">References the planning time that is related to specific tasks or information described in an information unit.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#PlanningTime"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-rendition">
+		<rdfs:label xml:lang="de">hat Inhaltsausprägung</rdfs:label>
+		<rdfs:label xml:lang="en">has rendition</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#Rendition"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Relates to a rendition of an information unit, meaning a physical file with content.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Verweist auf eine Inhaltsausprägung einer Informationseinheit.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#Rendition"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-selector">
+		<rdfs:label xml:lang="de">hat Selektor</rdfs:label>
+		<rdfs:label xml:lang="en">has selector</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#Selector"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">References the selector that is used to relate the information unit to a physical file with content.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#Rendition"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#Selector"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#Rendition [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-start-selector">
+		<rdfs:label xml:lang="de">hat Startselektor</rdfs:label>
+		<rdfs:label xml:lang="en">has start selector</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#has-selector"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#RangeSelector"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#FragmentSelector"/>
+		<iirds:description xml:lang="en">A range selector must reference one start and one end selector.</iirds:description>
+		<rdfs:comment xml:lang="en">References the start of a range in a file.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#RangeSelector"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#FragmentSelector"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#RangeSelector [1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-subject">
+		<rdfs:label xml:lang="de">hat Thema</rdfs:label>
+		<rdfs:label xml:lang="en">has subject</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/subject"/>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#has-information-type"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#InformationSubject"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">References the subject of an information unit.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Verweist auf das Thema einer Informationseinheit.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationSubject"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#has-topic-type">
+		<rdfs:label xml:lang="de">hat Topictyp</rdfs:label>
+		<rdfs:label xml:lang="en">has topic type</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#has-information-type"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#TopicType"/>
+		<iirds:description xml:lang="en">Defines the information type of a topic, e.g. task or learning.</iirds:description>
+		<rdfs:comment xml:lang="en">The nature of an information unit.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#TopicType"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#iirdsRelationConcept">
+		<rdfs:label xml:lang="de">iirdsRelationConcept</rdfs:label>
+		<rdfs:label xml:lang="en">iirdsRelationConcept</rdfs:label>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+		<iirds:description xml:lang="en">Not indented to be used directly.</iirds:description>
+		<rdfs:comment xml:lang="en">Base class for all relations in iiRDS.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#iirdsDomainEntity [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#is-part-of-package">
+		<rdfs:label xml:lang="de">ist Teil von Paket</rdfs:label>
+		<rdfs:label xml:lang="en">is part of package</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#Package"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">References the package in which the information unit was delivered.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#Package"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#is-replacement-of">
+		<rdfs:label xml:lang="de">ersetzt</rdfs:label>
+		<rdfs:label xml:lang="en">replaces</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/replaces"/>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">References the information unit that is replaced by this information unit.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#is-version-of">
+		<rdfs:label xml:lang="de">ist Version von</rdfs:label>
+		<rdfs:label xml:lang="en">is version of</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/isVersionOf"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#InformationObject"/>
+		<iirds:description xml:lang="en">Specifies that the information unit is a version or language variant of the information object.</iirds:description>
+		<rdfs:comment xml:lang="en">Relates an information unit to an information object.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationObject"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#purpose">
+		<rdfs:label xml:lang="de">Zweck</rdfs:label>
+		<rdfs:label xml:lang="en">Purpose</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsAttribute"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#ContentLifeCycleStatus"/>		
+		<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Specifies the reason for changing the content lifecycle status.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Begründung zum Ausüben der Statusänderung.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#ContentLifeCycleStatus"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#ContentLifeCycleStatus [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#relates-to-action">
+		<rdfs:label xml:lang="de">bezieht sich auf Handlung</rdfs:label>
+		<rdfs:label xml:lang="en">relates to action</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#relates-to-functional-metadata"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#Action"/>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses instead.</iirds:description>
+		<rdfs:comment xml:lang="en">Relates an iiRDS information unit to an action.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Erzeugt Beziehung von einer iiRDS-Entität zu einer Handlung.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#Action"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#relates-to-administrative-metadata">
+		<rdfs:label xml:lang="de">bezieht sich auf administrative Metadaten</rdfs:label>
+		<rdfs:label xml:lang="en">relates to administrative metadata</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#AdministrativeMetadata"/>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses instead.</iirds:description>
+		<rdfs:comment xml:lang="en">Relates an iiRDS entity to administrative metadata.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Erzeugt Beziehung von einer iiRDS-Entität zu administrativen Metadaten.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#AdministrativeMetadata"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#iirdsDomainEntity [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#relates-to-component">
+		<rdfs:label xml:lang="de">bezieht sich auf Komponente</rdfs:label>
+		<rdfs:label xml:lang="en">relates to component</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#relates-to-product-metadata"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#Component"/>
+		<iirds:description xml:lang="en">That means that the content of the information unit relates to a specific component of the documented product or component.</iirds:description>
+		<rdfs:comment xml:lang="en">Relates to a component.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#Component"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#relates-to-event">
+		<rdfs:label xml:lang="de">bezieht sich auf Ereignis</rdfs:label>
+		<rdfs:label xml:lang="en">relates to event</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#relates-to-functional-metadata"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#Event"/>
+		<iirds:description xml:lang="en">That means that the content of the information unit refers to a specific event that occured in the product/system, e.g. an error.</iirds:description>
+		<rdfs:comment xml:lang="en">Relates to an event.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#Event"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#relates-to-functional-metadata">
+		<rdfs:label xml:lang="de">bezieht sich auf funktionale Metadaten</rdfs:label>
+		<rdfs:label xml:lang="en">relates to functional metadata</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#FunctionalMetadata"/>
+		<iirds:description xml:lang="en">No intended to be used directly. Use the subclasses instead.</iirds:description>
+		<rdfs:comment xml:lang="en">Relates an iiRDS entity to functional metadata.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Erzeugt Beziehung von einer iiRDS-Entität zu funktionalen Metadaten.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#FunctionalMetadata"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#relates-to-information-unit">
+		<rdfs:label xml:lang="de">bezieht sich auf Informationseinheit</rdfs:label>
+		<rdfs:label xml:lang="en">relates to information unit</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#DirectoryNode"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<iirds:description xml:lang="en">The related information unit is part of the directory.</iirds:description>
+		<rdfs:comment xml:lang="en">Relates to an information unit from a directory node.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#DirectoryNode"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#DirectoryNode [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#relates-to-party">
+		<rdfs:label xml:lang="de">hat Beziehung zu Akteur</rdfs:label>
+		<rdfs:label xml:lang="en">relates to party</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#relates-to-administrative-metadata"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#Party"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Relates to a party, e.g. a company or an organization.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#Component"/>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#IdentityDomain"/>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#ContentLifeCycleStatus"/>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#ProductVariant"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#Party"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#Component [0..1]</iirds:description>		
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#ContentLifeCycleStatus [0..1]</iirds:description>		
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#IdentityDomain [0..1]</iirds:description>		
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#ProductVariant [0..1]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#relates-to-product-feature">
+		<rdfs:label xml:lang="de">bezieht sich auf Produkteigenschaft</rdfs:label>
+		<rdfs:label xml:lang="en">relates to product feature</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#relates-to-product-metadata"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#ProductFeature"/>
+		<iirds:description xml:lang="en">That means that the content of the information unit refers to or describes a specific product feature.</iirds:description>
+		<rdfs:comment xml:lang="en">Relates to a product feature.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#ProductFeature"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#relates-to-product-lifecycle-phase">
+		<rdfs:label xml:lang="de">bezieht sich auf Produktlebenszyklusphase</rdfs:label>
+		<rdfs:label xml:lang="en">relates to phase of the product lifecycle</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#relates-to-product-metadata"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#ProductLifeCyclePhase"/>
+		<iirds:description xml:lang="en">That means that the content of the information unit describes activities or knowledge related to a specific lifecycle phase. Examples are operation and maintenance.</iirds:description>
+		<rdfs:comment xml:lang="en">Relates to a product lifecycle phase.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#ProductLifeCyclePhase"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#relates-to-product-metadata">
+		<rdfs:label xml:lang="de">bezieht sich auf Produktmetadaten</rdfs:label>
+		<rdfs:label xml:lang="en">relates to product metadata</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#ProductMetadata"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Relates to product metadata.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#ProductMetadata"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#relates-to-product-variant">
+		<rdfs:label xml:lang="de">bezieht sich auf Produktvariante</rdfs:label>
+		<rdfs:label xml:lang="en">relates to product variant</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#relates-to-product-metadata"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#ProductVariant"/>
+		<iirds:description xml:lang="en">That means that the content of the information unit refers to or describes a specific variant of the product.</iirds:description>
+		<rdfs:comment xml:lang="en">Relates to product variant.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#ProductVariant"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#relates-to-qualification">
+		<rdfs:label xml:lang="de">bezieht sich auf Qualifikation</rdfs:label>
+		<rdfs:label xml:lang="en">relates to qualification</rdfs:label>		
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#relates-to-functional-metadata"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#Qualification"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Relates to a qualification that is required for the tasks or activities described in the information unit.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#Qualification"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#relates-to-supply">
+		<rdfs:label xml:lang="de">bezieht sich auf Hilfsmittel</rdfs:label>
+		<rdfs:label xml:lang="en">relates to supply</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#relates-to-functional-metadata"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<rdfs:range rdf:resource="http://iirds.tekom.de/iirds#Supply"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Relates to a supply that is required for the tasks or activities described in the information unit.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#InformationUnit"/>
+		<schema:rangeIncludes rdf:resource="http://iirds.tekom.de/iirds#Supply"/>
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]</iirds:description>		
+	</rdf:Property>
+	<rdf:Property rdf:about="http://iirds.tekom.de/iirds#relates-to-vcard">
+		<rdfs:label xml:lang="de">bezieht sich auf vCard</rdfs:label>
+		<rdfs:label xml:lang="en">relates to vCard</rdfs:label>
+		<rdfs:subPropertyOf rdf:resource="http://iirds.tekom.de/iirds#iirdsRelationConcept"/>
+		<rdfs:domain rdf:resource="http://iirds.tekom.de/iirds#Party"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2006/vcard/ns#Kind"/>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Relates to a vCard providing detailed information about the party.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://iirds.tekom.de/iirds#Party"/>
+		<schema:rangeIncludes rdf:resource="http://www.w3.org/2006/vcard/ns#Kind"/>	
+		<iirds:description xml:lang="en">Cardinality: http://iirds.tekom.de/iirds#Party [0..1]</iirds:description>		
+	</rdf:Property>
+	
+	<iirds:Action rdf:about="http://iirds.tekom.de/iirds#GenericAction">
+		<rdfs:label xml:lang="de">Handlung</rdfs:label>
+		<rdfs:label xml:lang="en">Action</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the Action class.</rdfs:comment>
+	</iirds:Action>
+	
+	<iirds:DesignAndRealization rdf:about="http://iirds.tekom.de/iirds#Acquisition">
+		<rdfs:label xml:lang="de">Beschaffung</rdfs:label>
+		<rdfs:label xml:lang="en">Acquisition</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Lifecycle phase of a product during which services, goods, or works are acquired from an external source.</rdfs:comment>
+	</iirds:DesignAndRealization>
+
+	<iirds:DocumentType rdf:about="http://iirds.tekom.de/iirds#AdministratorGuide">
+		<rdfs:label xml:lang="de">Administrationsanleitung</rdfs:label>
+		<rdfs:label xml:lang="en">Administrator guide</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Type of document. Contains instructions for the administration of a technical system.</rdfs:comment>
+	</iirds:DocumentType>
+
+	<iirds:Conformity rdf:about="http://iirds.tekom.de/iirds#ApplicableStandards">
+		<rdfs:label xml:lang="de">Geltende Norm und Richtlinie</rdfs:label>
+		<rdfs:label xml:lang="en">Applicable standard</rdfs:label>
+		<iirds:description xml:lang="en">Examples: machinery directive, ATEX directive</iirds:description>
+		<rdfs:comment xml:lang="en">Information subject related to conformity. Describes content related to standards that a product needs to fulfill.</rdfs:comment>
+	</iirds:Conformity>
+
+	<iirds:DocumentType rdf:about="http://iirds.tekom.de/iirds#AssemblyInstructions">
+		<rdfs:label xml:lang="de">Montageanleitung</rdfs:label>
+		<rdfs:label xml:lang="en">Assembly instructions</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Type of document. Contains instructions enabling the operator to assemble a physical product so that it fulfills its intended use and does not endanger the health and safety of persons.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Dokumentenart. Enthält Anleitungen, die den Anwender dazu befähigen, ein physisches Produkt so zusammenzubauen, dass es die bestimmungsgemäße Verwendung erfüllt und die Sicherheit und Gesundheit von Personen nicht beeinträchtigt wird.</rdfs:comment>
+	</iirds:DocumentType>
+
+	<iirds:DocumentType rdf:about="http://iirds.tekom.de/iirds#CEDeclarationOfConformity">
+		<rdfs:label xml:lang="de">CE-Konformitätserklärung</rdfs:label>
+		<rdfs:label xml:lang="en">CE declaration of conformity</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Type of document. Created as a result of a procedure whereby the manufacture or authorized representative "ensures and declares" that the products concerned satisfy the requirements of the directives that apply to them.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Bestätigung des Hersteller (bzw. falls dieser seinen Sitz außerhalb der EU hat, sein Bevollmächtigter mit Sitz in der EU), dass ein von ihm in Verkehr gebrachtes Produkt den grundlegenden Gesundheits- und Sicherheitsanforderungen aller relevanten europäischen Richtlinien entspricht, also mit ihnen konform ist.</rdfs:comment>
+	</iirds:DocumentType>
+
+	<iirds:PuttingToUse rdf:about="http://iirds.tekom.de/iirds#Configuration">
+		<rdfs:label xml:lang="de">Einrichtung</rdfs:label>
+		<rdfs:label xml:lang="en">Configuration</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Lifecycle phase of a product describing activities related to configuring the settings of a technical system before use.</rdfs:comment>
+	</iirds:PuttingToUse>
+
+	<iirds:Formality rdf:about="http://iirds.tekom.de/iirds#ContactInformation">
+		<rdfs:label xml:lang="de">Kontaktdaten</rdfs:label>
+		<rdfs:label xml:lang="en">Contact information</rdfs:label>
+		<iirds:description xml:lang="en">Contact information such as addresses, phone numbers, URLs.</iirds:description>
+		<rdfs:comment xml:lang="en">Information subject. Contact information of the supplier.</rdfs:comment>
+	</iirds:Formality>
+
+	<iirds:Conformity rdf:about="http://iirds.tekom.de/iirds#DeclarationOfConformity">
+		<rdfs:label xml:lang="de">Konformitätserklärung</rdfs:label>
+		<rdfs:label xml:lang="en">Declaration of conformity</rdfs:label>
+		<iirds:description xml:lang="en">The Declaration of Conformity states that the product complies with the essential requirements of the relevant standards. </iirds:description>
+		<rdfs:comment xml:lang="en">Information subject. Specifies that the information unit deals with the EU Declaration of Conformity for CE marking.</rdfs:comment>
+	</iirds:Conformity>
+
+	<iirds:Use rdf:about="http://iirds.tekom.de/iirds#Decommissioning">
+		<rdfs:label xml:lang="de">Außerbetriebnahme</rdfs:label>
+		<rdfs:label xml:lang="en">Decommissioning</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Lifecycle phase of a product describing the shut-down and transfer into a safe state.</rdfs:comment>
+	</iirds:Use>
+
+	<iirds:DesignAndRealization rdf:about="http://iirds.tekom.de/iirds#Design">
+		<rdfs:label xml:lang="de">Design</rdfs:label>
+		<rdfs:label xml:lang="en">Design</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Lifecycle phase of product design.</rdfs:comment>
+	</iirds:DesignAndRealization>
+
+	<iirds:DesignAndRealization rdf:about="http://iirds.tekom.de/iirds#Development">
+		<rdfs:label xml:lang="de">Entwicklung</rdfs:label>
+		<rdfs:label xml:lang="en">Development</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Lifecycle phase of a product progressing from detailed design to prototyping through pilot release to full product launch.</rdfs:comment>
+	</iirds:DesignAndRealization>
+
+	<iirds:Use rdf:about="http://iirds.tekom.de/iirds#Diagnostics">
+		<rdfs:label xml:lang="de">Fehlerdiagnose</rdfs:label>
+		<rdfs:label xml:lang="en">Diagnostics</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Lifecycle phase of a product containing procedures for locating errors.</rdfs:comment>
+	</iirds:Use>
+
+	<iirds:AfterUse rdf:about="http://iirds.tekom.de/iirds#Disposal">
+		<rdfs:label xml:lang="de">Entsorgung</rdfs:label>
+		<rdfs:label xml:lang="en">Disposal</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Lifecycle phase of a product describing the elimination of components, mounted parts and lubricant considering the country-specific current law.</rdfs:comment>
+	</iirds:AfterUse>
+
+	<iirds:Use rdf:about="http://iirds.tekom.de/iirds#EmergencyOperation">
+		<rdfs:label xml:lang="de">Notbetrieb</rdfs:label>
+		<rdfs:label xml:lang="en">Emergency operation</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Product lifecycle phase of a technical system in which the system's functionality is reduced to a minimum due to an error or emergency situation.</rdfs:comment>
+	</iirds:Use>
+
+	<iirds:Use rdf:about="http://iirds.tekom.de/iirds#Fault">
+		<rdfs:label xml:lang="de">Störung</rdfs:label>
+		<rdfs:label xml:lang="en">Fault</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Product lifecycle phase of a technical system in which the intended use and operation of a technical system or software is interrupted due to an error or malfunction.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Phase im Produktlebenszyklus, in der Störungen des bestimmungsgemäßen Betriebes einer technischen Anlage, einer Software oder eines technischen Systems auftreten.</rdfs:comment>
+	</iirds:Use>
+
+	<iirds:Safety rdf:about="http://iirds.tekom.de/iirds#ForeseeableMisuse">
+		<rdfs:label xml:lang="de">Vorhersehbarer Fehlgebrauch</rdfs:label>
+		<rdfs:label xml:lang="en">Foreseeable misuse</rdfs:label>
+		<iirds:description xml:lang="en">Use of a product in a manner not intended by the producer or supplier but which may result from foreseeable human behavior. See EN 82079-1</iirds:description>
+		<rdfs:comment xml:lang="en">Information subject. Foreseeable misuse of a product.</rdfs:comment>
+	</iirds:Safety>
+
+	<iirds:AfterUse rdf:about="http://iirds.tekom.de/iirds#GenericAfterUse">
+		<rdfs:label xml:lang="de">Nutzungsende</rdfs:label>
+		<rdfs:label xml:lang="en">After use</rdfs:label>
+		<iirds:description xml:lang="en">The AfterUse class is a parent class for product lifecycle phases that occur after the active use of the product.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the AfterUse class. </rdfs:comment>
+	</iirds:AfterUse>
+
+	<iirds:Collection rdf:about="http://iirds.tekom.de/iirds#GenericCollection">
+		<rdfs:label xml:lang="de">Zusammenstellung</rdfs:label>
+		<rdfs:label xml:lang="en">Collection</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Information subject. Indicates that the content represents a collection of information assembled from different information units.</rdfs:comment>
+	</iirds:Collection>
+
+	<iirds:Concept rdf:about="http://iirds.tekom.de/iirds#GenericConcept">
+		<rdfs:label xml:lang="de">Beschreibung</rdfs:label>
+		<rdfs:label xml:lang="en">Concept</rdfs:label>
+		<iirds:description xml:lang="en">Conceptual information helps users to map their existing knowledge to tasks and other essential information about a product or system.</iirds:description>
+		<rdfs:comment xml:lang="en">Topic type that provides background that helps readers understand essential information about a product, interface, or task.</rdfs:comment>
+	</iirds:Concept>
+
+	<iirds:Conformity rdf:about="http://iirds.tekom.de/iirds#GenericConformity">
+		<rdfs:label xml:lang="de">Konformität</rdfs:label>
+		<rdfs:label xml:lang="en">Conformity</rdfs:label>
+		<iirds:description xml:lang="en">The Conformity class is a parent class for information subjects that describe content related to applicable standards or the conformity of the product.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the Conformity class.</rdfs:comment>
+	</iirds:Conformity>
+
+	<iirds:DesignAndRealization rdf:about="http://iirds.tekom.de/iirds#GenericDesignAndRealization">
+		<rdfs:label xml:lang="de">Produktentstehung</rdfs:label>
+		<rdfs:label xml:lang="en">Design and realization</rdfs:label>
+		<iirds:description xml:lang="en">The DesignAndRealization class is a parent class for product lifecycle phases related to the design, construction, and realization of a product.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the DesignAndRealization class.</rdfs:comment>
+	</iirds:DesignAndRealization>
+
+	<iirds:DownTime rdf:about="http://iirds.tekom.de/iirds#GenericDownTime">
+		<rdfs:label xml:lang="de">Stillstandszeit</rdfs:label>
+		<rdfs:label xml:lang="en">Down time</rdfs:label>
+		<iirds:description xml:lang="en">The DownTime class is a parent class for time periods during which an equipment or machine is not functional or cannot work.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the DownTime class.</rdfs:comment>
+        <iirds:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#duration">PT0M</iirds:duration>
+	</iirds:DownTime>
+
+	<iirds:Event rdf:about="http://iirds.tekom.de/iirds#GenericEvent">
+		<rdfs:label xml:lang="de">Ereignis</rdfs:label>
+		<rdfs:label xml:lang="en">Event</rdfs:label>
+		<iirds:description xml:lang="en">The Event class describes events that happen in the technical system. Examples are errors, malfunctions, and warnings.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the Event class.</rdfs:comment>
+	</iirds:Event>
+	
+	<iirds:ContentLifeCycleStatusValue rdf:about="http://iirds.tekom.de/iirds#Approved">
+		<rdfs:label xml:lang="de">Freigegeben</rdfs:label>
+		<rdfs:label xml:lang="en">Approved</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Content lifecycle status value; indicates that the content has been approved.</rdfs:comment>
+	</iirds:ContentLifeCycleStatusValue>
+	
+	<iirds:ContentLifeCycleStatusValue rdf:about="http://iirds.tekom.de/iirds#Deleted">
+		<rdfs:label xml:lang="de">Gelöscht</rdfs:label>
+		<rdfs:label xml:lang="en">Deleted</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Content lifecycle status value; indicates that the content has been removed.</rdfs:comment>
+	</iirds:ContentLifeCycleStatusValue>
+	
+	<iirds:ContentLifeCycleStatusValue rdf:about="http://iirds.tekom.de/iirds#InPreparation">
+		<rdfs:label xml:lang="de">In Arbeit</rdfs:label>
+		<rdfs:label xml:lang="en">In preparation</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Content lifecycle status value; indicates that the content is not finished yet and is still being edited.</rdfs:comment>
+	</iirds:ContentLifeCycleStatusValue>
+	
+	<iirds:ContentLifeCycleStatusValue rdf:about="http://iirds.tekom.de/iirds#InReview">
+		<rdfs:label xml:lang="de">In Review</rdfs:label>
+		<rdfs:label xml:lang="en">In review</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Content lifecycle status value; indicates that the content is being reviewed.</rdfs:comment>
+	</iirds:ContentLifeCycleStatusValue>
+	
+	<iirds:ContentLifeCycleStatusValue rdf:about="http://iirds.tekom.de/iirds#Released">
+		<rdfs:label xml:lang="de">Veröffentlicht</rdfs:label>
+		<rdfs:label xml:lang="en">Released</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Content lifecycle status value; indicates that the content has been released.</rdfs:comment>
+	</iirds:ContentLifeCycleStatusValue>
+	
+	<iirds:ContentLifeCycleStatusValue rdf:about="http://iirds.tekom.de/iirds#Reviewed">
+		<rdfs:label xml:lang="de">Review durchgeführt</rdfs:label>
+		<rdfs:label xml:lang="en">Reviewed</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Content lifecycle status value; indicates that the content has been reviewed.</rdfs:comment>
+	</iirds:ContentLifeCycleStatusValue>
+	
+	<iirds:ContentLifeCycleStatusValue rdf:about="http://iirds.tekom.de/iirds#Withdrawn">
+		<rdfs:label xml:lang="de">Widerrufen</rdfs:label>
+		<rdfs:label xml:lang="en">Withdrawn</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Content lifecycle status value; indicates that the content has been withdrawn and is no longer valid.</rdfs:comment>
+	</iirds:ContentLifeCycleStatusValue>	
+
+	<iirds:Form rdf:about="http://iirds.tekom.de/iirds#GenericForm">
+		<rdfs:label xml:lang="de">Formular</rdfs:label>
+		<rdfs:label xml:lang="en">Form</rdfs:label>
+		<iirds:description xml:lang="en">The Form class describes topics that contain information in pre-defined form fields. Examples of forms are service reports, field reports, and user feedback.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the Form class.</rdfs:comment>
+	</iirds:Form>
+
+	<iirds:Formality rdf:about="http://iirds.tekom.de/iirds#GenericFormality">
+		<rdfs:label xml:lang="de">Formalie</rdfs:label>
+		<rdfs:label xml:lang="en">Formality</rdfs:label>
+		<iirds:description xml:lang="en">The Formality class is the parent class for information subjects that describe content related to official or legal documents.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the Formality class.</rdfs:comment>
+	</iirds:Formality>
+
+	<iirds:Functionality rdf:about="http://iirds.tekom.de/iirds#GenericFunctionality">
+		<rdfs:label xml:lang="de">Funktionalität</rdfs:label>
+		<rdfs:label xml:lang="en">Functionality</rdfs:label>
+		<iirds:description xml:lang="en">The Functionality class is the parent class for information subjects that describe content related to specific functionalities of the product.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the Functionality class.</rdfs:comment>
+	</iirds:Functionality>
+
+	<iirds:Learning rdf:about="http://iirds.tekom.de/iirds#GenericLearning">
+		<rdfs:label xml:lang="de">Lernen</rdfs:label>
+		<rdfs:label xml:lang="en">Learning</rdfs:label>
+		<iirds:description xml:lang="en">Learning content may comprise learning plans, learning objectives, learning content details, summaries, and assessments.</iirds:description>
+		<rdfs:comment xml:lang="en">Topic type that provides learning content.</rdfs:comment>
+	</iirds:Learning>
+
+	<iirds:MaintenanceInterval rdf:about="http://iirds.tekom.de/iirds#GenericMaintenanceInterval">
+		<rdfs:label xml:lang="de">Wartungsintervall</rdfs:label>
+		<rdfs:label xml:lang="en">Maintenance interval</rdfs:label>
+		<iirds:description xml:lang="en">The MaintenanceInterval class describes time intervals and durations for the scheduled maintenance of a technical system or its parts.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the MaintenanceInterval class.</rdfs:comment>
+        <iirds:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#duration">PT0M</iirds:duration>
+        <iirds:frequency>unknown</iirds:frequency>
+	</iirds:MaintenanceInterval>
+	
+	<iirds:PartyRole rdf:about="http://iirds.tekom.de/iirds#Author">
+		<rdfs:label xml:lang="de">Autor</rdfs:label>
+		<rdfs:label xml:lang="en">Author</rdfs:label>
+		<iirds:description xml:lang="en">An author is the individual or the organization from which the referenced iiRDS domain entity originates.</iirds:description>
+		<rdfs:comment xml:lang="en">Instance of the PartyRole class describing the role of an actor related to an iiRDS domain entity.</rdfs:comment>
+	</iirds:PartyRole>
+	
+	<iirds:PartyRole rdf:about="http://iirds.tekom.de/iirds#Creator">
+		<rdfs:label xml:lang="de">Ersteller</rdfs:label>
+		<rdfs:label xml:lang="en">Creator</rdfs:label>
+		<iirds:description xml:lang="en">A creator is the individual or the organization that created the referenced iiRDS domain entity.</iirds:description>
+		<rdfs:comment xml:lang="en">Instance of the PartyRole class describing the role of an actor related to an iiRDS domain entity.</rdfs:comment>
+	</iirds:PartyRole>
+	
+	<iirds:PartyRole rdf:about="http://iirds.tekom.de/iirds#Contributor">
+		<rdfs:label xml:lang="de">Beteiligter</rdfs:label>
+		<rdfs:label xml:lang="en">Contributor</rdfs:label>
+		<iirds:description xml:lang="en">A contributor is an individual or an organization that participated in the generation/change of the referenced iiRDS domain entity.</iirds:description>
+		<rdfs:comment xml:lang="en">Instance of the PartyRole class describing the role of an actor related to an iiRDS domain entity.</rdfs:comment>
+	</iirds:PartyRole>
+	
+	<iirds:PartyRole rdf:about="http://iirds.tekom.de/iirds#Customer">
+		<rdfs:label xml:lang="de">Kunde</rdfs:label>
+		<rdfs:label xml:lang="en">Customer</rdfs:label>
+		<iirds:description xml:lang="en">A customer is an individual or an organization that purchased or consumes the referenced iiRDS domain entity.</iirds:description>
+		<rdfs:comment xml:lang="en">Instance of the PartyRole class describing the role of an actor related to an iiRDS domain entity.</rdfs:comment>
+	</iirds:PartyRole>
+	
+	<iirds:PartyRole rdf:about="http://iirds.tekom.de/iirds#Inspector">
+		<rdfs:label xml:lang="de">Prüfer</rdfs:label>
+		<rdfs:label xml:lang="en">Inspector</rdfs:label>
+		<iirds:description xml:lang="en">An inspector is an individual or an organization that supervises or checks the referenced iiRDS domain entity and makes reports.</iirds:description>
+		<rdfs:comment xml:lang="en">Instance of the PartyRole class describing the role of an actor related to an iiRDS domain entity.</rdfs:comment>
+	</iirds:PartyRole>
+	
+	<iirds:PartyRole rdf:about="http://iirds.tekom.de/iirds#Manufacturer">
+		<rdfs:label xml:lang="de">Hersteller</rdfs:label>
+		<rdfs:label xml:lang="en">Manufacturer</rdfs:label>
+		<iirds:description xml:lang="en">The manufacturer is the individual or the organization that produces the referenced iiRDS domain entity.</iirds:description>
+		<rdfs:comment xml:lang="en">Instance of the PartyRole class describing the role of an actor related to an iiRDS domain entity.</rdfs:comment>
+	</iirds:PartyRole>
+	
+	<iirds:PartyRole rdf:about="http://iirds.tekom.de/iirds#PerformedBy">
+		<rdfs:label xml:lang="de">Durchgeführt von</rdfs:label>
+		<rdfs:label xml:lang="en">Performed by</rdfs:label>
+		<iirds:description xml:lang="en">Describes the actor that is involved in changing the content lifecycle status.</iirds:description>
+		<rdfs:comment xml:lang="en">Instance of the PartyRole class describing the role of an actor related to an iiRDS domain entity.</rdfs:comment>
+	</iirds:PartyRole>
+	
+	<iirds:PartyRole rdf:about="http://iirds.tekom.de/iirds#Supplier">
+		<rdfs:label xml:lang="de">Zulieferer</rdfs:label>
+		<rdfs:label xml:lang="en">Supplier</rdfs:label>
+		<iirds:description xml:lang="en">Describes the individual or the organization that provides the referenced iiRDS domain entity, e.g. a component.</iirds:description>
+		<rdfs:comment xml:lang="en">Instance of the PartyRole class describing the role of an actor related to an iiRDS domain entity.</rdfs:comment>
+	</iirds:PartyRole>
+
+	<iirds:PlanningTime rdf:about="http://iirds.tekom.de/iirds#GenericPlanningTime">
+		<rdfs:label xml:lang="de">Planungszeit</rdfs:label>
+		<rdfs:label xml:lang="en">Planning time</rdfs:label>
+		<iirds:description xml:lang="en">The PlanningTime class describes different types of planning times that may be referenced in technical documentation, for example time required for or resulting from specific working tasks.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the PlanningTime class.</rdfs:comment>
+		<iirds:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#duration">PT0M</iirds:duration>  
+	</iirds:PlanningTime>
+
+	<iirds:Process rdf:about="http://iirds.tekom.de/iirds#GenericProcess">
+		<rdfs:label xml:lang="de">Prozess</rdfs:label>
+		<rdfs:label xml:lang="en">Process</rdfs:label>
+		<iirds:description xml:lang="en">The Process class contains information subject for process-related information.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the Process class.</rdfs:comment>
+	</iirds:Process>
+
+	<iirds:ProductFeature rdf:about="http://iirds.tekom.de/iirds#GenericProductFeature">
+		<rdfs:label xml:lang="de">Produktmerkmal</rdfs:label>
+		<rdfs:label xml:lang="en">Product feature</rdfs:label>
+		<iirds:description xml:lang="en">The ProductFeature class is a parent class for characteristics and functions of a product or component.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the ProductFeature class.</rdfs:comment>
+	</iirds:ProductFeature>
+	
+	<iirds:ProductProperty rdf:about="http://iirds.tekom.de/iirds#GenericProductProperty">
+		<rdfs:label xml:lang="de">Produkteigenschaft</rdfs:label>
+		<rdfs:label xml:lang="en">Product property</rdfs:label>
+		<iirds:description xml:lang="en">The ProductProperty class describes a characteristic of a product or component.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the ProductProperty class.</rdfs:comment>
+	</iirds:ProductProperty>
+	
+	<iirds:ProductFunction rdf:about="http://iirds.tekom.de/iirds#GenericProductFunction">
+		<rdfs:label xml:lang="de">Produktfunktion</rdfs:label>
+		<rdfs:label xml:lang="en">Product function</rdfs:label>
+		<iirds:description xml:lang="en">The ProductFunction class describes a function that a product or component provides or implements.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the ProductFunction class.</rdfs:comment>
+	</iirds:ProductFunction>
+
+	<iirds:PuttingToUse rdf:about="http://iirds.tekom.de/iirds#GenericPuttingToUse">
+		<rdfs:label xml:lang="de">In Nutzung nehmen</rdfs:label>
+		<rdfs:label xml:lang="en">Putting to use</rdfs:label>
+		<iirds:description xml:lang="en">The PuttingToUse class is a parent class for the product lifecycle phases related to putting a product or technical system to use.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the GenericPuttingToUse class.</rdfs:comment>
+	</iirds:PuttingToUse>
+
+	<iirds:Reference rdf:about="http://iirds.tekom.de/iirds#GenericReference">
+		<rdfs:label xml:lang="de">Referenz</rdfs:label>
+		<rdfs:label xml:lang="en">Reference</rdfs:label>
+		<iirds:description xml:lang="en">The Reference class describes a topic type containing information that supports users as they perform a task, meaning data that is looked up rather than memorized. Examples are parameter lists, tables with technical data, UI control overviews, and parts lists. </iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the Reference class. </rdfs:comment>
+	</iirds:Reference>
+
+	<iirds:Role rdf:about="http://iirds.tekom.de/iirds#GenericRole">
+		<rdfs:label xml:lang="de">Rolle</rdfs:label>
+		<rdfs:label xml:lang="en">Role</rdfs:label>
+		<iirds:description xml:lang="en">The Role class describes roles for users of the technical system and the associated technical information.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the Role class.</rdfs:comment>
+	</iirds:Role>
+
+	<iirds:Safety rdf:about="http://iirds.tekom.de/iirds#GenericSafety">
+		<rdfs:label xml:lang="de">Sicherheit</rdfs:label>
+		<rdfs:label xml:lang="en">Safety</rdfs:label>
+		<iirds:description xml:lang="en">The Safety class contains information subjects related to safety.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the Safety class.</rdfs:comment>
+	</iirds:Safety>
+
+	<iirds:SkillLevel rdf:about="http://iirds.tekom.de/iirds#GenericSkillLevel">
+		<rdfs:label xml:lang="de">Kenntnisstufe</rdfs:label>
+		<rdfs:label xml:lang="en">Skill level</rdfs:label>
+		<iirds:description xml:lang="en">The SkillLevel class describes custom skill levels that the users of the technical system and the associated technical information require.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the SkillLevel class.</rdfs:comment>
+	</iirds:SkillLevel>
+
+	<iirds:Supply rdf:about="http://iirds.tekom.de/iirds#GenericSupply">
+		<rdfs:label xml:lang="de">Hilfsmittel</rdfs:label>
+		<rdfs:label xml:lang="en">Generic supply</rdfs:label>
+		<iirds:description xml:lang="en">The Supply class is a parent class for supplies that are required for working tasks described in technical documentation.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the Supply class.</rdfs:comment>
+	</iirds:Supply>
+
+	<iirds:Task rdf:about="http://iirds.tekom.de/iirds#GenericTask">
+		<rdfs:label xml:lang="de">Aufgabe</rdfs:label>
+		<rdfs:label xml:lang="en">Task</rdfs:label>
+		<iirds:description xml:lang="en">Tasks provide instructions and may contain information on other aspects, such as requirements that must be fulfilled or safety instructions.</iirds:description>
+		<rdfs:comment xml:lang="en">Topic type that contains procedural information for work activities.</rdfs:comment>
+	</iirds:Task>
+
+	<iirds:TechnicalData rdf:about="http://iirds.tekom.de/iirds#GenericTechnicalData">
+		<rdfs:label xml:lang="de">Technische Daten</rdfs:label>
+		<rdfs:label xml:lang="en">Technical data</rdfs:label>
+		<iirds:description xml:lang="en">Information that describes the technical characteristics of a product or component.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the TechnicalData class.</rdfs:comment>
+</iirds:TechnicalData>
+
+	<iirds:TechnicalOverview rdf:about="http://iirds.tekom.de/iirds#GenericTechnicalOverview">
+		<rdfs:label xml:lang="de">Technische Übersicht</rdfs:label>
+		<rdfs:label xml:lang="en">Technical overview</rdfs:label>
+		<iirds:description xml:lang="en">The TechnicalOverview class is a parent class for information subjects describing contents related to technical plans, diagrams, or the technical architecture of the product.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the TechnicalOverview class.</rdfs:comment>
+	</iirds:TechnicalOverview>
+
+	<iirds:Troubleshooting rdf:about="http://iirds.tekom.de/iirds#GenericTroubleshooting">
+		<rdfs:label xml:lang="de">Störungsbeseitigung</rdfs:label>
+		<rdfs:label xml:lang="en">Troubleshooting</rdfs:label>
+		<iirds:description xml:lang="en">Troubleshooting information may comprise a description of the symptoms, the cause of the error, and a remedy for the error.</iirds:description>
+		<rdfs:comment xml:lang="en">Topic type that contains corrective action information that helps to fix an error or remove a malfunction.</rdfs:comment>
+	</iirds:Troubleshooting>
+
+	<iirds:Use rdf:about="http://iirds.tekom.de/iirds#GenericUse">
+		<rdfs:label xml:lang="de">Nutzung</rdfs:label>
+		<rdfs:label xml:lang="en">Use</rdfs:label>
+		<iirds:description xml:lang="en">The Use class is a parent class for product lifecycle phases related to using a product or technical system.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the Use class.</rdfs:comment>
+	</iirds:Use>
+
+	<iirds:WorkingTime rdf:about="http://iirds.tekom.de/iirds#GenericWorkingTime">
+		<rdfs:label xml:lang="de">Arbeitszeit</rdfs:label>
+		<rdfs:label xml:lang="en">Generic working time</rdfs:label>
+		<iirds:description xml:lang="en">The WorkingTime class is a parent class for periods of time required for a specific working task.</iirds:description>
+		<rdfs:comment xml:lang="en">Generic instance of the WorkingTime class. </rdfs:comment>
+        <iirds:duration rdf:datatype="http://www.w3.org/2001/XMLSchema#duration">PT0M</iirds:duration>
+	</iirds:WorkingTime>
+
+	<iirds:DirectoryNodeType rdf:about="http://iirds.tekom.de/iirds#Index">
+		<rdfs:label xml:lang="de">Index</rdfs:label>
+		<rdfs:label xml:lang="en">Index</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Index directory type</rdfs:comment>
+		<rdfs:comment xml:lang="de">Verzeichnistyp Index</rdfs:comment>
+	</iirds:DirectoryNodeType>
+
+	<iirds:PuttingToUse rdf:about="http://iirds.tekom.de/iirds#Installation">
+		<rdfs:label xml:lang="de">Installation</rdfs:label>
+		<rdfs:label xml:lang="en">Installation</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Lifecycle phase of a product containing procedures for installing and setting up a software or IT system.</rdfs:comment>
+	</iirds:PuttingToUse>
+
+	<iirds:DocumentType rdf:about="http://iirds.tekom.de/iirds#InstallationInstructions">
+		<rdfs:label xml:lang="de">Installationsanleitung</rdfs:label>
+		<rdfs:label xml:lang="en">Installation instructions</rdfs:label>
+		<iirds:description xml:lang="en">For physical products: instructions enabling the operator to assemble and electrically connect a physical product so that it fulfills its intended use and does not endanger the health and safety of persons. For IT products: Instructions enabling the administrator to set up and potentially configure a program or new version on a computer so that does not endanger data security. </iirds:description>
+		<rdfs:comment xml:lang="en">Type of document. Contains instructions enabling the operator or administrator to assemble or install a physical product or software so that it fulfills its intended use.</rdfs:comment>
+	</iirds:DocumentType>
+
+	<iirds:Safety rdf:about="http://iirds.tekom.de/iirds#IntendedUse">
+		<rdfs:label xml:lang="de">Bestimmungsgemäße Verwendung</rdfs:label>
+		<rdfs:label xml:lang="en">Intended use</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Information subject: Legal concept outlining the field of application specified in matters of design and construction of the machinery which is described in the operating instructions/technical documentation, including considerations of the reasonable foreseeable use and potential misuse.</rdfs:comment>
+		<rdfs:comment xml:lang="de">Informationsthema: Rechtlicher Begriff für den bei der Konzeption und Konstruktion einer Maschine festgelegten Einsatzbereich, der in der Betriebsanleitung/Technischen Dokumentation beschrieben wird und auch Überlegungen zur vernünftigerweise vorhersehbaren Verwendung bzw. zu möglicher Fehlverwendung beinhaltet.</rdfs:comment>
+	</iirds:Safety>
+
+	<iirds:Formality rdf:about="http://iirds.tekom.de/iirds#LegalInformation">
+		<rdfs:label xml:lang="de">Rechtlicher Hinweis</rdfs:label>
+		<rdfs:label xml:lang="en">Legal information</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Information subject for legal information.</rdfs:comment>
+	</iirds:Formality>
+
+	<iirds:Formality rdf:about="http://iirds.tekom.de/iirds#LicenceTerm">
+		<rdfs:label xml:lang="de">Lizenzbedingung</rdfs:label>
+		<rdfs:label xml:lang="en">License terms</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Information subject describing licensing conditions.</rdfs:comment>
+	</iirds:Formality>
+
+	<iirds:DirectoryNodeType rdf:about="http://iirds.tekom.de/iirds#ListOfFigures">
+		<rdfs:label xml:lang="de">Abbildungsverzeichnis</rdfs:label>
+		<rdfs:label xml:lang="en">List of figures</rdfs:label>
+		<iirds:synonym>LOF</iirds:synonym>
+		<iirds:description xml:lang="en">Type of directory</iirds:description>
+		<rdfs:comment xml:lang="en">List of figures</rdfs:comment>
+		<rdfs:comment xml:lang="de">Abbildungsverzeichnis</rdfs:comment>
+	</iirds:DirectoryNodeType>
+
+	<iirds:DirectoryNodeType rdf:about="http://iirds.tekom.de/iirds#ListOfListings">
+		<rdfs:label xml:lang="de">Codeverzeichnis</rdfs:label>
+		<rdfs:label xml:lang="en">List of listings</rdfs:label>
+		<iirds:synonym>LOL</iirds:synonym>
+		<iirds:description xml:lang="en">Type of directory</iirds:description>
+		<rdfs:comment xml:lang="en">Code listing</rdfs:comment>
+		<rdfs:comment xml:lang="de">Verzeichnistyp für Programmcode</rdfs:comment>
+	</iirds:DirectoryNodeType>
+
+	<iirds:DirectoryNodeType rdf:about="http://iirds.tekom.de/iirds#ListOfTables">
+		<rdfs:label xml:lang="de">Tabellenverzeichnis</rdfs:label>
+		<rdfs:label xml:lang="en">List of tables</rdfs:label>
+		<iirds:synonym>LOT</iirds:synonym>
+		<iirds:description xml:lang="en">Type of directory</iirds:description>
+		<rdfs:comment xml:lang="en">List of tables</rdfs:comment>
+		<rdfs:comment xml:lang="de">Tabellenverzeichnis</rdfs:comment>
+	</iirds:DirectoryNodeType>
+
+	<iirds:Use rdf:about="http://iirds.tekom.de/iirds#Maintenance">
+		<rdfs:label xml:lang="de">Wartung</rdfs:label>
+		<rdfs:label xml:lang="en">Maintenance</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Lifecycle phase of a product that describes activities of all technical and management actions intended to retain an item in a state in which it can perform as required.</rdfs:comment>
+	</iirds:Use>
+
+	<iirds:DocumentType rdf:about="http://iirds.tekom.de/iirds#MaintenanceInstructions">
+		<rdfs:label xml:lang="de">Wartungsanleitung</rdfs:label>
+		<rdfs:label xml:lang="en">Maintenance instructions</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Type of document. Contains instructions of all technical and management actions intended to retain an item in a state in which it can perform as required.</rdfs:comment>
+	</iirds:DocumentType>
+
+	<iirds:Formality rdf:about="http://iirds.tekom.de/iirds#ManufacturerInformation">
+		<rdfs:label xml:lang="de">Herstellerinformation</rdfs:label>
+		<rdfs:label xml:lang="en">Manufacturer information</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Information subject. Information about the manufacturer of a product like name and address.</rdfs:comment>
+	</iirds:Formality>
+
+	<iirds:TechnicalOverview rdf:about="http://iirds.tekom.de/iirds#OperatingElement">
+		<rdfs:label xml:lang="de">Bedienelement</rdfs:label>
+		<rdfs:label xml:lang="en">Control element</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Information subject. Describes a device that a person can use to influence a machine or plant.</rdfs:comment>
+	</iirds:TechnicalOverview>
+
+	<iirds:DocumentType rdf:about="http://iirds.tekom.de/iirds#OperatingInstructions">
+		<rdfs:label xml:lang="de">Betriebsanleitung</rdfs:label>
+		<rdfs:label xml:lang="en">Operating instructions</rdfs:label>
+		<iirds:description xml:lang="en">The instructions in this document type enable the user to operate a device, machine, or software considering the reference use as well as the safety and health regulations for the product.</iirds:description>
+		<iirds:description xml:lang="de">Anleitung, die den Anwender dazu befähigt, ein Gerät, eine Maschine oder eine Software so zu betreiben, dass das Gerät oder die Maschine die bestimmungsgemäße Verwendung erfüllt und die Sicherheit und Gesundheit von Personen nicht beeinträchtigt wird.</iirds:description>
+		<rdfs:comment xml:lang="en">Type of document. Contains instructions for operation and use of a technical system.</rdfs:comment>
+	</iirds:DocumentType>
+
+	<iirds:Use rdf:about="http://iirds.tekom.de/iirds#Operation">
+		<rdfs:label xml:lang="de">Betrieb</rdfs:label>
+		<rdfs:label xml:lang="en">Operation</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Lifecycle phase of a product in which a technical product or system is actively used and operated.</rdfs:comment>
+	</iirds:Use>
+
+	<iirds:DocumentType rdf:about="http://iirds.tekom.de/iirds#PartsCatalog">
+		<rdfs:label xml:lang="de">Teilekatalog</rdfs:label>
+		<rdfs:label xml:lang="en">Parts catalog</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Type of document. Contains listings of product names and their part numbers and graphics which are necessary for the aftersales service, but do not include prices or availabilities.</rdfs:comment>
+	</iirds:DocumentType>
+
+	<iirds:Formality rdf:about="http://iirds.tekom.de/iirds#ProductIdentification">
+		<rdfs:label xml:lang="de">Produktidentifikation</rdfs:label>
+		<rdfs:label xml:lang="en">Product identification</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Information subject: Describes a name plate or similar that identifies the product.</rdfs:comment>
+	</iirds:Formality>
+
+	<iirds:DesignAndRealization rdf:about="http://iirds.tekom.de/iirds#Production">
+		<rdfs:label xml:lang="de">Herstellung</rdfs:label>
+		<rdfs:label xml:lang="en">Production</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Lifecycle phase of a product in which the product is manufactured.</rdfs:comment>
+	</iirds:DesignAndRealization>
+
+	<iirds:Formality rdf:about="http://iirds.tekom.de/iirds#ProductName">
+		<rdfs:label xml:lang="de">Produktbezeichnung</rdfs:label>
+		<rdfs:label xml:lang="en">Product name</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Information subject. Contains the name of the product.</rdfs:comment>
+	</iirds:Formality>
+
+	<iirds:DocumentType rdf:about="http://iirds.tekom.de/iirds#QuickGuide">
+		<rdfs:label xml:lang="de">Kurzanleitung</rdfs:label>
+		<rdfs:label xml:lang="en">Quick reference guide</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Type of document. Describes a short document that contains selected instructions for a specific user group or purpose.</rdfs:comment>
+	</iirds:DocumentType>
+
+	<iirds:Use rdf:about="http://iirds.tekom.de/iirds#Repair">
+		<rdfs:label xml:lang="de">Reparatur</rdfs:label>
+		<rdfs:label xml:lang="en">Repair</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Lifecycle phase of a product that describes activities for restoring the product to a working and sound condition after damage or wear and tear.</rdfs:comment>
+	</iirds:Use>
+
+	<iirds:DocumentType rdf:about="http://iirds.tekom.de/iirds#RepairInstructions">
+		<rdfs:label xml:lang="de">Reparaturanleitung</rdfs:label>
+		<rdfs:label xml:lang="en">Repair instructions</rdfs:label>
+		<iirds:description xml:lang="en">The instructions in this document type enable the user to repair a device, machine, or system considering the reference use as well as the safety and health regulations for the product.</iirds:description>
+		<iirds:description xml:lang="de">Anleitung, die den Anwender dazu befähigt, ein Gerät oder eine Maschine so instandzusetzen, dass das Gerät oder die Maschine die bestimmungsgemäße Verwendung erfüllt und die Sicherheit und Gesundheit von Personen nicht beeinträchtigt wird.</iirds:description>
+		<rdfs:comment xml:lang="en">Type of document. Contains instructions for restoring a product to a working condition.</rdfs:comment>
+	</iirds:DocumentType>
+
+	<iirds:DesignAndRealization rdf:about="http://iirds.tekom.de/iirds#RequirementsAnalysis">
+		<rdfs:label xml:lang="de">Anforderungsanalyse</rdfs:label>
+		<rdfs:label xml:lang="en">Requirement analysis</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Lifecycle phase of a product belonging to the product design; comprises the analysis and definition of requirements for the future product.</rdfs:comment>
+	</iirds:DesignAndRealization>
+
+	<iirds:Safety rdf:about="http://iirds.tekom.de/iirds#RestrictionOnUse">
+		<rdfs:label xml:lang="de">Einsatzbeschränkungen</rdfs:label>
+		<rdfs:label xml:lang="en">Restriction on use</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Information subjects. Specifies that there are restrictions regarding the use of the product.</rdfs:comment>
+	</iirds:Safety>
+
+	<iirds:Conformity rdf:about="http://iirds.tekom.de/iirds#RiskAssessment">
+		<rdfs:label xml:lang="de">Risikobewertung</rdfs:label>
+		<rdfs:label xml:lang="en">Risk assessment</rdfs:label>
+		<iirds:description xml:lang="en">A risk assessment determines the risks and hazards to life, environment, or machine functioning including a quantitative and qualitative estimate.</iirds:description>
+		<rdfs:comment xml:lang="en">Information subject related to conformity. Specifies that the information unit contains information on the risk assessment made within the safety engineering of the product.</rdfs:comment>
+	</iirds:Conformity>
+
+	<iirds:Safety rdf:about="http://iirds.tekom.de/iirds#SafetyInstruction">
+		<rdfs:label xml:lang="de">Sicherheitshinweis</rdfs:label>
+		<rdfs:label xml:lang="en">Safety instruction</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Information subject. Safety instructions explain to the user how to handle a product in a safe way.</rdfs:comment>
+	</iirds:Safety>
+
+	<iirds:DocumentType rdf:about="http://iirds.tekom.de/iirds#SalesCatalog">
+		<rdfs:label xml:lang="de">Verkaufskatalog</rdfs:label>
+		<rdfs:label xml:lang="en">Sales catalog</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Type of document. Contains listings of available products of a producing company with consumers as the target group.</rdfs:comment>
+	</iirds:DocumentType>
+
+	<iirds:Formality rdf:about="http://iirds.tekom.de/iirds#ScopeOfDelivery">
+		<rdfs:label xml:lang="de">Lieferumfang</rdfs:label>
+		<rdfs:label xml:lang="en">Scope of delivery</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Information subject. Specifies the scope of the delivery.</rdfs:comment>
+	</iirds:Formality>	
+	
+	<iirds:Formality rdf:about="http://iirds.tekom.de/iirds#WarrantyConditions">
+		<rdfs:label xml:lang="de">Garantiebedingungen</rdfs:label>
+		<rdfs:label xml:lang="en">Warranty conditions</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Information subject. Contains the warranty conditions.</rdfs:comment>
+	</iirds:Formality>	
+
+	<iirds:DocumentType rdf:about="http://iirds.tekom.de/iirds#Specification">
+		<rdfs:label xml:lang="de">Spezifikation</rdfs:label>
+		<rdfs:label xml:lang="en">Specification</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Type of document. Contains requirements and/or statements describing properties and qualities of a product to be built or manufactured.</rdfs:comment>
+	</iirds:DocumentType>
+
+	<iirds:TechnicalOverview rdf:about="http://iirds.tekom.de/iirds#Symbol">
+		<rdfs:label xml:lang="de">Symbol</rdfs:label>
+		<rdfs:label xml:lang="en">Symbol</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Information subject. Contains a list and explanation of symbols used in the documentation.</rdfs:comment>
+	</iirds:TechnicalOverview>
+
+	<iirds:DirectoryNodeType rdf:about="http://iirds.tekom.de/iirds#TableOfContents">
+		<rdfs:label xml:lang="de">Inhaltsverzeichnis</rdfs:label>
+		<rdfs:label xml:lang="en">Table of contents</rdfs:label>
+		<iirds:synonym>TOC</iirds:synonym>
+		<iirds:description xml:lang="en">Directory type</iirds:description>
+		<rdfs:comment xml:lang="en">Table of contents</rdfs:comment>
+		<rdfs:comment xml:lang="de">Inhaltsverzeichnis</rdfs:comment>
+	</iirds:DirectoryNodeType>
+
+	<iirds:Conformity rdf:about="http://iirds.tekom.de/iirds#TechnicalReport">
+		<rdfs:label xml:lang="de">Technischer Bericht</rdfs:label>
+		<rdfs:label xml:lang="en">Technical report</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Information subject related to conformity. Specifies that the information unit represents a report regarding the activities or working tasks related to the product. </rdfs:comment>
+	</iirds:Conformity>
+
+	<iirds:DocumentType rdf:about="http://iirds.tekom.de/iirds#TransportInstructions">
+		<rdfs:label xml:lang="de">Transportanleitung</rdfs:label>
+		<rdfs:label xml:lang="en">Transport instructions</rdfs:label>
+		<iirds:description xml:lang="en"></iirds:description>
+		<rdfs:comment xml:lang="en">Type of document. Contains instructions for transporting the product or its components from one place to another.</rdfs:comment>
+	</iirds:DocumentType>
+	
+	<iirds:DocumentType rdf:about="http://iirds.tekom.de/iirds#ElectronicIdentificationPlate">
+		<rdfs:label xml:lang="de">Elektronisches Typenschild</rdfs:label>
+		<rdfs:label xml:lang="en">Electronic identification plate</rdfs:label>
+		<iirds:description xml:lang="en">Type of document (VDI 2770)</iirds:description>
+		<rdfs:comment xml:lang="en">Electronically readable label on a machine or component that provides information on the identity of the manufacturer and the product, as well as on the technical characteristics of the product.</rdfs:comment>
+	</iirds:DocumentType>
+	
+	<iirds:DocumentType rdf:about="http://iirds.tekom.de/iirds#Plan">
+		<rdfs:label xml:lang="de">Plan</rdfs:label>
+		<rdfs:label xml:lang="en">Plan</rdfs:label>
+		<iirds:description xml:lang="en">Type of document (VDI 2770).</iirds:description>
+		<rdfs:comment xml:lang="en">Describes documents containing technical plans for a component or machine.</rdfs:comment>
+	</iirds:DocumentType>
+
+	<iirds:DocumentType rdf:about="http://iirds.tekom.de/iirds#Certificate">
+		<rdfs:label xml:lang="de">Zertifikat</rdfs:label>
+		<rdfs:label xml:lang="en">Certificate</rdfs:label>
+		<iirds:description xml:lang="en">Type of document (VDI 2770). Examples are ATEX certificates, acceptance reports, and material certificates.</iirds:description>
+		<rdfs:comment xml:lang="en">Document of legal nature that contains and certifies product information, quality, and characteristics. Usually acknowledged with a signature.</rdfs:comment>
+	</iirds:DocumentType>
+	
+	<iirds:DocumentType rdf:about="http://iirds.tekom.de/iirds#SafetyInstructions">
+		<rdfs:label xml:lang="de">Sicherheitsanleitung</rdfs:label>
+		<rdfs:label xml:lang="en">Safety instructions</rdfs:label>
+		<iirds:description xml:lang="en">Type of document (VDI 2770). Examples are documents about the intended use of the product, protection/safety measures, safety equipment, and explosion prevention. </iirds:description>
+		<rdfs:comment xml:lang="en">Contains general safety-related information provided by the manufacturer that must be considered during assembly, operation, maintenance, repair, and disassembly of the product. Safety information related to individual tasks is provided in the tasks.</rdfs:comment>
+	</iirds:DocumentType>
+	
+	<iirds:DocumentType rdf:about="http://iirds.tekom.de/iirds#BillOfMaterials">
+		<rdfs:label xml:lang="de">Stückliste</rdfs:label>
+		<rdfs:label xml:lang="en">Bill of materials</rdfs:label>
+		<iirds:description xml:lang="en">Type of document (VDI 2770). Examples are part list with part number, part description, order number, and references to other documents.</iirds:description>
+		<rdfs:comment xml:lang="en">List of sub-components, sub-modules and parts of a product. The materials are listed with their identity and characteristics so that they can be identified within the product and procured.</rdfs:comment>
+	</iirds:DocumentType>	
+	
+	<iirds:DocumentType rdf:about="http://iirds.tekom.de/iirds#ContractualDocument">
+		<rdfs:label xml:lang="de">Vertragliches Dokument</rdfs:label>
+		<rdfs:label xml:lang="en">Contractual document</rdfs:label>
+		<iirds:description xml:lang="en">Type of document (VDI 2770). Contractual documents include, among others, contracts, acceptance reports, and service conditions.</iirds:description>
+		<rdfs:comment xml:lang="en">Document that is part of or accompanies a contract.</rdfs:comment>
+	</iirds:DocumentType>
+
+	<iirds:DocumentType rdf:about="http://iirds.tekom.de/iirds#TechnicalDrawingDiagram">
+		<rdfs:label xml:lang="de">Technische Zeichnung/Diagramm</rdfs:label>
+		<rdfs:label xml:lang="en">Technical drawing/diagram</rdfs:label>
+		<rdfs:comment xml:lang="en">Type of document. Examples are flow diagrams and circuit diagrams.</rdfs:comment>
+		<iirds:description xml:lang="en">A technical drawing or diagram.</iirds:description>
+	</iirds:DocumentType>
+
+	<iirds:DocumentType rdf:about="http://iirds.tekom.de/iirds#IdentificationDocument">
+		<rdfs:label xml:lang="de">Identifikationsdokument</rdfs:label>
+		<rdfs:label xml:lang="en">Identification document</rdfs:label>
+		<rdfs:comment xml:lang="en">Type of document. </rdfs:comment>
+		<iirds:description xml:lang="en">Identifies an object and provides descriptive or classifying information.</iirds:description>
+	</iirds:DocumentType>
+	
+
+	<iirds:WarningMessage rdf:about="http://iirds.tekom.de/iirds#Danger">
+		<rdfs:label xml:lang="de">Gefahr</rdfs:label>
+		<rdfs:label xml:lang="en">Danger</rdfs:label>
+		<iirds:description xml:lang="en">See ANSI Z535.5</iirds:description>
+		<rdfs:comment xml:lang="en">Describes a hazardous situation which, if not avoided, will result in death or serious injury.</rdfs:comment>
+	</iirds:WarningMessage>
+	
+	<iirds:WarningMessage rdf:about="http://iirds.tekom.de/iirds#Warning">
+		<rdfs:label xml:lang="de">Warnung</rdfs:label>
+		<rdfs:label xml:lang="en">Warning</rdfs:label>
+		<iirds:description xml:lang="en">See ANSI Z535.5</iirds:description>
+		<rdfs:comment xml:lang="en">Describes a hazardous situation which, if not avoided, could result in death or serious injury.</rdfs:comment>
+	</iirds:WarningMessage>
+	
+	<iirds:WarningMessage rdf:about="http://iirds.tekom.de/iirds#Caution">
+		<rdfs:label xml:lang="de">Vorsicht</rdfs:label>
+		<rdfs:label xml:lang="en">Caution</rdfs:label>
+		<iirds:description xml:lang="en">See ANSI Z535.5</iirds:description>
+		<rdfs:comment xml:lang="en">Describes a hazardous situation which, if not avoided, could result in minor or moderate injury.</rdfs:comment>
+	</iirds:WarningMessage>
+	
+	<iirds:WarningMessage rdf:about="http://iirds.tekom.de/iirds#Notice">
+		<rdfs:label xml:lang="de">Hinweis</rdfs:label>
+		<rdfs:label xml:lang="en">Notice</rdfs:label>
+		<iirds:description xml:lang="en">See ANSI Z535.5</iirds:description>
+		<rdfs:comment xml:lang="en">Information considered important but not related to personal injury.</rdfs:comment>
+	</iirds:WarningMessage>
+	
+	<iirds:WarningMessage rdf:about="http://iirds.tekom.de/iirds#GenericWarningMessage">
+		<rdfs:label xml:lang="de">Warnhinweis</rdfs:label>
+		<rdfs:label xml:lang="en">Warning message</rdfs:label>
+		<iirds:description xml:lang="en">If possible, use Danger, Warning, Caution, or Notice instead.</iirds:description>
+		<rdfs:comment xml:lang="en">Warning or notice with unknown severity.</rdfs:comment>
+	</iirds:WarningMessage>	
+	
+	<iirds:IdentityType rdf:about="http://iirds.tekom.de/iirds#ArticleCode">
+		<rdfs:label xml:lang="de">Artikelcode</rdfs:label>
+		<rdfs:label xml:lang="en">Article code</rdfs:label>
+		<iirds:description xml:lang="en">Examples of article code are material number, article number, or item number.</iirds:description>
+		<rdfs:comment xml:lang="en"></rdfs:comment>
+	</iirds:IdentityType>
+	
+	<iirds:IdentityType rdf:about="http://iirds.tekom.de/iirds#OrderCode">
+		<rdfs:label xml:lang="de">Bestellcode</rdfs:label>
+		<rdfs:label xml:lang="en">Order code</rdfs:label>
+		<iirds:description xml:lang="en">Examples of order code are configuration number, product number, or code.</iirds:description>
+		<rdfs:comment xml:lang="en"></rdfs:comment>
+	</iirds:IdentityType>
+	
+	<iirds:IdentityType rdf:about="http://iirds.tekom.de/iirds#ProductType">
+		<rdfs:label xml:lang="de">Produkttyp</rdfs:label>
+		<rdfs:label xml:lang="en">Product type</rdfs:label>
+		<iirds:description xml:lang="en">Examples of product type are labels of product variants and type or model.</iirds:description>
+		<rdfs:comment xml:lang="en"></rdfs:comment>
+	</iirds:IdentityType>
+	
+	<iirds:IdentityType rdf:about="http://iirds.tekom.de/iirds#GlobalTradeItemNumber">
+		<rdfs:label xml:lang="de">GTIN</rdfs:label>
+		<rdfs:label xml:lang="en">GTIN</rdfs:label>
+		<iirds:description xml:lang="en">Global Trade Item Number (GTIN) is an identifier for trade items.</iirds:description>
+		<rdfs:comment xml:lang="en"></rdfs:comment>
+	</iirds:IdentityType>
+	
+	<iirds:IdentityType rdf:about="http://iirds.tekom.de/iirds#EuropeanArticleNumber">
+		<rdfs:label xml:lang="de">EAN</rdfs:label>
+		<rdfs:label xml:lang="en">EAN</rdfs:label>
+		<iirds:description xml:lang="en">European Article Number (EAN; also International Article Number, IAN) identifier for trade items.</iirds:description>
+		<rdfs:comment xml:lang="en"></rdfs:comment>
+	</iirds:IdentityType>
+	
+	<iirds:IdentityType rdf:about="http://iirds.tekom.de/iirds#ObjectInstanceURI">
+		<rdfs:label xml:lang="de">Instanz einer Objekt-URI</rdfs:label>
+		<rdfs:label xml:lang="en">Instance of object URI</rdfs:label>
+		<iirds:description xml:lang="en">A globally biunique serial number, for example, according to the stipulations made in DIN SPEC 91406.</iirds:description>
+		<rdfs:comment xml:lang="en"></rdfs:comment>
+	</iirds:IdentityType>
+	
+	<iirds:IdentityType rdf:about="http://iirds.tekom.de/iirds#SerialNumber">
+		<rdfs:label xml:lang="de">Seriennummer</rdfs:label>
+		<rdfs:label xml:lang="en">Serial number</rdfs:label>
+		<iirds:description xml:lang="en">A serial number, serial ID oder serial code identifying a single object instance.</iirds:description>
+		<rdfs:comment xml:lang="en"></rdfs:comment>
+	</iirds:IdentityType>
+
+</rdf:RDF>
+
