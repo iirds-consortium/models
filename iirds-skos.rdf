@@ -10,361 +10,361 @@
 This work is licensed under a Creative Commons Attribution-NoDerivatives 4.0 International License (https://creativecommons.org/licenses/by-nd/4.0/).
 -->
 
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#PuttingToUse">
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#PuttingToUse">
       <skos:prefLabel xml:lang="en">putting into use</skos:prefLabel>
       <skos:hiddenLabel xml:lang="en">putting to use</skos:hiddenLabel>
       <skos:definition xml:lang="en">product life cycle phase after production in which a product is set up for its intended use</skos:definition>
       <skos:prefLabel xml:lang="de">in Nutzung nehmen</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#ProductVariant">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#ProductVariant">
       <skos:prefLabel xml:lang="en">product variant</skos:prefLabel>
       <skos:definition xml:lang="en">item or service offered on the market and designed to meet the needs or wishes of customers</skos:definition>
       <skos:prefLabel xml:lang="de">Produktvariante</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#InformationUnit">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#InformationUnit">
       <skos:prefLabel xml:lang="en">information unit</skos:prefLabel>
       <skos:definition xml:lang="en">piece of digitally encoded information</skos:definition>
       <skos:prefLabel xml:lang="de">Informationseinheit</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Package">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Package">
       <skos:prefLabel xml:lang="en">package</skos:prefLabel>
       <skos:definition xml:lang="en">information unit that bundles other information units for exchange</skos:definition>
       <skos:prefLabel xml:lang="de">Paket</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Topic">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Topic">
       <skos:prefLabel xml:lang="en">topic</skos:prefLabel>
       <skos:definition xml:lang="en">information unit that covers a single subject</skos:definition>
       <skos:prefLabel xml:lang="de">Topic</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Rendition">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Rendition">
       <skos:prefLabel xml:lang="en">rendition</skos:prefLabel>
       <skos:definition xml:lang="en">content of an information unit in a specific format</skos:definition>
       <skos:note xml:lang="en">Content is information in any form, for example text, audio, and video.</skos:note>
       <skos:prefLabel xml:lang="de">Inhaltsausprägung</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Selector">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Selector">
       <skos:prefLabel xml:lang="en">selector</skos:prefLabel>
       <skos:definition xml:lang="en">pointer to the content of a rendition</skos:definition>
       <skos:prefLabel xml:lang="de">Selektor</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#AdministrativeMetadata">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#AdministrativeMetadata">
       <skos:prefLabel xml:lang="en">administrative metadata</skos:prefLabel>
       <skos:definition xml:lang="en">information that allows the management of iiRDS resources</skos:definition>
       <skos:note xml:lang="en">Administrative metadata can be divided into the following categories: - context or provenance metadata: describe the life cycle of a resource to a point, including the related entities and processes, e.g. configuration and log files, - technical metadata: describe the technical characteristics of a digital object, e g. its format, - rights metadata: define the ownership and the legally permitted usage of an object.</skos:note>
       <skos:prefLabel xml:lang="de">Verwaltungsmetadaten</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#DirectoryNode">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#DirectoryNode">
       <skos:prefLabel xml:lang="en">administrative metadata</skos:prefLabel>
       <skos:definition xml:lang="en">node in a tree-like, ordered collection</skos:definition>
       <skos:note xml:lang="en">The directory node structure may provide users with information on the context of the topic they are reading, its position in a document, its predecessors, and successors.</skos:note>
       <skos:prefLabel xml:lang="de">Verzeichnisknoten</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#nil">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#nil">
       <skos:prefLabel xml:lang="en">end of directory node</skos:prefLabel>
       <skos:definition xml:lang="en">closing element in a chain of directory nodes</skos:definition>
       <skos:prefLabel xml:lang="de">Ende einer Verzeichnisstruktur</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#DocumentationMetadata">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#DocumentationMetadata">
       <skos:prefLabel xml:lang="en">documentation metadata</skos:prefLabel>
       <skos:definition xml:lang="en">information that describes the context to which iiRDS resources apply</skos:definition>
       <skos:note xml:lang="en">Documentation metadata can be used for assigning or filtering content according to specific use cases.</skos:note>
       <skos:prefLabel xml:lang="de">Metadaten der Dokumentation</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Action">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Action">
       <skos:prefLabel xml:lang="en">action</skos:prefLabel>
       <skos:definition xml:lang="en">atomic manipulation of an object by a participant</skos:definition>
       <skos:prefLabel xml:lang="de">Handlung</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Event">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Event">
       <skos:prefLabel xml:lang="en">event</skos:prefLabel>
       <skos:definition xml:lang="en">something noticeable that takes place at a given location and point in time</skos:definition>
       <skos:prefLabel xml:lang="de">Ereignis</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#DownTime">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#DownTime">
       <skos:prefLabel xml:lang="en">down time</skos:prefLabel>
       <skos:definition xml:lang="en">period of time during which an item is not in condition to perform its intended function</skos:definition>
       <skos:note xml:lang="en">Down time consists of service time, modification time, supply delay time and administration time</skos:note>
       <skos:prefLabel xml:lang="de">Stillstandzeit</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Component">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Component">
       <skos:prefLabel xml:lang="en">component</skos:prefLabel>
       <skos:definition xml:lang="en">part used as a constituent in an assembled product, system or plant</skos:definition>
       <skos:prefLabel xml:lang="de">Komponente</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#AfterUse">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#AfterUse">
       <skos:prefLabel xml:lang="en">after use</skos:prefLabel>
       <skos:definition xml:lang="en">product life cycle phase that follows the active use of the product</skos:definition>
       <skos:prefLabel xml:lang="de">Nutzungsende</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#DesignAndRealization">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#DesignAndRealization">
       <skos:prefLabel xml:lang="en">design and realization</skos:prefLabel>
       <skos:altLabel xml:lang="en">design and realization</skos:altLabel>
       <skos:definition xml:lang="en">product life cycle phase from environment analysis and ideation through production</skos:definition>
       <skos:prefLabel xml:lang="de">Produktentstehung</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#DirectoryNodeType">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#DirectoryNodeType">
       <skos:prefLabel xml:lang="en">directory node type</skos:prefLabel>
       <skos:definition xml:lang="en">type of information arranged in a hierarchically ordered list of elements built by a root node and its subordinate nodes</skos:definition>
       <skos:note xml:lang="en">Directories help the user to navigate through the information units.</skos:note>
       <skos:prefLabel xml:lang="de">Verzeichnistyp</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#DocumentType">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#DocumentType">
       <skos:prefLabel xml:lang="en">document type</skos:prefLabel>
       <skos:definition xml:lang="en">type of information arranged in a document defined with respect to its specified purpose, function, and form of presentation</skos:definition>
       <skos:prefLabel xml:lang="de">Dokumentart</skos:prefLabel>
       <skos:hiddenLabel xml:lang="en">Dokumenttyp</skos:hiddenLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Collection">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Collection">
       <skos:prefLabel xml:lang="en">collection</skos:prefLabel>
       <skos:definition xml:lang="en">information subject that covers specific content in lists or overviews</skos:definition>
       <skos:prefLabel xml:lang="de">Zusammenstellung</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Conformity">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Conformity">
       <skos:prefLabel xml:lang="en">conformity</skos:prefLabel>
       <skos:definition xml:lang="en">information subject that covers applicable standards or the fulfilment of a product requirement</skos:definition>
       <skos:prefLabel xml:lang="de">Konformität</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Concept">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Concept">
       <skos:prefLabel xml:lang="en">concept</skos:prefLabel>
       <skos:definition xml:lang="en">topic type that provides background information which helps users understand the structure or essential principles of a product, interface, or task</skos:definition>
       <skos:prefLabel xml:lang="de">Beschreibung</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Form">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Form">
       <skos:prefLabel xml:lang="en">form</skos:prefLabel>
       <skos:definition xml:lang="en">topic type that provides information in pre-defined fields</skos:definition>
       <skos:prefLabel xml:lang="de">Formular</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Document">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Document">
       <skos:prefLabel xml:lang="en">document</skos:prefLabel>
       <skos:definition xml:lang="en">information unit that consists of an ordered set of information intended by the sender to be regarded as an entity</skos:definition>
       <skos:prefLabel xml:lang="de">Dokument</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#iirdsDomainEntity">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#iirdsDomainEntity">
       <skos:prefLabel xml:lang="en">iiRDS domain entity</skos:prefLabel>
       <skos:definition xml:lang="en">any resource within the iiRDS domain</skos:definition>
       <skos:prefLabel xml:lang="de">Entität der iiRDS-Domäne</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Identity">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Identity">
       <skos:prefLabel xml:lang="en">identity</skos:prefLabel>
       <skos:definition xml:lang="en">complex identifier of a resource in an external system</skos:definition>
       <skos:note xml:lang="en">Each identity must be related to the identity domain within which its identifier is unambiguous.</skos:note>
       <skos:prefLabel xml:lang="de">Identität</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#IdentityDomain">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#IdentityDomain">
       <skos:prefLabel xml:lang="en">identity domain</skos:prefLabel>
       <skos:definition xml:lang="en">organizational origin of an identifier that is assigned to an iiRDS identity</skos:definition>
       <skos:note xml:lang="en">An identity domain relates to an organization which owns or administers that domain.</skos:note>
       <skos:prefLabel xml:lang="de">Identitäts-Domäne</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#IdentityType">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#IdentityType">
       <skos:prefLabel xml:lang="en">identity type</skos:prefLabel>
       <skos:definition xml:lang="en">distinguished set of identifiers that are assigned to an iiRDS identity</skos:definition>
       <skos:prefLabel xml:lang="de">Identitäts-Typ</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#FunctionalMetadata">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#FunctionalMetadata">
       <skos:prefLabel xml:lang="en">functional metadata</skos:prefLabel>
       <skos:definition xml:lang="en">information used to implement advanced content delivery scenarios and content assemblies for specific purposes</skos:definition>
       <skos:prefLabel xml:lang="de">Funktionale Metadaten</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#InformationObject">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#InformationObject">
       <skos:prefLabel xml:lang="en">information object</skos:prefLabel>
       <skos:definition xml:lang="en">version- and language-independent abstraction of an information unit</skos:definition>
       <skos:prefLabel xml:lang="de">Informationsobjekt</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Formality">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Formality">
       <skos:prefLabel xml:lang="en">formality</skos:prefLabel>
       <skos:definition xml:lang="en">information subject that covers contractually relevant elements</skos:definition>
       <skos:prefLabel xml:lang="de">Formalität</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Functionality">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Functionality">
       <skos:prefLabel xml:lang="en">functionality</skos:prefLabel>
       <skos:definition xml:lang="en">information subject that covers specific capabilities of the product</skos:definition>
       <skos:prefLabel xml:lang="de">Funktionalität</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Fragment">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Fragment">
       <skos:prefLabel xml:lang="en">fragment</skos:prefLabel>
       <skos:definition xml:lang="en">information unit that requires additional context</skos:definition>
       <skos:prefLabel xml:lang="de">Fragment</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#FragmentSelector">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#FragmentSelector">
       <skos:prefLabel xml:lang="en">fragment selector</skos:prefLabel>
       <skos:definition xml:lang="en">selector that defines a part of content by a single identifier</skos:definition>
       <skos:prefLabel xml:lang="de">Fragmentselektor</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#RangeSelector">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#RangeSelector">
       <skos:prefLabel xml:lang="en">range selector</skos:prefLabel>
       <skos:definition xml:lang="en">selector that defines the start point and the end point of a part of content</skos:definition>
       <skos:prefLabel xml:lang="de">Bereichsselektor</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#ContentLifeCycleStatus">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#ContentLifeCycleStatus">
       <skos:prefLabel xml:lang="en">information unit life cycle status</skos:prefLabel>
       <skos:definition xml:lang="en">stage of an information unit in the information development process</skos:definition>
       <skos:prefLabel xml:lang="de">Lebenszyklus-Status einer Informationseinheit</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Party">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Party">
       <skos:prefLabel xml:lang="en">party</skos:prefLabel>
       <skos:definition xml:lang="en">person, organization, or system</skos:definition>
       <skos:note xml:lang="en">Detailed information about a party may be specified in a vCard.</skos:note>
       <skos:prefLabel xml:lang="de">Akteur</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#PartyRole">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#PartyRole">
       <skos:prefLabel xml:lang="en">party role</skos:prefLabel>
       <skos:definition xml:lang="en">responsibility of a person or organization</skos:definition>
       <skos:prefLabel xml:lang="de">Akteursrolle</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#ContentLifeCycleStatusValue">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#ContentLifeCycleStatusValue">
       <skos:prefLabel xml:lang="en">value of the information unit life cycle status</skos:prefLabel>
       <skos:definition xml:lang="en">categorical denomination of the information unit life cycle stage</skos:definition>
       <skos:prefLabel xml:lang="de">Wert des Lebenszyklus-Status einer Informationseinheit</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#PlanningTime">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#PlanningTime">
       <skos:prefLabel xml:lang="en">planning time</skos:prefLabel>
       <skos:definition xml:lang="en">period of time required for or resulting from a specific task</skos:definition>
       <skos:prefLabel xml:lang="de">Planungszeit</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#MaintenanceInterval">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#MaintenanceInterval">
       <skos:prefLabel xml:lang="en">maintenance interval</skos:prefLabel>
       <skos:definition xml:lang="en">period of time between scheduled maintenance operations</skos:definition>
       <skos:prefLabel xml:lang="de">Wartungsintervall</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#WorkingTime">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#WorkingTime">
       <skos:prefLabel xml:lang="en">work time</skos:prefLabel>
       <skos:hiddenLabel xml:lang="en">working time</skos:hiddenLabel>
       <skos:definition xml:lang="en">period of time that is required for conducting a specific task</skos:definition>
       <skos:prefLabel xml:lang="de">Arbeitszeit</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Qualification">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Qualification">
       <skos:prefLabel xml:lang="en">qualification</skos:prefLabel>
       <skos:definition xml:lang="en">proficiency, competence, or expertise exhibited by an individual</skos:definition>
       <skos:prefLabel xml:lang="de">Qualifikation</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Role">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Role">
       <skos:prefLabel xml:lang="en">role</skos:prefLabel>
       <skos:definition xml:lang="en">set of connected behaviors, privileges, and obligations associated with a party</skos:definition>
       <skos:note xml:lang="en">The 'Role' class serves as a docking point for custom roles for users of the technical system and the associated technical information. Users can be humans, software processes, or devices of a system.</skos:note>
       <skos:prefLabel xml:lang="de">Rolle</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#SkillLevel">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#SkillLevel">
       <skos:prefLabel xml:lang="en">skill level</skos:prefLabel>
       <skos:definition xml:lang="en">degree of qualification of an individual</skos:definition>
       <skos:note xml:lang="en">The 'Skill level' class serves as a docking point for custom skill levels that the users of technical and the supported product require.</skos:note>
       <skos:prefLabel xml:lang="de">Kenntnisstufe</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Supply">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Supply">
       <skos:prefLabel xml:lang="en">supply</skos:prefLabel>
       <skos:definition xml:lang="en">physical object used by an actor that performs work tasks described in technical documentation</skos:definition>
       <skos:prefLabel xml:lang="de">Hilfsmittel</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#ProductMetadata">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#ProductMetadata">
       <skos:prefLabel xml:lang="en">product metadata</skos:prefLabel>
       <skos:definition xml:lang="en">information about a product or component</skos:definition>
       <skos:prefLabel xml:lang="de">Produktmetadaten</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#ProductLifeCyclePhase">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#ProductLifeCyclePhase">
       <skos:prefLabel xml:lang="en">product life cycle phase</skos:prefLabel>
       <skos:altLabel xml:lang="en">phase of product life cycle</skos:altLabel>
       <skos:definition xml:lang="en">defined period in the evolution of a product from the conceptual idea to its ultimate disposal</skos:definition>
       <skos:prefLabel xml:lang="de">Produktlebenszyklusphase</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Use">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Use">
       <skos:prefLabel xml:lang="en">use</skos:prefLabel>
       <skos:definition xml:lang="en">product life cycle phase in which the product is supposed to realize its function</skos:definition>
       <skos:prefLabel xml:lang="de">Nutzung</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#ProductFeature">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#ProductFeature">
       <skos:prefLabel xml:lang="en">product feature</skos:prefLabel>
       <skos:definition xml:lang="en">product characteristics</skos:definition>
       <skos:prefLabel xml:lang="de">Produktmerkmal</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#ProductFunction">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#ProductFunction">
       <skos:prefLabel xml:lang="en">product function</skos:prefLabel>
       <skos:definition xml:lang="en">capability of a product or a component which is specific or required for the intended product task</skos:definition>
       <skos:prefLabel xml:lang="de">Produktfunktion</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#ProductProperty">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#ProductProperty">
       <skos:prefLabel xml:lang="en">product property</skos:prefLabel>
       <skos:definition xml:lang="en">invariable characteristic of a product whose value is fixed once the product is defined</skos:definition>
       <skos:prefLabel xml:lang="de">Produkteigenschaft</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#InformationType">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#InformationType">
       <skos:prefLabel xml:lang="en">information type</skos:prefLabel>
       <skos:definition xml:lang="en">characteristic of content</skos:definition>
       <skos:prefLabel xml:lang="de">Informationsart</skos:prefLabel>
       <skos:hiddenLabel xml:lang="en">Informationstyp</skos:hiddenLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#InformationSubject">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#InformationSubject">
       <skos:prefLabel xml:lang="en">information subject</skos:prefLabel>
       <skos:definition xml:lang="en">thematical characteristic of content</skos:definition>
       <skos:note xml:lang="en">Information subjects represent typical information types and usage scenarios for technical documentation</skos:note>
       <skos:prefLabel xml:lang="de">Informationsthema</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Process">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Process">
       <skos:prefLabel xml:lang="en">process</skos:prefLabel>
       <skos:definition xml:lang="en">information subject that covers structured activities carried out to achieve a specific goal</skos:definition>
       <skos:prefLabel xml:lang="de">Prozess</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Safety">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Safety">
       <skos:prefLabel xml:lang="en">safety</skos:prefLabel>
       <skos:definition xml:lang="en">information subject that covers content which helps to avoid risk</skos:definition>
       <skos:prefLabel xml:lang="de">Sicherheit</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#TechnicalOverview">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#TechnicalOverview">
       <skos:prefLabel xml:lang="en">technical overview</skos:prefLabel>
       <skos:definition xml:lang="en">information subject that covers the technical structure of a product</skos:definition>
       <skos:prefLabel xml:lang="de">Technische Übersicht</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#TopicType">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#TopicType">
       <skos:prefLabel xml:lang="en">topic type</skos:prefLabel>
       <skos:definition xml:lang="en">type of information determined according to functional principles</skos:definition>
       <skos:prefLabel xml:lang="de">Topictyp</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Learning">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Learning">
       <skos:prefLabel xml:lang="en">learning</skos:prefLabel>
       <skos:definition xml:lang="en">topic type that provides learning content</skos:definition>
       <skos:prefLabel xml:lang="de">Lernen</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Reference">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Reference">
       <skos:prefLabel xml:lang="en">reference</skos:prefLabel>
       <skos:definition xml:lang="en">topic type that provides additional details for lookup</skos:definition>
       <skos:prefLabel xml:lang="de">Referenz</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#WarningMessage">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#WarningMessage">
       <skos:prefLabel xml:lang="en">warning message</skos:prefLabel>
       <skos:definition xml:lang="en">safety-related information that warns about hazards and instructs on how to avoid them</skos:definition>
       <skos:note xml:lang="en">Warning messages are normally given within step-by-step instructions related to hazardous tasks.</skos:note>
       <skos:prefLabel xml:lang="de">Warnhinweis</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#TechnicalData">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#TechnicalData">
       <skos:prefLabel xml:lang="en">technical data</skos:prefLabel>
       <skos:definition xml:lang="en">information subject that covers qualitative and quantitative characteristics of technical objects</skos:definition>
       <skos:prefLabel xml:lang="de">Technische Daten</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Task">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Task">
       <skos:prefLabel xml:lang="en">task</skos:prefLabel>
       <skos:definition xml:lang="en">topic type that provides procedures and action steps to be followed or considered</skos:definition>
       <skos:prefLabel xml:lang="de">Aufgabe</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#Troubleshooting">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#Troubleshooting">
       <skos:prefLabel xml:lang="en">troubleshooting</skos:prefLabel>
       <skos:definition xml:lang="en">topic type that provides an explanation for symptoms, diagnosis, and resolution of problems</skos:definition>
       <skos:note xml:lang="en">Typical troubleshooting topics contain sections with a description of the system's behavior or symptom, the cause of the error, and a corrective action information that helps to fix the error or remove the malfunction.</skos:note>
       <skos:prefLabel xml:lang="de">Störungsbeseitigung</skos:prefLabel>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#ExternalClassification">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#ExternalClassification">
       <skos:prefLabel xml:lang="de">Externe Klassifikation</skos:prefLabel>
       <skos:prefLabel xml:lang="en">external classification</skos:prefLabel>
       <skos:definition xml:lang="en">External classification of an iiRDS domain entity. Each classification must be related to the classification domain within which it is unambiguous.</skos:definition>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#ClassificationDomain">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#ClassificationDomain">
       <skos:prefLabel xml:lang="de">Externe Klassifikationsdomäne</skos:prefLabel>
       <skos:prefLabel xml:lang="en">external classification domain</skos:prefLabel>
       <skos:definition xml:lang="en">domain of an external classification that is assigned to an iiRDS entity</skos:definition>
-   </rdf:Class>
-   <rdf:Class rdf:about="http://iirds.tekom.de/iirds#ClassificationType">
+   </rdfs:Class>
+   <rdfs:Class rdf:about="http://iirds.tekom.de/iirds#ClassificationType">
       <skos:prefLabel xml:lang="de">Klassifikationstyp</skos:prefLabel>
       <skos:prefLabel xml:lang="en">classification type</skos:prefLabel>
       <skos:definition xml:lang="en">type of a classification that is assigned to an iiRDS domain entity</skos:definition>
-   </rdf:Class>
+   </rdfs:Class>
    <iirds:Action rdf:about="http://iirds.tekom.de/iirds#GenericAction">
       <skos:prefLabel xml:lang="en">action</skos:prefLabel>
       <skos:definition xml:lang="en">atomic manipulation of an object by a participant</skos:definition>
@@ -1045,7 +1045,7 @@ This work is licensed under a Creative Commons Attribution-NoDerivatives 4.0 Int
       <skos:prefLabel xml:lang="de">iiRDS Version</skos:prefLabel>
    </rdf:Property>
    <rdf:Property rdf:about="http://iirds.tekom.de/iirds#revision">
-      <rdf:label xml:lang="en">revision</rdf:label>
+      <rdfs:label xml:lang="en">revision</rdfs:label>
       <skos:prefLabel xml:lang="en">revision</skos:prefLabel>
       <skos:definition xml:lang="en">version of an information unit</skos:definition>
       <skos:prefLabel xml:lang="de">Revision</skos:prefLabel>
@@ -1062,7 +1062,7 @@ This work is licensed under a Creative Commons Attribution-NoDerivatives 4.0 Int
       <skos:prefLabel xml:lang="de">Quelle</skos:prefLabel>
    </rdf:Property>
    <rdf:Property rdf:about="http://iirds.tekom.de/iirds#synonym">
-      <rdf:label xml:lang="en">synonym</rdf:label>
+      <rdfs:label xml:lang="en">synonym</rdfs:label>
       <skos:prefLabel xml:lang="en">synonym</skos:prefLabel>
       <skos:definition xml:lang="en">word or phrase that means exactly or nearly the same as another word or phrase in the same language</skos:definition>
       <skos:prefLabel xml:lang="de">Synonym</skos:prefLabel>
