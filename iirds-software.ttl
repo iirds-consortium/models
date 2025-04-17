@@ -1,0 +1,57 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix iirds: <http://iirds.tekom.de/iirds#> .
+@prefix iirdsSft: <http://iirds.tekom.de/iirds/domain/software#> .
+
+iirdsSft:iirdsSoftwareDomainEntity a rdfs:Class ;
+  rdfs:label "iirdsSoftwareDomainEntity"@de, "iirdsSoftwareDomainEntity"@en ;
+  rdfs:comment "Entität der Software-Domäne."@de, "entity of the software domain."@en ;
+  iirds:description ""@en ;
+  rdfs:subClassOf iirds:iirdsDomainEntity .
+
+iirdsSft:Administration a iirds:Use, iirdsSft:iirdsSoftwareDomainEntity ;
+  rdfs:label "Administration"@de, "administration"@en ;
+  rdfs:comment "Lifecycle phase of a product containing activities related to managing, updating, and configuring software products and IT systems."@en ;
+  iirds:description ""@en .
+
+iirdsSft:Architecture a iirds:TechnicalOverview, iirdsSft:iirdsSoftwareDomainEntity ;
+  rdfs:label "Architektur"@de, "architecture"@en ;
+  rdfs:comment "Technischer Aufbaus eines Software-Produkts oder -Komponente."@de, "technical structure of a software product or component."@en ;
+  iirds:description ""@en .
+
+iirdsSft:Customization a iirds:Use, iirdsSft:iirdsSoftwareDomainEntity ;
+  rdfs:label "customization"@en, "kundenspezifische Anpassung"@de ;
+  rdfs:comment "Lifecycle phase of a product containing activities relating to reworking a standard product to the special requirements of individual customers."@en ;
+  iirds:description ""@en .
+
+iirdsSft:Deinstallation a iirds:AfterUse, iirdsSft:iirdsSoftwareDomainEntity ;
+  rdfs:label "Deinstallation"@de, "Deinstallation"@en ;
+  rdfs:comment "lifecycle phase of a product containing procedures for deinstalling an IT system or removing a software from a system."@en ;
+  iirds:description ""@en .
+
+iirdsSft:Deployment a iirds:PuttingToUse, iirdsSft:iirdsSoftwareDomainEntity ;
+  rdfs:label "Bereitstellung"@de, "deployment"@en ;
+  rdfs:comment "lfecycle phase of a product describing activities related to making a software system available for use."@en ;
+  iirds:description ""@en .
+
+iirdsSft:Integration a iirds:PuttingToUse, iirdsSft:iirdsSoftwareDomainEntity ;
+  rdfs:label "Integration"@de, "integration"@en ;
+  rdfs:comment "lifecycle phase of a product containing procedures for integrating a software or IT system with other software products or systems."@en ;
+  iirds:description ""@en .
+
+iirdsSft:Interface a iirds:TechnicalOverview, iirdsSft:iirdsSoftwareDomainEntity ;
+  rdfs:label "Schnittstelle"@de, "interface"@en ;
+  rdfs:comment "information subject. Point of interaction between hardware and software or between software programs."@en ;
+  iirds:description ""@en .
+
+iirdsSft:SystemRequirement a iirds:TechnicalData, iirdsSft:iirdsSoftwareDomainEntity ;
+  rdfs:label "Systemanforderung"@de, "system requirement"@en ;
+  rdfs:comment "information subject. Describes the requirements that need to be fulfilled in order for a software to be installed and operated."@en ;
+  iirds:description "Examples are operating system, storage space, and RAM size."@en .
+
+iirdsSft:Update a iirds:Use, iirdsSft:iirdsSoftwareDomainEntity ;
+  rdfs:label "Update"@de, "update"@en ;
+  rdfs:comment "lifecycle phase of a software product containing procedures for installing a new version of a software in an IT system."@en ;
+  iirds:description ""@en .
+
+
