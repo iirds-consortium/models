@@ -1,0 +1,1661 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix iirds: <http://iirds.tekom.de/iirds#> .
+@prefix schema: <http://schema.org/> .
+
+iirds:Action a rdfs:Class ;
+  rdfs:label "Handlung"@de, "action"@en ;
+  rdfs:comment "atomic manipulation of an object by a participant"@en ;
+  iirds:description "Use the relates-to-action property to create a reference from an information unit to an action."@en ;
+  rdfs:subClassOf iirds:FunctionalMetadata .
+
+iirds:AdministrativeMetadata a rdfs:Class ;
+  rdfs:label "Verwaltungsmetadaten"@de, "administrative metadata"@en ;
+  rdfs:comment "information that allows the management of iiRDS resources"@en ;
+  iirds:description "Not intended to be used directly. Use the subclasses instead."@en ;
+  rdfs:subClassOf iirds:iirdsDomainEntity .
+
+iirds:AfterUse a rdfs:Class ;
+  rdfs:label "Nutzungsende"@de, "after use"@en ;
+  rdfs:comment "product life cycle phase that follows the active use of the product"@en ;
+  iirds:description "IRI: required"@en, "Not intended to be used directly. Use the subclasses instead. For lifecycle phases not covered by the iiRDS standard subclasses, define custom subclasses."@en ;
+  rdfs:subClassOf iirds:ProductLifeCyclePhase .
+
+iirds:ClassificationDomain a rdfs:Class ;
+  rdfs:label "Externe Klassifikationsdomäne"@de, "external classification domain"@en ;
+  rdfs:comment "domain of an external classification that is assigned to an iiRDS entity"@en ;
+  iirds:description "A classification domain relates to a party, meaning a company or organization. The party is the owner or custodian of the domain."@en, "IRI: required"@en ;
+  rdfs:subClassOf iirds:AdministrativeMetadata .
+
+iirds:ClassificationType a rdfs:Class ;
+  rdfs:label "Klassifikationstyp"@de, "classification type"@en ;
+  rdfs:comment "type of an classification that is assigned to an iiRDS domain entity"@en ;
+  iirds:description "IRI: required"@en, "The type of classification contained by the domain."@en ;
+  rdfs:subClassOf iirds:AdministrativeMetadata .
+
+iirds:Collection a rdfs:Class ;
+  rdfs:label "Zusammenstellung"@de, "collection"@en ;
+  rdfs:comment "information subject that covers specific content in lists or overviews"@en ;
+  iirds:description "IRI: required"@en, "Not intented to be used directly. Use the subclasses instead. For collection subjects not covered by the iiRDS standard subclasses, define custom subclasses."@en ;
+  rdfs:subClassOf iirds:InformationSubject .
+
+iirds:Component a rdfs:Class ;
+  rdfs:label "Komponente"@de, "component"@en ;
+  rdfs:comment "part used as a constituent in an assembled product, system or plant"@en ;
+  iirds:description "Components may have relations to other components so that iiRDS Generators can build up a simple component hierarchy with iiRDS structures. The iirds#Component may also be used as a docking point for external component definitions."@en, "IRI: required"@en ;
+  rdfs:subClassOf iirds:ProductMetadata .
+
+iirds:Concept a rdfs:Class ;
+  rdfs:label "Beschreibung"@de, "concept"@en ;
+  rdfs:comment "topic type that provides background information which helps users understand the structure or essential principles of a product, interface, or task"@en ;
+  iirds:description """Conceptual information helps users to map their existing knowledge to tasks and other essential information about a product or system.
+\t\t"""@en, "IRI: required"@en ;
+  rdfs:subClassOf iirds:TopicType .
+
+iirds:Conformity a rdfs:Class ;
+  rdfs:label "Konformität"@de, "conformity"@en ;
+  rdfs:comment "information subject that covers applicable standards or the fulfilment of a product requirement"@en ;
+  iirds:description "IRI: required"@en, "Not intended to be used directly. Use the subclasses instead. For information subjects not covered by the iiRDS standard subclasses, define custom subclasses."@en ;
+  rdfs:subClassOf iirds:InformationSubject .
+
+iirds:ContentLifeCycleStatus a rdfs:Class ;
+  rdfs:label "Lebenszyklus-Status einer Informationseinheit"@de, "information unit lifecycle status"@en ;
+  rdfs:comment "stage of an information unit in the information development process"@en ;
+  iirds:description "IRI: optional"@en, "The status value is referenced using has-content-lifecycle-status-value. "@en ;
+  rdfs:subClassOf iirds:AdministrativeMetadata .
+
+iirds:ContentLifeCycleStatusValue a rdfs:Class ;
+  rdfs:label "Wert des Lebenszyklus-Status einer Informationseinheit"@de, "value of the information unit lifecycle status"@en ;
+  rdfs:comment "categorical denomination of the information unit life cycle stage"@en ;
+  iirds:description "IRI: required"@en, "The value refers to the content status, for example whether it is approved or withdrawn."@en ;
+  rdfs:subClassOf iirds:AdministrativeMetadata .
+
+iirds:DesignAndRealization a rdfs:Class ;
+  rdfs:label "Produktentstehung"@de, "design and realization"@en ;
+  rdfs:comment "product life cycle phase from environment analysis and ideation through production"@en ;
+  iirds:description "IRI: required"@en, "Not intended to be used directly. Use the subclasses instead. For lifecycle phases not covered by the iiRDS standard subclasses, define custom subclasses."@en ;
+  rdfs:subClassOf iirds:ProductLifeCyclePhase .
+
+iirds:DirectoryNode a rdfs:Class ;
+  rdfs:label "Verzeichnisknoten"@de, "directory node"@en ;
+  rdfs:comment "node in a tree-like, ordered collection"@en ;
+  iirds:description "A directory is a tree-like, ordered collection of information units. Directory nodes are the entries in the directory. Directories help the user to navigate through the information units. A table of contents is a typical example of a directory. "@en, "Ein Verzeichnis ist eine baumartig organisierte und geordnete Zusammenstellung von Informationseinheiten. Verzeichnisknoten sind die Einträge in dem Baum. Verzeichnisse dienen dem Benutzer als Navigationshilfe über die Informationseinheiten. Ein Inhaltsverzeichnis eines Dokuments ist ein typisches Beispiel eines Verzeichnisses."@de, "IRI: optional"@en ;
+  rdfs:subClassOf iirds:iirdsDomainEntity .
+
+iirds:DirectoryNodeType a rdfs:Class ;
+  rdfs:label "Verzeichnistyp"@de, "directory node type"@en ;
+  rdfs:comment "type of information arranged in a hierarchically ordered list of elements built by a root node and its subordinate nodes"@en ;
+  iirds:description "A directory represented by a directory root node and its sub nodes has a type such as 'table of contens' or 'list of figures'."@en, "Ein Verzeichnis, das durch einen Wurzelknoten und seine untergeordneten Knoten aufgespannt wird, hat einen Typ wie 'Inhaltsverzeichnis' oder 'Abbildungsverzeichnis'."@de, "IRI: required"@en ;
+  rdfs:subClassOf iirds:InformationType .
+
+iirds:Document a rdfs:Class ;
+  rdfs:label "Dokument"@de, "document"@en ;
+  rdfs:comment "information unit that consists of an ordered set of information intended by the sender to be regarded as an entity"@en ;
+  iirds:description "A document consists of one or more files. It can consist of topics. The resource is either a blank node (when there is no file representing the document) or a file in the iiRDS package."@en, "IRI: required"@en ;
+  rdfs:subClassOf iirds:InformationUnit .
+
+iirds:DocumentType a rdfs:Class ;
+  rdfs:label "Dokumentart"@de, "document type"@en ;
+  rdfs:comment "type of information arranged in a document defined with respect to its specified purpose, function, and form of presentation"@en ;
+  iirds:description "Document types define the intended purpose of a document."@en, "IRI: required"@en ;
+  rdfs:subClassOf iirds:InformationType .
+
+iirds:DocumentationMetadata a rdfs:Class ;
+  rdfs:label "Metadaten der Dokumentation"@de, "documentation metadata"@en ;
+  rdfs:comment "information that describes the context to which iiRDS resources apply"@en ;
+  iirds:description "Not intended to be used directly. Use the subclasses instead."@en ;
+  rdfs:subClassOf iirds:iirdsDomainEntity .
+
+iirds:DownTime a rdfs:Class ;
+  rdfs:label "Stillstandzeit"@de, "down time"@en ;
+  rdfs:comment "period of time during which an item is not in condition to perform its intended function"@en ;
+  iirds:description ""@en, "IRI: optional"@en ;
+  rdfs:subClassOf iirds:PlanningTime .
+
+iirds:Event a rdfs:Class ;
+  rdfs:label "Ereignis"@de, "event"@en ;
+  rdfs:comment "something noticeable that takes place at a given location and point in time"@en ;
+  iirds:description """Examples are errors, malfunctions, and warnings.
+Use the relates-to-event property to create a reference from an information unit to an event."""@en, "IRI: required"@en ;
+  rdfs:subClassOf iirds:FunctionalMetadata .
+
+iirds:ExternalClassification a rdfs:Class ;
+  rdfs:label "Externe Klassifikation"@de, "external classification"@en ;
+  rdfs:comment "External classification of an iiRDS domain entity. Each classification must be related to the classification domain within which it is unambiguous."@en ;
+  iirds:description "External classifications may be assigned to information objects, information units, product variants, product features and components. Typically, external classifications are used to include metadata from other standards. Examples: ECLASS and CDD (IEC 61360) for product classfication and DCC (IEC 61355) or VDI 2770 for document classification."@en, "IRI: optional"@en ;
+  rdfs:subClassOf iirds:AdministrativeMetadata .
+
+iirds:Form a rdfs:Class ;
+  rdfs:label "Formular"@de, "form"@en ;
+  rdfs:comment "topic type that provides information in pre-defined fields"@en ;
+  iirds:description "Examples of forms are service reports, field reports, and user feedback."@en, "IRI: required"@en ;
+  rdfs:subClassOf iirds:TopicType .
+
+iirds:Formality a rdfs:Class ;
+  rdfs:label "Formalität"@de, "formality"@en ;
+  rdfs:comment "information subject that covers contractually relevant elements"@en ;
+  iirds:description "Examples of formality subjects are license terms and warranty conditions."@en, "IRI: required"@en ;
+  rdfs:subClassOf iirds:InformationSubject .
+
+iirds:Fragment a rdfs:Class ;
+  rdfs:label "Fragment"@de, "fragment"@en ;
+  rdfs:comment "information unit that requires additional context"@en ;
+  iirds:description "IRI: required"@en, "Sections, tables, lists, paragraphs, and hazard statements are examples of fragments. Fragments assign metadata to parts of topic or document files in an iiRDS package. The parts are identified by a fragment selector."@en ;
+  rdfs:subClassOf iirds:InformationUnit .
+
+iirds:FragmentSelector a rdfs:Class ;
+  rdfs:label "Fragmentselektor"@de, "fragment selector"@en ;
+  rdfs:comment "selector that defines a part of content by a single identifier"@en ;
+  iirds:description "IRI: optional"@en ;
+  rdfs:subClassOf iirds:Selector .
+
+iirds:FunctionalMetadata a rdfs:Class ;
+  rdfs:label "Funktionale Metadaten"@de, "functional metadata"@en ;
+  rdfs:comment "information used to implement advanced content delivery scenarios and content assemblies for specific purposes"@en ;
+  iirds:description "Not intended to be used directly. Use the subclasses instead."@en ;
+  rdfs:subClassOf iirds:DocumentationMetadata .
+
+iirds:Functionality a rdfs:Class ;
+  rdfs:label "Funktionalität"@de, "functionality"@en ;
+  rdfs:comment "information subject that covers specific capabilities of the product"@en ;
+  iirds:description ""@en, "IRI: required"@en ;
+  rdfs:subClassOf iirds:InformationSubject .
+
+iirds:Identity a rdfs:Class ;
+  rdfs:label "Identität"@de, "identity"@en ;
+  rdfs:comment "complex identifier of a resource in an external system"@en ;
+  iirds:description "Complex identifiers may be assigned to information objects, information units, product variants, and components. Typically, identities are used to provide IDs from other systems. Examples: serial numbers for components and module IDs from content management systems for topics."@en, "IRI: optional"@en ;
+  rdfs:subClassOf iirds:AdministrativeMetadata .
+
+iirds:IdentityDomain a rdfs:Class ;
+  rdfs:label "Identitäts-Domäne"@de, "identity domain"@en ;
+  rdfs:comment "organizational origin of an identifier that is assigned to an iiRDS identity"@en ;
+  iirds:description "An identity domain relates to a party, meaning a company or organization. The party is the owner or custodian of the domain."@en, "IRI: required"@en ;
+  rdfs:subClassOf iirds:AdministrativeMetadata .
+
+iirds:IdentityType a rdfs:Class ;
+  rdfs:label "Identitäts-Typ"@de, "identity type"@en ;
+  rdfs:comment "distinguished set of identifiers that are assigned to an iiRDS identity"@en ;
+  iirds:description "IRI: required"@en, "The type of identity contained by the domain."@en ;
+  rdfs:subClassOf iirds:AdministrativeMetadata .
+
+iirds:InformationObject a rdfs:Class ;
+  rdfs:label "Informationsobjekt"@de, "information object"@en ;
+  rdfs:comment "version- and language-independent abstraction of an information unit"@en ;
+  iirds:description "IRI: required"@en, "Only used if a version/language-independent equivalent to an information unit is required. The versioned information unit references the information object."@en ;
+  rdfs:subClassOf iirds:iirdsDomainEntity .
+
+iirds:InformationSubject a rdfs:Class ;
+  rdfs:label "Informationsthema"@de, "information subject"@en ;
+  rdfs:comment "thematical characteristic of content"@en ;
+  iirds:description "IRI: required"@en, "Not intented to be used directly. Use the subclasses instead."@en ;
+  rdfs:subClassOf iirds:InformationType .
+
+iirds:InformationType a rdfs:Class ;
+  rdfs:label "Informationsart"@de, "information type"@en ;
+  rdfs:comment "characteristic of content"@en ;
+  iirds:description "IRI: required"@en, "Not intented to be used directly."@en ;
+  rdfs:subClassOf iirds:iirdsDomainEntity .
+
+iirds:InformationUnit a rdfs:Class ;
+  rdfs:label "Informationseinheit"@de, "information unit"@en ;
+  rdfs:comment "piece of digitally encoded information"@en ;
+  iirds:description "IRI: required"@en, "Not intended to be used directly. Use the subclasses Package, Document, Topic, and Fragment instead."@en ;
+  rdfs:subClassOf iirds:iirdsDomainEntity .
+
+iirds:Learning a rdfs:Class ;
+  rdfs:label "Lernen"@de, "learning"@en ;
+  rdfs:comment "topic type that provides learning content"@en ;
+  iirds:description "IRI: required"@en, "Learning content may comprise learning plans, learning objectives, learning content details, summaries, and assessments."@en ;
+  rdfs:subClassOf iirds:TopicType .
+
+iirds:MaintenanceInterval a rdfs:Class ;
+  rdfs:label "Wartungsintervall"@de, "maintenance interval"@en ;
+  rdfs:comment "period of time between scheduled maintenance operations"@en ;
+  iirds:description "IRI: optional"@en, "Instances have a maintenance frequency and an optional maintenance duration."@en ;
+  rdfs:subClassOf iirds:PlanningTime .
+
+iirds:Package a rdfs:Class ;
+  rdfs:label "Paket"@de, "package"@en ;
+  rdfs:comment "information unit that bundles other information units for exchange"@en ;
+  iirds:description "IRI: required"@en, "There is exactly one Package instance within an iiRDS package. It holds general metadata on the overall iiRDS package."@en ;
+  rdfs:subClassOf iirds:InformationUnit .
+
+iirds:Party a rdfs:Class ;
+  rdfs:label "Akteur"@de, "party"@en ;
+  rdfs:comment "person, organization, or system"@en ;
+  iirds:description "Detailed information about a party may be specified in a vCard."@en, "IRI: required"@en ;
+  rdfs:subClassOf iirds:AdministrativeMetadata .
+
+iirds:PartyRole a rdfs:Class ;
+  rdfs:label "Akteursrolle"@de, "party role"@en ;
+  rdfs:comment "responsibility of a person or organization"@en ;
+  iirds:description "Examples of party roles: manufacturer, author, inspector."@en, "IRI: required"@en ;
+  rdfs:subClassOf iirds:AdministrativeMetadata .
+
+iirds:PlanningTime a rdfs:Class ;
+  rdfs:label "Planungszeit"@de, "planning time"@en ;
+  rdfs:comment "period of time required for or resulting from a specific task"@en ;
+  iirds:description "IRI: optional"@en, "Not intended to be used directly.  Use the subclasses instead."@en ;
+  rdfs:subClassOf iirds:FunctionalMetadata .
+
+iirds:Process a rdfs:Class ;
+  rdfs:label "Prozess"@de, "process"@en ;
+  rdfs:comment "information subject that covers structured activities carried out to achieve a specific goal"@en ;
+  iirds:description ""@en, "IRI: required"@en ;
+  rdfs:subClassOf iirds:InformationSubject .
+
+iirds:ProductFeature a rdfs:Class ;
+  rdfs:label "Produktmerkmal"@de, "product feature"@en ;
+  rdfs:comment "product characteristics"@en ;
+  iirds:description "IRI: required"@en, "Not intended to be used directly. Use the subclasses instead."@en ;
+  rdfs:subClassOf iirds:ProductMetadata .
+
+iirds:ProductFunction a rdfs:Class ;
+  rdfs:label "Produktfunktion"@de, "product function"@en ;
+  rdfs:comment "capability of a product or a component which is specific or required for the intended product task"@en ;
+  iirds:description "Examples: starting a phone call, ending a phone call, ringing."@en, "IRI: required"@en ;
+  rdfs:subClassOf iirds:ProductFeature .
+
+iirds:ProductLifeCyclePhase a rdfs:Class ;
+  rdfs:label "Produktlebenszyklusphase"@de, "phase of product lifecycle"@en ;
+  rdfs:comment "defined period in the evolution of a product from the conceptual idea to its ultimate disposal"@en ;
+  iirds:description "IRI: required"@en, "Not intended to be used directly. Use the subclasses instead. "@en ;
+  rdfs:subClassOf iirds:ProductMetadata .
+
+iirds:ProductMetadata a rdfs:Class ;
+  rdfs:label "Produktmetadaten"@de, "productMetadata"@en ;
+  rdfs:comment "information about a product or component"@en ;
+  iirds:description "IRI: required"@en, "Not intended to be used directly. Use the subclasses instead."@en ;
+  rdfs:subClassOf iirds:DocumentationMetadata .
+
+iirds:ProductProperty a rdfs:Class ;
+  rdfs:label "Produkteigenschaft"@de, "product property"@en ;
+  rdfs:comment "invariable characteristic of a product whose value is fixed once the product is defined"@en ;
+  iirds:description "Examples: dimensions, voltage, power, weight."@en, "IRI: required"@en ;
+  rdfs:subClassOf iirds:ProductFeature .
+
+iirds:ProductVariant a rdfs:Class ;
+  rdfs:label "Produktvariante"@de, "product variant"@en ;
+  rdfs:comment "item or service offered on the market and designed to meet the needs or wishes of customers"@en ;
+  iirds:description "Examples: a specific model in a series or an individually manufactured good."@en, "IRI: required"@en ;
+  rdfs:subClassOf iirds:ProductMetadata .
+
+iirds:PuttingToUse a rdfs:Class ;
+  rdfs:label "In Nutzung nehmen"@de, "putting to use"@en ;
+  rdfs:comment "product life cycle phase after production in which a product is set up for its intended use"@en ;
+  iirds:description "IRI: required"@en, "Not intended to be used directly. Use the subclasses instead. For lifecycle phases not covered by the iiRDS standard subclasses, define custom subclasses."@en ;
+  rdfs:subClassOf iirds:ProductLifeCyclePhase .
+
+iirds:Qualification a rdfs:Class ;
+  rdfs:label "Qualifikation"@de, "qualification"@en ;
+  rdfs:comment "proficiency, competence, or expertise exhibited by an individual"@en ;
+  iirds:description "IRI: required"@en, "Not intended to be used directly. Use the subclasses instead. "@en ;
+  rdfs:subClassOf iirds:FunctionalMetadata .
+
+iirds:RangeSelector a rdfs:Class ;
+  rdfs:label "Bereichsselektor"@de, "range selector"@en ;
+  rdfs:comment "selector that defines the start point and the end point of a part of content"@en ;
+  iirds:description ""@en, "IRI: optional"@en ;
+  rdfs:subClassOf iirds:Selector .
+
+iirds:Reference a rdfs:Class ;
+  rdfs:label "Referenz"@de, "reference"@en ;
+  iirds:description """Examples are parameter lists, tables with technical data, UI control overviews, and parts lists.
+\t\t"""@de, "IRI: required"@en ;
+  rdfs:subClassOf iirds:TopicType .
+
+iirds:Rendition a rdfs:Class ;
+  rdfs:label "Inhaltsausprägung"@de, "rendition"@en ;
+  rdfs:comment "content of an information unit in a specific format"@en ;
+  iirds:description ""@en, "IRI: optional"@en ;
+  rdfs:subClassOf iirds:iirdsDomainEntity .
+
+iirds:Role a rdfs:Class ;
+  rdfs:label "Rolle"@de, "role"@en ;
+  rdfs:comment "set of connected behaviors, privileges, and obligations associated with a party"@en ;
+  iirds:description "Describes a set of connected behaviors, privileges and obligations associated with users (humans, software processes or devices) of a system."@en, "IRI: required"@en, "Menge von zusammenhängenden Verhaltensweisen, Berechtigungen und Verpflichtungen, die Nutzern (Menschen, Softwareprozesse oder Geräte) eines Systems zugeordnet sind."@de ;
+  rdfs:subClassOf iirds:Qualification .
+
+iirds:Safety a rdfs:Class ;
+  rdfs:label "Sicherheit"@de, "safety"@en ;
+  rdfs:comment "information subject that covers content which helps to avoid risk"@en ;
+  iirds:description "IRI: required"@en, "Not intended to be used directly. Use the subclasses instead."@en ;
+  rdfs:subClassOf iirds:InformationSubject .
+
+iirds:Selector a rdfs:Class ;
+  rdfs:label "Selektor"@de, "selector"@en ;
+  rdfs:comment "pointer to the content of a rendition"@en ;
+  iirds:description ""@de, ""@en, "IRI: optional"@en ;
+  rdfs:subClassOf iirds:iirdsDomainEntity .
+
+iirds:SkillLevel a rdfs:Class ;
+  rdfs:label "Kenntnisstufe"@de, "skill level"@en ;
+  rdfs:comment "degree of qualification of an individual"@en ;
+  iirds:description "Describe the levels of ability required to carry out a specific task described in the technical documentation."@en, "IRI: required"@en ;
+  rdfs:subClassOf iirds:Qualification .
+
+iirds:Supply a rdfs:Class ;
+  rdfs:label "Hilfsmittel"@de, "supply"@en ;
+  rdfs:comment "physical object used by an actor that performs work tasks described in technical documentation"@en ;
+  iirds:description "IRI: required"@en, "Not intended to be used directly. Use the subclasses instead. "@en ;
+  rdfs:subClassOf iirds:FunctionalMetadata .
+
+iirds:Task a rdfs:Class ;
+  rdfs:label "Aufgabe"@de, "task"@en ;
+  rdfs:comment "topic type that provides procedures and action steps to be followed or considered"@en ;
+  iirds:description "IRI: required"@en, """Tasks provide instructions and may contain information on other aspects, such as requirements that must be fulfilled or safety instructions.
+\t\t"""@en ;
+  rdfs:subClassOf iirds:TopicType .
+
+iirds:TechnicalData a rdfs:Class ;
+  rdfs:label "Technische Daten"@de, "technical data"@en ;
+  rdfs:comment "information subject that covers qualitative and quantitative characteristics of technical objects"@en ;
+  iirds:description "IRI: required"@en, "Not intended to be used directly. Use instances of this class instead."@en ;
+  rdfs:subClassOf iirds:InformationSubject .
+
+iirds:TechnicalOverview a rdfs:Class ;
+  rdfs:label "Technische Übersicht"@de, "technical overview"@en ;
+  rdfs:comment "information subject that covers the technical structure of a product"@en ;
+  iirds:description "Examples are circuit diagrams, flow diagrams, software interface overviews, and pneumatic diagrams."@en, "IRI: required"@en ;
+  rdfs:subClassOf iirds:InformationSubject .
+
+iirds:Topic a rdfs:Class ;
+  rdfs:label "Topic"@de, "topic"@en ;
+  rdfs:comment "information unit that covers a single subject"@en ;
+  iirds:description "IRI: required"@en, "The resource of a topic is a file in the iiRDS package."@en ;
+  rdfs:subClassOf iirds:InformationUnit .
+
+iirds:TopicType a rdfs:Class ;
+  rdfs:label "Topictyp"@de, "topic type"@en ;
+  rdfs:comment "type of information determined according to functional principles"@en ;
+  iirds:description "IRI: required"@en, "Possible types include task, learning, and concept. Information units that represent topics may have one or more has-topic-type properties that define the topic's information type. Topics without a has-topic-type property are generic topics, with no specific type."@en ;
+  rdfs:subClassOf iirds:InformationType .
+
+iirds:Troubleshooting a rdfs:Class ;
+  rdfs:label "Störungsbeseitigung"@de, "troubleshooting "@en ;
+  rdfs:comment "topic type that provides an explanation for symptoms, diagnosis, and resolution of problems"@en ;
+  iirds:description "IRI: required"@en, "Typical troubleshooting topics contain sections with a description of the system's behavior or symptom, the cause for the error, and a remedy for the error."@en ;
+  rdfs:subClassOf iirds:TopicType .
+
+iirds:Use a rdfs:Class ;
+  rdfs:label "Nutzung"@de, "use"@en ;
+  rdfs:comment "product life cycle phase in which the product is supposed to realize its function"@en ;
+  iirds:description "IRI: required"@en, "Not intended to be used directly. Use the subclasses instead. For lifecycle phases not covered by the iiRDS standard subclasses, define custom subclasses."@en ;
+  rdfs:subClassOf iirds:ProductLifeCyclePhase .
+
+iirds:WarningMessage a rdfs:Class ;
+  rdfs:label "Warnhinweis"@de, "warning message"@en ;
+  rdfs:comment "safety-related information that warns about hazards and instructs on how to avoid them"@en ;
+  iirds:description "IRI: required"@en, """Warning messages usually consist of a hazard alert symbol, a signal word (such as "Danger", "Warning", "Caution", "Notice"),
+a description of the potential hazard, and hints how to avoid the hazard."""@en ;
+  rdfs:subClassOf iirds:Safety .
+
+iirds:WorkingTime a rdfs:Class ;
+  rdfs:label "Arbeitszeit"@de, "working time"@en ;
+  rdfs:comment "period of time that is required for conducting a specific task"@en ;
+  iirds:description ""@en, "IRI: optional"@en ;
+  rdfs:subClassOf iirds:PlanningTime .
+
+iirds:iirdsDomainEntity a rdfs:Class ;
+  rdfs:label "iirdsDomainEntity"@de, "iirdsDomainEntity"@en ;
+  rdfs:comment "any resource within the iiRDS domain"@en ;
+  iirds:description "Not intended to be used directly. Use the subclasses instead."@en .
+
+iirds:nil a rdfs:Class ;
+  rdfs:label "Ende einer Verzeichnisstruktur"@de, "end of Directory node"@en ;
+  rdfs:comment "closing element in a chain of directory nodes"@en ;
+  iirds:description ""@en ;
+  rdfs:subClassOf iirds:DirectoryNode .
+
+iirds:classificationIdentifier a rdf:Property ;
+  rdfs:label "Klassifikationsbezeichner"@de, "classification identifier"@en ;
+  rdfs:comment "classification identifier of the resource within an external classification domain"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#ExternalClassification [1]"@en, "Recommended best practice is to classify the resource by means of a string conforming to a non-IRI identifier in an external classification domain."@en ;
+  rdfs:domain iirds:ExternalClassification ;
+  rdfs:range rdfs:Literal ;
+  rdfs:subPropertyOf iirds:iirdsAttribute ;
+  schema:domainIncludes iirds:ExternalClassification ;
+  schema:rangeIncludes rdfs:Literal .
+
+iirds:classificationVersion a rdf:Property ;
+  rdfs:label "Klassifikationsversion"@de, "classification version"@en ;
+  rdfs:comment "version of the external classification"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#ExternalClassification [0..1]"@en, "Recommended best practice is to use the version or release date of the external classification."@en ;
+  rdfs:domain iirds:ExternalClassification ;
+  rdfs:range rdfs:Literal ;
+  rdfs:subPropertyOf iirds:iirdsAttribute ;
+  schema:domainIncludes iirds:ExternalClassification ;
+  schema:rangeIncludes rdfs:Literal .
+
+iirds:dateOfCreation a rdf:Property ;
+  rdfs:label "Erstellungsdatum"@de, "date of Creation"@en ;
+  rdfs:comment "date of creation of the resource"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..1]"@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#dateTimeStamp> ;
+  rdfs:subPropertyOf iirds:iirdsAttribute, <http://purl.org/dc/terms/created> ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes <http://www.w3.org/2001/XMLSchema#dateTimeStamp> .
+
+iirds:dateOfEffect a rdf:Property ;
+  rdfs:label "Gültigkeitsbeginn"@de, "effective date"@en ;
+  rdfs:comment "date and time on which the given content lifecycle status becomes valid"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#ContentLifeCycleStatus [0..1]"@en ;
+  rdfs:domain iirds:ContentLifeCycleStatus ;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#dateTimeStamp> ;
+  rdfs:subPropertyOf iirds:iirdsAttribute ;
+  schema:domainIncludes iirds:ContentLifeCycleStatus ;
+  schema:rangeIncludes <http://www.w3.org/2001/XMLSchema#dateTimeStamp> .
+
+iirds:dateOfExpiry a rdf:Property ;
+  rdfs:label "Auslaufdatum"@de, "expiry date"@en ;
+  rdfs:comment "date and time on which the given content lifecycle status becomes invalid"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#ContentLifeCycleStatus [0..1]"@en ;
+  rdfs:domain iirds:ContentLifeCycleStatus ;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#dateTimeStamp> ;
+  rdfs:subPropertyOf iirds:iirdsAttribute ;
+  schema:domainIncludes iirds:ContentLifeCycleStatus ;
+  schema:rangeIncludes <http://www.w3.org/2001/XMLSchema#dateTimeStamp> .
+
+iirds:dateOfLastModification a rdf:Property ;
+  rdfs:label "Letztes Änderungsdatum"@de, "date of last modification"@en ;
+  rdfs:comment "date and time of an information unit's last change "@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..1]"@en ;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#dateTimeStamp> ;
+  rdfs:subPropertyOf iirds:iirdsAttribute ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes <http://www.w3.org/2001/XMLSchema#dateTimeStamp> .
+
+iirds:dateOfStatus a rdf:Property ;
+  rdfs:label "Vergabedatum"@de, "status date"@en ;
+  rdfs:comment "date and time of a lifecycle status's last change"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#ContentLifeCycleStatus [0..1]"@en ;
+  rdfs:domain iirds:ContentLifeCycleStatus ;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#dateTimeStamp> ;
+  rdfs:subPropertyOf iirds:iirdsAttribute ;
+  schema:domainIncludes iirds:ContentLifeCycleStatus ;
+  schema:rangeIncludes <http://www.w3.org/2001/XMLSchema#dateTimeStamp> .
+
+iirds:description a rdf:Property ;
+  rdfs:label "Beschreibung"@de, "description"@en ;
+  rdfs:comment "account on the resource"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#iirdsDomainEntity [0..*]"@en, "Typically a free-text acount of the resource"@en ;
+  rdfs:range rdfs:Literal ;
+  rdfs:subPropertyOf iirds:iirdsAttribute, <http://purl.org/dc/terms/description> ;
+  schema:domainIncludes iirds:iirdsDomainEntity ;
+  schema:rangeIncludes rdfs:Literal .
+
+iirds:duration a rdf:Property ;
+  rdfs:label "Dauer"@de, "duration"@en ;
+  rdfs:comment "span of time"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#PlanningTime [1]"@en ;
+  rdfs:domain iirds:PlanningTime ;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#duration> ;
+  rdfs:subPropertyOf iirds:iirdsAttribute ;
+  schema:domainIncludes iirds:PlanningTime ;
+  schema:rangeIncludes <http://www.w3.org/2001/XMLSchema#duration> .
+
+iirds:format a rdf:Property ;
+  rdfs:label "Format"@de, "format"@en ;
+  rdfs:comment "media type of the rendition"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#Rendition [1]"@en ;
+  rdfs:domain iirds:Rendition ;
+  rdfs:range rdfs:Literal ;
+  rdfs:subPropertyOf iirds:iirdsAttribute, <http://purl.org/dc/terms/format> ;
+  schema:domainIncludes iirds:Rendition ;
+  schema:rangeIncludes rdfs:Literal .
+
+iirds:formatRestriction a rdf:Property ;
+  rdfs:label "Formateinschränkung"@de, "format Restriction"@en ;
+  rdfs:comment "restriction of media formats allowed in an iiRDS package"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#Package [0..1]"@en, "Value \"A\" means that the package uses a restricted set of media formats (\"iiRDS/A\")."@en ;
+  rdfs:domain iirds:Package ;
+  rdfs:range rdfs:Literal ;
+  rdfs:subPropertyOf iirds:iirdsAttribute ;
+  schema:domainIncludes iirds:Package ;
+  schema:rangeIncludes rdfs:Literal .
+
+iirds:frequency a rdf:Property ;
+  rdfs:label "Wartungsfrequenz"@de, "maintenance frequency"@en ;
+  rdfs:comment "intended interval between recurring maintanance tasks"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#MaintenanceInterval [1]"@en ;
+  rdfs:domain iirds:MaintenanceInterval ;
+  rdfs:range rdfs:Literal ;
+  rdfs:subPropertyOf iirds:iirdsAttribute .
+
+iirds:has-abstract a rdf:Property ;
+  rdfs:label "has abstract"@en, "hat Zusammenfassung"@de ;
+  rdfs:comment "summary of the resource"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..1]"@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept, <http://purl.org/dc/terms/abstract> ;
+  schema:domainIncludes iirds:InformationUnit .
+
+iirds:has-classification-domain a rdf:Property ;
+  rdfs:label "has classification domain"@en, "hat Klassifikations-Domain"@de ;
+  rdfs:comment "references the domain that a classification refers to"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#ExternalClassification [1]"@en ;
+  rdfs:domain iirds:ExternalClassification ;
+  rdfs:range iirds:ClassificationDomain ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:ExternalClassification ;
+  schema:rangeIncludes iirds:ClassificationDomain .
+
+iirds:has-classification-type a rdf:Property ;
+  rdfs:label "has classification type"@en, "hat Klassifikations-Typ"@de ;
+  rdfs:comment "type of the classification or the class name"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#ClassificationDomain [0..1]"@en ;
+  rdfs:domain iirds:ClassificationDomain ;
+  rdfs:range iirds:ClassificationType ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:ClassificationDomain ;
+  schema:rangeIncludes iirds:ClassificationType .
+
+iirds:has-component a rdf:Property ;
+  rdfs:label "has component"@en, "hat Komponente"@de ;
+  rdfs:comment "property that references a component"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#Component [0..*]"@en ;
+  rdfs:domain iirds:Component ;
+  rdfs:range iirds:Component ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:Component ;
+  schema:rangeIncludes iirds:Component .
+
+iirds:has-content-lifecycle-status a rdf:Property ;
+  rdfs:label "hat Beziehung zu Bearbeitungsstatus"@de, "relates to content lifecycle status"@en ;
+  rdfs:comment "information unit's property that references its content lifecycle status"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range iirds:ContentLifeCycleStatus ;
+  rdfs:subPropertyOf iirds:relates-to-administrative-metadata ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes iirds:ContentLifeCycleStatus .
+
+iirds:has-content-lifecycle-status-value a rdf:Property ;
+  rdfs:label "has status value"@en, "hat Statuswert"@de ;
+  rdfs:comment "content lifecycle status's property that references its value"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#ContentLifeCycleStatus [1]"@en ;
+  rdfs:domain iirds:ContentLifeCycleStatus ;
+  rdfs:range iirds:ContentLifeCycleStatusValue ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:ContentLifeCycleStatus ;
+  schema:rangeIncludes iirds:ContentLifeCycleStatusValue .
+
+iirds:has-directory-structure-type a rdf:Property ;
+  rdfs:label "has directory structure type"@en, "hat Verzeichnisstrukturtyp"@de ;
+  rdfs:comment "directory node's property that references its node type"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#DirectoryNode [0..1]"@en ;
+  rdfs:domain iirds:DirectoryNode ;
+  rdfs:range iirds:DirectoryNodeType ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:DirectoryNode ;
+  schema:rangeIncludes iirds:DirectoryNodeType .
+
+iirds:has-document-type a rdf:Property ;
+  rdfs:label "has document type"@en, "hat Dokumentart"@de ;
+  rdfs:comment "document's property that references its document type"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#Document [1..*]"@en, "Documents have one or more document types. Documents without document types are unspecific documents."@en ;
+  rdfs:domain iirds:Document ;
+  rdfs:range iirds:DocumentType ;
+  rdfs:subPropertyOf iirds:has-information-type ;
+  schema:domainIncludes iirds:Document ;
+  schema:rangeIncludes iirds:DocumentType .
+
+iirds:has-end-selector a rdf:Property ;
+  rdfs:label "has end selector"@en, "hat Endselektor"@de ;
+  rdfs:comment "range selector's property that references the end of its  range"@en ;
+  iirds:description "A range selector must reference one start and one end selector."@en, "Cardinality: http://iirds.tekom.de/iirds#RangeSelector [1]"@en ;
+  rdfs:domain iirds:RangeSelector ;
+  rdfs:range iirds:FragmentSelector ;
+  rdfs:subPropertyOf iirds:has-selector ;
+  schema:domainIncludes iirds:RangeSelector ;
+  schema:rangeIncludes iirds:FragmentSelector .
+
+iirds:has-event-code a rdf:Property ;
+  rdfs:label "has event code"@en, "hat Ereigniscode"@de ;
+  rdfs:comment "property to identify an event"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#Event [0..1]"@en ;
+  rdfs:domain iirds:Event ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:Event .
+
+iirds:has-event-type a rdf:Property ;
+  rdfs:label "has event type"@en, "hat Ereignistyp"@de ;
+  rdfs:comment "event's property that references its type"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#Event [0..1]"@en ;
+  rdfs:domain iirds:Event ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:Event .
+
+iirds:has-external-classification a rdf:Property ;
+  rdfs:label "has external classification"@en, "hat externe Klassifikation"@de ;
+  rdfs:comment "references an external classification"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#Component [0..*]"@en, "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en, "Cardinality: http://iirds.tekom.de/iirds#ProductFeature [0..*]"@en, "Cardinality: http://iirds.tekom.de/iirds#ProductVariant [0..*]"@en ;
+  rdfs:range iirds:ExternalClassification ;
+  rdfs:subPropertyOf iirds:relates-to-administrative-metadata ;
+  schema:domainIncludes iirds:Component, iirds:InformationUnit, iirds:ProductFeature, iirds:ProductVariant ;
+  schema:rangeIncludes iirds:ExternalClassification .
+
+iirds:has-first-child a rdf:Property ;
+  rdfs:label "has first child"@en, "hat als erstes Kindelement"@de ;
+  rdfs:comment "directory node's property that references the first directory node on the next subordinate level in a directory structure"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#DirectoryNode [0..1]"@en ;
+  rdfs:domain iirds:DirectoryNode ;
+  rdfs:range iirds:DirectoryNode ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:DirectoryNode ;
+  schema:rangeIncludes iirds:DirectoryNode .
+
+iirds:has-identity a rdf:Property ;
+  rdfs:label "has complex identifier"@en, "hat komplexen Identifier"@de ;
+  rdfs:comment "iiRDS resource's property that references an identifier"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#Component [0..*]"@en, "Cardinality: http://iirds.tekom.de/iirds#InformationObject [0..*]"@en, "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en, "Cardinality: http://iirds.tekom.de/iirds#ProductVariant [0..*]"@en, "Cardinality: http://iirds.tekom.de/iirds#Rendition [0..*]"@en ;
+  rdfs:range iirds:Identity ;
+  rdfs:subPropertyOf iirds:relates-to-administrative-metadata ;
+  schema:domainIncludes iirds:Component, iirds:InformationObject, iirds:InformationUnit, iirds:ProductVariant, iirds:Rendition ;
+  schema:rangeIncludes iirds:Identity .
+
+iirds:has-identity-domain a rdf:Property ;
+  rdfs:label "has identifier domain"@en, "hat Identifier-Domain"@de ;
+  rdfs:comment "identifier's property that references the domain in which it is unique"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#Identity [1]"@en ;
+  rdfs:domain iirds:Identity ;
+  rdfs:range iirds:IdentityDomain ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:Identity ;
+  schema:rangeIncludes iirds:IdentityDomain .
+
+iirds:has-identity-type a rdf:Property ;
+  rdfs:label "has identifier type"@en, "hat Identifier-Typ"@de ;
+  rdfs:comment "identity domain's property that references its identifier type"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#IdentityDomain [0..1]"@en ;
+  rdfs:domain iirds:IdentityDomain ;
+  rdfs:range iirds:IdentityType ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:IdentityDomain ;
+  schema:rangeIncludes iirds:IdentityType .
+
+iirds:has-information-type a rdf:Property ;
+  rdfs:label "has information type"@en, "hat Informationsart"@de ;
+  rdfs:comment "information unit's property that references its nature or subject"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en, "Not intended to be used directly. Use the child properties instead, such as has-document-type for documents and has-topic-type for topics."@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range iirds:InformationType ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes iirds:InformationType .
+
+iirds:has-next-sibling a rdf:Property ;
+  rdfs:label "has next sibling"@en, "hat als nächstes Element"@de ;
+  rdfs:comment "directory node's property that references the following directory node on the same hierarchy level in a directory structure"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#DirectoryNode [0..1]"@en ;
+  rdfs:domain iirds:DirectoryNode ;
+  rdfs:range iirds:DirectoryNode ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:DirectoryNode ;
+  schema:rangeIncludes iirds:DirectoryNode .
+
+iirds:has-party-role a rdf:Property ;
+  rdfs:label "has administrative role"@en, "hat administrative Rolle"@de ;
+  rdfs:comment ""@de, "party's property that references its role"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#Party [0..1]"@en ;
+  rdfs:domain iirds:Party ;
+  rdfs:range iirds:PartyRole ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:Party ;
+  schema:rangeIncludes iirds:PartyRole .
+
+iirds:has-planning-time a rdf:Property ;
+  rdfs:label "has time"@en, "hat Zeit"@de ;
+  rdfs:comment "information unit's property that references the planning time"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range iirds:PlanningTime ;
+  rdfs:subPropertyOf iirds:relates-to-functional-metadata ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes iirds:PlanningTime .
+
+iirds:has-rendition a rdf:Property ;
+  rdfs:label "has rendition"@en, "hat Inhaltsausprägung"@de ;
+  rdfs:comment "information unit's property that references its rendition"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range iirds:Rendition ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes iirds:Rendition .
+
+iirds:has-selector a rdf:Property ;
+  rdfs:label "has selector"@en, "hat Selektor"@de ;
+  rdfs:comment "rendition's property that references a selector"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#Rendition [0..1]"@en ;
+  rdfs:range iirds:Selector ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:Rendition ;
+  schema:rangeIncludes iirds:Selector .
+
+iirds:has-start-selector a rdf:Property ;
+  rdfs:label "has start selector"@en, "hat Startselektor"@de ;
+  rdfs:comment "range selector's property that references the start of its  range"@en ;
+  iirds:description "A range selector must reference one start and one end selector."@en, "Cardinality: http://iirds.tekom.de/iirds#RangeSelector [1]"@en ;
+  rdfs:domain iirds:RangeSelector ;
+  rdfs:range iirds:FragmentSelector ;
+  rdfs:subPropertyOf iirds:has-selector ;
+  schema:domainIncludes iirds:RangeSelector ;
+  schema:rangeIncludes iirds:FragmentSelector .
+
+iirds:has-subject a rdf:Property ;
+  rdfs:label "has subject"@en, "hat Thema"@de ;
+  rdfs:comment "information unit's property that references its subject"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range iirds:InformationSubject ;
+  rdfs:subPropertyOf iirds:has-information-type, <http://purl.org/dc/terms/subject> ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes iirds:InformationSubject .
+
+iirds:has-topic-type a rdf:Property ;
+  rdfs:label "has topic type"@en, "hat Topictyp"@de ;
+  rdfs:comment "information unit's property that references its topic type"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en, "Defines the information type of a topic, e.g. task or learning."@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range iirds:TopicType ;
+  rdfs:subPropertyOf iirds:has-information-type ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes iirds:TopicType .
+
+iirds:identifier a rdf:Property ;
+  rdfs:label "Bezeichner"@de, "identifier"@en ;
+  rdfs:comment "unique name of the resource within a given domain"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#Identity [1]"@en, "Recommended best practice is to identify the resource by means of a string conforming to a formal identification system."@en ;
+  rdfs:domain iirds:Identity ;
+  rdfs:range rdfs:Literal ;
+  rdfs:subPropertyOf iirds:iirdsAttribute, <http://purl.org/dc/terms/identifier> ;
+  schema:domainIncludes iirds:Identity ;
+  schema:rangeIncludes rdfs:Literal .
+
+iirds:iiRDSVersion a rdf:Property ;
+  rdfs:label "iiRDS Version"@de, "iiRDS version"@en ;
+  rdfs:comment "iiRDS version with which the iiRDS package complies"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#Package [1]"@en, "Current version is 1.0."@en ;
+  rdfs:domain iirds:Package ;
+  rdfs:range rdfs:Literal ;
+  rdfs:subPropertyOf iirds:iirdsAttribute ;
+  schema:domainIncludes iirds:Package ;
+  schema:rangeIncludes rdfs:Literal .
+
+iirds:iirdsAttribute a rdf:Property ;
+  rdfs:label "iirdsAttribute"@de, "iirdsAttribute"@en ;
+  rdfs:comment "property with a literal value"@en ;
+  iirds:description "Not intended to be used directly. Use the subclasses instead."@en ;
+  rdfs:range rdfs:Literal ;
+  schema:domainIncludes iirds:iirdsDomainEntity ;
+  schema:rangeIncludes rdfs:Literal .
+
+iirds:iirdsRelationConcept a rdf:Property ;
+  rdfs:label "iirdsRelationConcept"@de, "iirdsRelationConcept"@en ;
+  rdfs:comment "iiRDS resource's property that references an iiRDS resource"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#iirdsDomainEntity [0..*]"@en, "Not indented to be used directly."@en ;
+  rdfs:domain iirds:iirdsDomainEntity ;
+  rdfs:range iirds:iirdsDomainEntity ;
+  schema:domainIncludes iirds:iirdsDomainEntity ;
+  schema:rangeIncludes iirds:iirdsDomainEntity .
+
+iirds:is-applicable-for-document-type a rdf:Property ;
+  rdfs:label "applicable for document type"@en, "geeignet für Dokumentart"@de ;
+  rdfs:comment "information unit's property that references a document type the information unit is suitable for"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en, "Example: topics that are suitable for the installation instructions."@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range iirds:DocumentType ;
+  rdfs:subPropertyOf iirds:has-information-type ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes iirds:DocumentType .
+
+iirds:is-part-of-package a rdf:Property ;
+  rdfs:label "is part of package"@en, "ist Teil von Paket"@de ;
+  rdfs:comment "information unit's property that references the package to which it belongs"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range iirds:Package ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes iirds:Package .
+
+iirds:is-replacement-of a rdf:Property ;
+  rdfs:label "ersetzt"@de, "replaces"@en ;
+  rdfs:comment "information unit's property that references the information unit to be replaced"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..1]"@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range iirds:InformationUnit ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept, <http://purl.org/dc/terms/replaces> ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes iirds:InformationUnit .
+
+iirds:is-version-of a rdf:Property ;
+  rdfs:label "is version of"@en, "ist Version von"@de ;
+  rdfs:comment "information unit's property that references its information object"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..1]"@en, "Specifies that the information unit is a version or language variant of the information object."@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range iirds:InformationObject ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept, <http://purl.org/dc/terms/isVersionOf> ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes iirds:InformationObject .
+
+iirds:language a rdf:Property ;
+  rdfs:label "Sprache"@de, "language"@en ;
+  rdfs:comment "identifier of the content's language"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en, "Controlled vocabulary according to RFC 4646."@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range rdfs:Literal ;
+  rdfs:subPropertyOf iirds:iirdsAttribute, <http://purl.org/dc/terms/language> ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes rdfs:Literal .
+
+iirds:purpose a rdf:Property ;
+  rdfs:label "Zweck"@de, "purpose"@en ;
+  rdfs:comment "reason for an information unit's lifecycle status"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#ContentLifeCycleStatus [0..1]"@en ;
+  rdfs:domain iirds:ContentLifeCycleStatus ;
+  rdfs:range rdfs:Literal ;
+  rdfs:subPropertyOf iirds:iirdsAttribute ;
+  schema:domainIncludes iirds:ContentLifeCycleStatus ;
+  schema:rangeIncludes rdfs:Literal .
+
+iirds:relates-to-action a rdf:Property ;
+  rdfs:label "bezieht sich auf Handlung"@de, "relates to action"@en ;
+  rdfs:comment "information unit's property that references an action"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en, "Not intended to be used directly. Use the subclasses instead."@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range iirds:Action ;
+  rdfs:subPropertyOf iirds:relates-to-functional-metadata ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes iirds:Action .
+
+iirds:relates-to-administrative-metadata a rdf:Property ;
+  rdfs:label "bezieht sich auf administrative Metadaten"@de, "relates to administrative metadata"@en ;
+  rdfs:comment "iiRDS resource's property that references administrative metadata "@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#iirdsDomainEntity [0..*]"@en, "Not intended to be used directly. Use the subclasses instead."@en ;
+  rdfs:domain iirds:iirdsDomainEntity ;
+  rdfs:range iirds:AdministrativeMetadata ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:iirdsDomainEntity ;
+  schema:rangeIncludes iirds:AdministrativeMetadata .
+
+iirds:relates-to-component a rdf:Property ;
+  rdfs:label "bezieht sich auf Komponente"@de, "relates to component"@en ;
+  rdfs:comment "information unit's property that references a component"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en, "That means that the content of the information unit relates to a specific component of the documented product or component."@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range iirds:Component ;
+  rdfs:subPropertyOf iirds:relates-to-product-metadata ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes iirds:Component .
+
+iirds:relates-to-event a rdf:Property ;
+  rdfs:label "bezieht sich auf Ereignis"@de, "relates to event"@en ;
+  rdfs:comment "information unit's property that references an event"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en, "That means that the content of the information unit refers to a specific event that occured in the product/system, e.g. an error."@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range iirds:Event ;
+  rdfs:subPropertyOf iirds:relates-to-functional-metadata ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes iirds:Event .
+
+iirds:relates-to-functional-metadata a rdf:Property ;
+  rdfs:label "bezieht sich auf funktionale Metadaten"@de, "relates to functional metadata"@en ;
+  rdfs:comment "information unit's property that references functional metadata"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en, "No intended to be used directly. Use the subclasses instead."@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range iirds:FunctionalMetadata ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes iirds:FunctionalMetadata .
+
+iirds:relates-to-information-unit a rdf:Property ;
+  rdfs:label "bezieht sich auf Informationseinheit"@de, "relates to information unit"@en ;
+  rdfs:comment "directory node's property that references the corresponding information unit"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#DirectoryNode [0..1]"@en, "The related information unit is part of the directory."@en ;
+  rdfs:domain iirds:DirectoryNode ;
+  rdfs:range iirds:InformationUnit ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:DirectoryNode ;
+  schema:rangeIncludes iirds:InformationUnit .
+
+iirds:relates-to-party a rdf:Property ;
+  rdfs:label "hat Beziehung zu Akteur"@de, "relates to party"@en ;
+  rdfs:comment "iiRDS resource's property that references a party"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#ClassificationDomain [0..1]"@en, "Cardinality: http://iirds.tekom.de/iirds#Component [0..1]"@en, "Cardinality: http://iirds.tekom.de/iirds#ContentLifeCycleStatus [0..1]"@en, "Cardinality: http://iirds.tekom.de/iirds#IdentityDomain [0..1]"@en, "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en, "Cardinality: http://iirds.tekom.de/iirds#ProductVariant [0..1]"@en ;
+  rdfs:range iirds:Party ;
+  rdfs:subPropertyOf iirds:relates-to-administrative-metadata ;
+  schema:domainIncludes iirds:ClassificationDomain, iirds:Component, iirds:ContentLifeCycleStatus, iirds:IdentityDomain, iirds:InformationUnit, iirds:ProductVariant ;
+  schema:rangeIncludes iirds:Party .
+
+iirds:relates-to-product-feature a rdf:Property ;
+  rdfs:label "bezieht sich auf Produkteigenschaft"@de, "relates to product feature"@en ;
+  rdfs:comment "information unit's property that references a product feature"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en, "That means that the content of the information unit refers to or describes a specific product feature."@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range iirds:ProductFeature ;
+  rdfs:subPropertyOf iirds:relates-to-product-metadata ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes iirds:ProductFeature .
+
+iirds:relates-to-product-lifecycle-phase a rdf:Property ;
+  rdfs:label "bezieht sich auf Produktlebenszyklusphase"@de, "relates to phase of the product lifecycle"@en ;
+  rdfs:comment "information unit's property that references a product lifecycle phase"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en, "That means that the content of the information unit describes activities or knowledge related to a specific lifecycle phase. Examples are operation and maintenance."@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range iirds:ProductLifeCyclePhase ;
+  rdfs:subPropertyOf iirds:relates-to-product-metadata ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes iirds:ProductLifeCyclePhase .
+
+iirds:relates-to-product-metadata a rdf:Property ;
+  rdfs:label "bezieht sich auf Produktmetadaten"@de, "relates to product metadata"@en ;
+  rdfs:comment "information unit's property that references product metadata"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range iirds:ProductMetadata ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes iirds:ProductMetadata .
+
+iirds:relates-to-product-variant a rdf:Property ;
+  rdfs:label "bezieht sich auf Produktvariante"@de, "relates to product variant"@en ;
+  rdfs:comment "information unit's property that references a product variant"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en, "That means that the content of the information unit refers to or describes a specific variant of the product."@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range iirds:ProductVariant ;
+  rdfs:subPropertyOf iirds:relates-to-product-metadata ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes iirds:ProductVariant .
+
+iirds:relates-to-qualification a rdf:Property ;
+  rdfs:label "bezieht sich auf Qualifikation"@de, "relates to qualification"@en ;
+  rdfs:comment "information unit's property that references a qualification "@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range iirds:Qualification ;
+  rdfs:subPropertyOf iirds:relates-to-functional-metadata ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes iirds:Qualification .
+
+iirds:relates-to-supply a rdf:Property ;
+  rdfs:label "bezieht sich auf Hilfsmittel"@de, "relates to supply"@en ;
+  rdfs:comment "information unit's property that references a supply"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range iirds:Supply ;
+  rdfs:subPropertyOf iirds:relates-to-functional-metadata ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes iirds:Supply .
+
+iirds:relates-to-vcard a rdf:Property ;
+  rdfs:label "bezieht sich auf vCard"@de, "relates to vCard"@en ;
+  rdfs:comment "party's property that references an organization or person"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#Party [0..1]"@en ;
+  rdfs:domain iirds:Party ;
+  rdfs:range <http://www.w3.org/2006/vcard/ns#Kind> ;
+  rdfs:subPropertyOf iirds:iirdsRelationConcept ;
+  schema:domainIncludes iirds:Party ;
+  schema:rangeIncludes <http://www.w3.org/2006/vcard/ns#Kind> .
+
+iirds:revision a rdf:Property ;
+  rdfs:label "Revision"@de, "revision"@en ;
+  rdfs:comment "version of an information unit"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..1]"@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range rdfs:Literal ;
+  rdfs:subPropertyOf iirds:iirdsAttribute ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes rdfs:Literal .
+
+iirds:rights a rdf:Property ;
+  rdfs:label "Rechte"@de, "rights"@en ;
+  rdfs:comment "declaration of specific rights regarding the usage of the information"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..*]"@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range rdfs:Literal ;
+  rdfs:subPropertyOf iirds:iirdsAttribute, <http://purl.org/dc/elements/1.1/rights> ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes rdfs:Literal .
+
+iirds:source a rdf:Property ;
+  rdfs:label "Quelle"@de, "source"@en ;
+  rdfs:comment "relative path of a file in an iiRDS package that contains the content of a rendition"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#Rendition [1]"@en, "The path is relative to the root directory of the package, e.g., \"content/overview.html\"."@de ;
+  rdfs:domain iirds:Rendition ;
+  rdfs:range rdfs:Literal ;
+  rdfs:subPropertyOf iirds:iirdsAttribute ;
+  schema:domainIncludes iirds:Rendition ;
+  schema:rangeIncludes rdfs:Literal .
+
+iirds:statusComment a rdf:Property ;
+  rdfs:label "Kommentar zum Status"@de, "status comment"@en ;
+  rdfs:comment "note on a content lifecycle status"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#ContentLifeCycleStatus [0..*]"@en ;
+  rdfs:domain iirds:ContentLifeCycleStatus ;
+  rdfs:range rdfs:Literal ;
+  rdfs:subPropertyOf iirds:iirdsAttribute ;
+  schema:domainIncludes iirds:ContentLifeCycleStatus ;
+  schema:rangeIncludes rdfs:Literal .
+
+iirds:synonym a rdf:Property ;
+  rdfs:label "Synonym"@de, "synonym"@en ;
+  rdfs:comment "word or phrase that means exactly or nearly the same as another word or phrase in the same language"@en ;
+  iirds:description ""@en, "Cardinality: http://iirds.tekom.de/iirds#iirdsDomainEntity [0..*]"@en ;
+  rdfs:domain iirds:iirdsDomainEntity ;
+  rdfs:range rdfs:Literal ;
+  rdfs:subPropertyOf iirds:iirdsAttribute ;
+  schema:domainIncludes iirds:iirdsDomainEntity ;
+  schema:rangeIncludes rdfs:Literal .
+
+iirds:title a rdf:Property ;
+  rdfs:label "Titel"@de, "title"@en ;
+  rdfs:comment "name of the information unit"@en ;
+  iirds:description "Cardinality: http://iirds.tekom.de/iirds#InformationUnit [0..1]"@en, "Typically, a title will be a name by which the information unit is formally known."@en ;
+  rdfs:domain iirds:InformationUnit ;
+  rdfs:range rdfs:Literal ;
+  rdfs:subPropertyOf iirds:iirdsAttribute, <http://purl.org/dc/terms/title> ;
+  schema:domainIncludes iirds:InformationUnit ;
+  schema:rangeIncludes rdfs:Literal .
+
+iirds:Acquisition a iirds:DesignAndRealization ;
+  rdfs:label "Beschaffung"@de, "acquisition"@en ;
+  rdfs:comment "product life cycle phase of obtaining systems, products, or services as part of design and realization"@en ;
+  iirds:description ""@en .
+
+iirds:AdministratorGuide a iirds:DocumentType ;
+  rdfs:label "Administrationsanleitung"@de, "administrator guide"@en ;
+  rdfs:comment "document type that refers to information on the management of a technical system"@en ;
+  iirds:description ""@en .
+
+iirds:ApplicableStandards a iirds:Conformity ;
+  rdfs:label "Geltende Norm und Richtlinie"@de, "applicable standard"@en ;
+  rdfs:comment "information subject covering rules, guidelines, or definitions of product characteristics that need to comply with normative or legislative requirements"@en ;
+  iirds:description "Examples: machinery directive, ATEX directive"@en .
+
+iirds:Approved a iirds:ContentLifeCycleStatusValue ;
+  rdfs:label "Freigegeben"@de, "approved"@en ;
+  rdfs:comment "content life cycle status value which indicates that the information of the resource is correct"@en ;
+  iirds:description ""@en .
+
+iirds:ArticleCode a iirds:IdentityType ;
+  rdfs:label "Artikelcode"@de, "article code"@en ;
+  rdfs:comment "identity type of the manufacturer's reference number or other identifier for products or for parts of a product"@en ;
+  iirds:description "Examples of article code are material number, article number, or item number."@en .
+
+iirds:AssemblyInstructions a iirds:DocumentType ;
+  rdfs:label "Montageanleitung"@de, "assembly instructions"@en ;
+  rdfs:comment "document type that refers to information on how parts are put together to complete a specific product so that it fulfils its intended use"@en ;
+  iirds:description ""@en .
+
+iirds:Author a iirds:PartyRole ;
+  rdfs:label "Autor"@de, "author"@en ;
+  rdfs:comment "party role of the party that edited the referenced information unit "@en ;
+  iirds:description "An author is the individual or the organization from which the referenced iiRDS domain entity originates."@en .
+
+iirds:BillOfMaterials a iirds:DocumentType ;
+  rdfs:label "Stückliste"@de, "bill of materials"@en ;
+  rdfs:comment "document type that refers to formal tabulation of the physical assemblies, subassemblies, and components needed to fabricate a product"@en ;
+  iirds:description "Type of document (VDI 2770). Examples are part list with part number, part description, order number, and references to other documents."@en .
+
+iirds:CDD a iirds:ClassificationType ;
+  rdfs:label "CDD Identifikator"@de, "CDD identifier"@en ;
+  rdfs:comment "classification type that references a product classification in the Common Data Dictionary (CDD, IEC 61360)"@en .
+
+iirds:CEDeclarationOfConformity a iirds:DocumentType ;
+  rdfs:label "CE-Konformitätserklärung"@de, "cE declaration of conformity"@en ;
+  rdfs:comment "document type that refers to a confirmation that a product complies with the applicable CE marking directives or regulations"@en ;
+  iirds:description ""@en .
+
+iirds:Caution a iirds:WarningMessage ;
+  rdfs:label "Vorsicht"@de, "caution"@en ;
+  rdfs:comment "warning message that describes a hazardous situation which, if not avoided, could result in minor or moderate injury"@en ;
+  iirds:description "See ANSI Z535.5"@en .
+
+iirds:Certificate a iirds:DocumentType ;
+  rdfs:label "Zertifikat"@de, "certificate"@en ;
+  rdfs:comment "document type that refers to a document attesting conformity with applicable regulations"@en ;
+  iirds:description "Type of document (VDI 2770). Examples are ATEX certificates, acceptance reports, and material certificates."@en .
+
+iirds:Configuration a iirds:PuttingToUse ;
+  rdfs:label "Einrichtung"@de, "configuration"@en ;
+  rdfs:comment "product life cycle phase of adapting settings to achieve the desired functionality of a product"@en ;
+  iirds:description ""@en .
+
+iirds:ContactInformation a iirds:Formality ;
+  rdfs:label "Kontaktdaten"@de, "contact information"@en ;
+  rdfs:comment "information subject that covers information on how to contact a party"@en ;
+  iirds:description "Contact information such as addresses, phone numbers, URLs."@en .
+
+iirds:ContractualDocument a iirds:DocumentType ;
+  rdfs:label "Vertragliches Dokument"@de, "contractual document"@en ;
+  rdfs:comment "document type that refers to a binding agreement between parties"@en ;
+  iirds:description "Type of document (VDI 2770). Contractual documents include, among others, contracts, acceptance reports, and service conditions."@en .
+
+iirds:Contributor a iirds:PartyRole ;
+  rdfs:label "Beteiligter"@de, "contributor"@en ;
+  rdfs:comment "party role of the party that provides input to the making of an information unit"@en ;
+  iirds:description "A contributor is an individual or an organization that participated in the generation/change of the referenced iiRDS domain entity."@en .
+
+iirds:Creator a iirds:PartyRole ;
+  rdfs:label "Ersteller"@de, "creator"@en ;
+  rdfs:comment "party role of the party from which an information unit originated"@en ;
+  iirds:description "A creator is the individual or the organization that created the referenced iiRDS domain entity."@en .
+
+iirds:Customer a iirds:PartyRole ;
+  rdfs:label "Kunde"@de, "customer"@en ;
+  rdfs:comment "party role of the party that purchases or receives a product"@en ;
+  iirds:description "A customer is an individual or an organization that purchased or consumes the referenced iiRDS domain entity."@en .
+
+iirds:Danger a iirds:WarningMessage ;
+  rdfs:label "Gefahr"@de, "danger"@en ;
+  rdfs:comment "warning message that describes a hazardous situation which, if not avoided, will result in death or serious injury"@en ;
+  iirds:description "See ANSI Z535.5"@en .
+
+iirds:DeclarationOfConformity a iirds:Conformity ;
+  rdfs:label "Konformitätserklärung"@de, "declaration of conformity"@en ;
+  rdfs:comment "information subject covering an assurance that the product complies  with the EU Declaration of Conformity for CE marking"@en ;
+  iirds:description "The Declaration of Conformity states that the product complies with the essential requirements of the relevant standards. "@en .
+
+iirds:Decommissioning a iirds:Use ;
+  rdfs:label "Außerbetriebnahme"@de, "decommissioning"@en ;
+  rdfs:comment "product life cycle phase of shutting down a system at the end of its usage period"@en ;
+  iirds:description ""@en .
+
+iirds:Deleted a iirds:ContentLifeCycleStatusValue ;
+  rdfs:label "Gelöscht"@de, "deleted"@en ;
+  rdfs:comment "content life cycle status value which indicates that the information of the resource has been revoked"@en ;
+  iirds:description ""@en .
+
+iirds:Design a iirds:DesignAndRealization ;
+  rdfs:label "Design"@de, "design"@en ;
+  rdfs:comment "product life cycle phase of designing systems, products, or services"@en ;
+  iirds:description ""@en .
+
+iirds:Development a iirds:DesignAndRealization ;
+  rdfs:label "Entwicklung"@de, "development"@en ;
+  rdfs:comment "product life cycle phase of transfoming from design into a production-ready functional system, product or service"@en ;
+  iirds:description ""@en .
+
+iirds:Diagnostics a iirds:Use ;
+  rdfs:label "Fehlerdiagnose"@de, "diagnostics"@en ;
+  rdfs:comment "product life cycle phase of identifying a fault and its cause whitin the use phase"@en ;
+  iirds:description ""@en .
+
+iirds:Disposal a iirds:AfterUse ;
+  rdfs:label "Entsorgung"@de, "disposal"@en ;
+  rdfs:comment "product life cycle phase spanning the process of elimination of a product or component"@en ;
+  iirds:description ""@en .
+
+iirds:EclassCodedName a iirds:ClassificationType ;
+  rdfs:label "ECLASS Coded Name"@de, "ECLASS Coded Name"@en ;
+  rdfs:comment "8-digit class code that references an ECLASS product classification"@en ;
+  iirds:description "classification type that references an ECLASS product classification by an international registration data identifier (IRDI) path"@en .
+
+iirds:EclassIRDI a iirds:ClassificationType ;
+  rdfs:label "ECLASS IRDI"@de, "ECLASS IRDI"@en ;
+  rdfs:comment "classification type that references an ECLASS product classification by an international registration data identifier (IRDI) path"@en .
+
+iirds:ElectronicIdentificationPlate a iirds:DocumentType ;
+  rdfs:label "Elektronisches Typenschild"@de, "electronic identification plate"@en ;
+  rdfs:comment "document type referring electronically readable label on a product or component that provides information on its identity and characteristics"@en ;
+  iirds:description "Type of document (VDI 2770)"@en .
+
+iirds:EmergencyOperation a iirds:Use ;
+  rdfs:label "Notbetrieb"@de, "emergency operation"@en ;
+  rdfs:comment "product life cycle of restricted operation of a system to protect it from damage"@en ;
+  iirds:description ""@en .
+
+iirds:EuropeanArticleNumber a iirds:IdentityType ;
+  rdfs:label "EAN"@de, "EAN"@en ;
+  rdfs:comment "identity type of the European article number according to ISO/IEC 15420"@en ;
+  iirds:description "European Article Number (EAN; also International Article Number, IAN) identifier for trade items."@en .
+
+iirds:Fault a iirds:Use ;
+  rdfs:label "Störung"@de, "fault"@en ;
+  rdfs:comment "product life cycle that spans the interruption of the intended operation of a system due to malfunction"@en ;
+  iirds:description ""@en .
+
+iirds:ForeseeableMisuse a iirds:Safety ;
+  rdfs:label "Vorhersehbarer Fehlgebrauch"@de, "foreseeable misuse"@en ;
+  rdfs:comment "information subject that covers the use of a product or system in a way not intended by the supplier, but which can result from readily predictable human behaviour"@en ;
+  iirds:description "Use of a product in a manner not intended by the producer or supplier but which may result from foreseeable human behavior. See EN 82079-1"@en .
+
+iirds:GenericAction a iirds:Action ;
+  rdfs:label "Handlung"@de, "action"@en ;
+  rdfs:comment "atomic manipulation of an object by a participant"@en ;
+  iirds:description ""@en .
+
+iirds:GenericAfterUse a iirds:AfterUse ;
+  rdfs:label "Nutzungsende"@de, "after use"@en ;
+  rdfs:comment "product life cycle phase following the active use of the product"@en ;
+  iirds:description "The AfterUse class is a parent class for product lifecycle phases that occur after the active use of the product."@en .
+
+iirds:GenericCollection a iirds:Collection ;
+  rdfs:label "Zusammenstellung"@de, "collection"@en ;
+  rdfs:comment "information subject covering specific content in lists or overviews"@en ;
+  iirds:description ""@en .
+
+iirds:GenericConcept a iirds:Concept ;
+  rdfs:label "Beschreibung"@de, "concept"@en ;
+  rdfs:comment "topic type providing background information that helps users understand the structure or essential principles of a product, interface, or task"@en ;
+  iirds:description "Conceptual information helps users to map their existing knowledge to tasks and other essential information about a product or system."@en .
+
+iirds:GenericConformity a iirds:Conformity ;
+  rdfs:label "Konformität"@de, "conformity"@en ;
+  rdfs:comment "information subject covering applicable law, standards, or the fulfilment of a product requirement"@en ;
+  iirds:description "The Conformity class is a parent class for information subjects that describe content related to applicable standards or the conformity of the product."@en .
+
+iirds:GenericDesignAndRealization a iirds:DesignAndRealization ;
+  rdfs:label "Produktentstehung"@de, "design and realization"@en ;
+  rdfs:comment "product life cycle phase from ideation through production"@en ;
+  iirds:description "The DesignAndRealization class is a parent class for product lifecycle phases related to the design, construction, and realization of a product."@en .
+
+iirds:GenericDownTime a iirds:DownTime ;
+  rdfs:label "Stillstandszeit"@de, "down time"@en ;
+  rdfs:comment "period of time during which an item is not in condition to perform its intended function"@en ;
+  iirds:description "The DownTime class is a parent class for time periods during which an equipment or machine is not functional or cannot work."@en ;
+  iirds:duration "PT0M"^^<http://www.w3.org/2001/XMLSchema#duration> .
+
+iirds:GenericEvent a iirds:Event ;
+  rdfs:label "Ereignis"@de, "event"@en ;
+  rdfs:comment "something noticeable that takes place at a given location and point in time"@en ;
+  iirds:description "The Event class describes events that happen in the technical system. Examples are errors, malfunctions, and warnings."@en .
+
+iirds:GenericForm a iirds:Form ;
+  rdfs:label "Formular"@de, "form"@en ;
+  rdfs:comment "topic type providing information in pre-defined fields"@en ;
+  iirds:description "The Form class describes topics that contain information in pre-defined form fields. Examples of forms are service reports, field reports, and user feedback."@en .
+
+iirds:GenericFormality a iirds:Formality ;
+  rdfs:label "Formalie"@de, "formality"@en ;
+  rdfs:comment "information subject that covers contractually relevant elements"@en ;
+  iirds:description "The Formality class is the parent class for information subjects that describe content related to official or legal documents."@en .
+
+iirds:GenericFunctionality a iirds:Functionality ;
+  rdfs:label "Funktionalität"@de, "functionality"@en ;
+  rdfs:comment "information subject that covers specific capabilities of the product"@en ;
+  iirds:description "The Functionality class is the parent class for information subjects that describe content related to specific functionalities of the product."@en .
+
+iirds:GenericLearning a iirds:Learning ;
+  rdfs:label "Lernen"@de, "learning"@en ;
+  rdfs:comment "type of topic that provides learning content"@en ;
+  iirds:description "Learning content may comprise learning plans, learning objectives, learning content details, summaries, and assessments."@en .
+
+iirds:GenericMaintenanceInterval a iirds:MaintenanceInterval ;
+  rdfs:label "Wartungsintervall"@de, "maintenance interval"@en ;
+  rdfs:comment "period of time between scheduled maintenance operations"@en ;
+  iirds:description "The MaintenanceInterval class describes time intervals and durations for the scheduled maintenance of a technical system or its parts."@en ;
+  iirds:duration "PT0M"^^<http://www.w3.org/2001/XMLSchema#duration> ;
+  iirds:frequency "unknown"@en .
+
+iirds:GenericPlanningTime a iirds:PlanningTime ;
+  rdfs:label "Planungszeit"@de, "planning time"@en ;
+  rdfs:comment "period of time that is required for conducting a specific task"@en ;
+  iirds:description "The PlanningTime class describes different types of planning times that may be referenced in technical documentation, for example time required for or resulting from specific working tasks."@en ;
+  iirds:duration "PT0M"^^<http://www.w3.org/2001/XMLSchema#duration> .
+
+iirds:GenericProcess a iirds:Process ;
+  rdfs:label "Prozess"@de, "process"@en ;
+  rdfs:comment "information subject that covers structured activities which are carried out to achieve a specific goal"@en ;
+  iirds:description "The Process class contains information subject for process-related information."@en .
+
+iirds:GenericProductFeature a iirds:ProductFeature ;
+  rdfs:label "Produktmerkmal"@de, "product feature"@en ;
+  rdfs:comment "product characteristics"@en ;
+  iirds:description "The ProductFeature class is a parent class for characteristics and functions of a product or component."@en .
+
+iirds:GenericProductFunction a iirds:ProductFunction ;
+  rdfs:label "Produktfunktion"@de, "product function"@en ;
+  rdfs:comment "capability of a product or a component which is specific or required for the intended product task"@en ;
+  iirds:description "The ProductFunction class describes a function that a product or component provides or implements."@en .
+
+iirds:GenericProductProperty a iirds:ProductProperty ;
+  rdfs:label "Produkteigenschaft"@de, "product property"@en ;
+  rdfs:comment "invariable characteristic of a product whose value is fixed once the product is defined"@en ;
+  iirds:description "The ProductProperty class describes a characteristic of a product or component."@en .
+
+iirds:GenericPuttingToUse a iirds:PuttingToUse ;
+  rdfs:label "In Nutzung nehmen"@de, "putting to use"@en ;
+  rdfs:comment "product life cycle phase after production in which a product is set up for its intended use"@en ;
+  iirds:description "The PuttingToUse class is a parent class for the product lifecycle phases related to putting a product or technical system to use."@en .
+
+iirds:GenericReference a iirds:Reference ;
+  rdfs:label "Referenz"@de, "reference"@en ;
+  rdfs:comment "topic type that provides additional details for lookup"@en ;
+  iirds:description "The Reference class describes a topic type containing information that supports users as they perform a task, meaning data that is looked up rather than memorized. Examples are parameter lists, tables with technical data, UI control overviews, and parts lists. "@en .
+
+iirds:GenericRole a iirds:Role ;
+  rdfs:label "Rolle"@de, "role"@en ;
+  rdfs:comment "set of connected behaviors, privileges and obligations associated with a party"@en ;
+  iirds:description "The Role class describes roles for users of the technical system and the associated technical information."@en .
+
+iirds:GenericSafety a iirds:Safety ;
+  rdfs:label "Sicherheit"@de, "safety"@en ;
+  rdfs:comment "information subject that covers content which helps to avoid risk"@en ;
+  iirds:description "The Safety class contains information subjects related to safety."@en .
+
+iirds:GenericSkillLevel a iirds:SkillLevel ;
+  rdfs:label "Kenntnisstufe"@de, "skill level"@en ;
+  rdfs:comment "degree of qualification of an individual"@en ;
+  iirds:description "The SkillLevel class describes custom skill levels that the users of the technical system and the associated technical information require."@en .
+
+iirds:GenericSupply a iirds:Supply ;
+  rdfs:label "Hilfsmittel"@de, "generic supply"@en ;
+  rdfs:comment "physical object used by an actor performing work tasks described in technical documentation"@en ;
+  iirds:description "The Supply class is a parent class for supplies that are required for working tasks described in technical documentation."@en .
+
+iirds:GenericTask a iirds:Task ;
+  rdfs:label "Aufgabe"@de, "task"@en ;
+  rdfs:comment "topic type that provides procedures and action steps to be followed or considered"@en ;
+  iirds:description "Tasks provide instructions and may contain information on other aspects, such as requirements that must be fulfilled or safety instructions."@en .
+
+iirds:GenericTechnicalData a iirds:TechnicalData ;
+  rdfs:label "Technische Daten"@de, "technical data"@en ;
+  rdfs:comment "information subject that covers qualitative and quantitative characteristics  of technical objects"@en ;
+  iirds:description "Information that describes the technical characteristics of a product or component."@en .
+
+iirds:GenericTechnicalOverview a iirds:TechnicalOverview ;
+  rdfs:label "Technische Übersicht"@de, "technical overview"@en ;
+  rdfs:comment "information subject that covers the technical structure of a product"@en ;
+  iirds:description "The TechnicalOverview class is a parent class for information subjects describing contents related to technical plans, diagrams, or the technical architecture of the product."@en .
+
+iirds:GenericTroubleshooting a iirds:Troubleshooting ;
+  rdfs:label "Störungsbeseitigung"@de, "troubleshooting"@en ;
+  rdfs:comment "topic type that provides an explanation on symptoms, diagnosis, and resolution of problems"@en ;
+  iirds:description "Troubleshooting information may comprise a description of the symptoms, the cause of the error, and a remedy for the error."@en .
+
+iirds:GenericUse a iirds:Use ;
+  rdfs:label "Nutzung"@de, "use"@en ;
+  rdfs:comment "product life cycle phase in which the product is supposed to realize its function"@en ;
+  iirds:description "The Use class is a parent class for product lifecycle phases related to using a product or technical system."@en .
+
+iirds:GenericWarningMessage a iirds:WarningMessage ;
+  rdfs:label "Warnhinweis"@de, "warning message"@en ;
+  rdfs:comment "safety-related information that warns about hazards and instructs on how to avoid them"@en ;
+  iirds:description "If possible, use Danger, Warning, Caution, or Notice instead."@en .
+
+iirds:GenericWorkingTime a iirds:WorkingTime ;
+  rdfs:label "Arbeitszeit"@de, "generic working time"@en ;
+  rdfs:comment "period of time that is required for conducting a specific task"@en ;
+  iirds:description "The WorkingTime class is a parent class for periods of time required for a specific working task."@en ;
+  iirds:duration "PT0M"^^<http://www.w3.org/2001/XMLSchema#duration> .
+
+iirds:GlobalTradeItemNumber a iirds:IdentityType ;
+  rdfs:label "GTIN"@de, "GTIN"@en ;
+  rdfs:comment "identity type of internationally coordinated, uniform and globally unique article number for products and services"@en ;
+  iirds:description "Global Trade Item Number (GTIN) is an identifier for trade items."@en .
+
+iirds:IdentificationDocument a iirds:DocumentType ;
+  rdfs:label "Identifikationsdokument"@de, "identification document"@en ;
+  rdfs:comment "document type that refers to information on identity and characteristics of products"@en ;
+  iirds:description "Identifies an object and provides descriptive or classifying information."@en .
+
+iirds:InPreparation a iirds:ContentLifeCycleStatusValue ;
+  rdfs:label "In Arbeit"@de, "in preparation"@en ;
+  rdfs:comment "content life cycle status value which indicates that the information of the resource is still being edited"@en ;
+  iirds:description ""@en .
+
+iirds:InReview a iirds:ContentLifeCycleStatusValue ;
+  rdfs:label "In Review"@de, "in review"@en ;
+  rdfs:comment "content life cycle status value which indicates that the information of the resource is being checked for correctness"@en ;
+  iirds:description ""@en .
+
+iirds:Index a iirds:DirectoryNodeType ;
+  rdfs:label "Index"@de, "index"@en ;
+  rdfs:comment "directory node type that refers to an  ordered arrangement of entries, designed to enable users to locate information in information units"@en ;
+  iirds:description ""@en .
+
+iirds:Inspector a iirds:PartyRole ;
+  rdfs:label "Prüfer"@de, "inspector"@en ;
+  rdfs:comment "party role of the party that evaluates conformity with the requirements"@en ;
+  iirds:description "An inspector is an individual or an organization that supervises or checks the referenced iiRDS domain entity and makes reports."@en .
+
+iirds:Installation a iirds:PuttingToUse ;
+  rdfs:label "Installation"@de, "installation"@en ;
+  rdfs:comment "product life cycle phase of setting up a product in the designated target environment so that it fulfils its intended use"@en ;
+  iirds:description ""@en .
+
+iirds:InstallationInstructions a iirds:DocumentType ;
+  rdfs:label "Installationsanleitung"@de, "installation instructions"@en ;
+  rdfs:comment "document type that refers to information on how to set up a product in the designated target environment so that it fulfils its intended use"@en ;
+  iirds:description "For physical products: instructions enabling the operator to assemble and electrically connect a physical product so that it fulfills its intended use and does not endanger the health and safety of persons. For IT products: Instructions enabling the administrator to set up and potentially configure a program or new version on a computer so that does not endanger data security. "@en .
+
+iirds:IntendedUse a iirds:Safety ;
+  rdfs:label "Bestimmungsgemäße Verwendung"@de, "intended use"@en ;
+  rdfs:comment "information subject that covers information which states the range of functions or foreseen applications defined and designed by the supplier of the product"@en ;
+  iirds:description ""@en .
+
+iirds:LegalInformation a iirds:Formality ;
+  rdfs:label "Rechtlicher Hinweis"@de, "legal information"@en ;
+  rdfs:comment "information subject that covers supplementary information referencing laws or regulations"@en ;
+  iirds:description ""@en .
+
+iirds:LicenceTerm a iirds:Formality ;
+  rdfs:label "Lizenzbedingung"@de, "license terms"@en ;
+  rdfs:comment "information subject that covers a legal contract between two parties wherein the property owner gives permission to another party to use its intellectual properties"@en ;
+  iirds:description ""@en .
+
+iirds:ListOfFigures a iirds:DirectoryNodeType ;
+  rdfs:label "Abbildungsverzeichnis"@de, "list of figures"@en ;
+  rdfs:comment "directory node type that refers to a list of visuals and their location within information units, generally in order of appearance"@en ;
+  iirds:description "Type of directory"@en ;
+  iirds:synonym "LOF"@en .
+
+iirds:ListOfListings a iirds:DirectoryNodeType ;
+  rdfs:label "Codeverzeichnis"@de, "list of listings"@en ;
+  rdfs:comment "directory node type that refers to a list of code snippets and their location within information units, generally in order of appearance"@en ;
+  iirds:description "Type of directory"@en ;
+  iirds:synonym "LOL"@en .
+
+iirds:ListOfTables a iirds:DirectoryNodeType ;
+  rdfs:label "Tabellenverzeichnis"@de, "list of tables"@en ;
+  rdfs:comment "directory node type that refers to a list of tables and their location within information units, generally in order of appearance"@en ;
+  iirds:description "Type of directory"@en ;
+  iirds:synonym "LOT"@en .
+
+iirds:Maintenance a iirds:Use ;
+  rdfs:label "Wartung"@de, "maintenance"@en ;
+  rdfs:comment "product life cycle phase of activities intended  to retain or restore a system in or to operational state"@en ;
+  iirds:description ""@en .
+
+iirds:MaintenanceInstructions a iirds:DocumentType ;
+  rdfs:label "Wartungsanleitung"@de, "maintenance instructions"@en ;
+  rdfs:comment "document type that refers to information on procedures to be followed to ensure that a product remains in good working order"@en ;
+  iirds:description ""@en .
+
+iirds:Manufacturer a iirds:PartyRole ;
+  rdfs:label "Hersteller"@de, "manufacturer"@en ;
+  rdfs:comment "party role of the party that designs or produces a product"@en ;
+  iirds:description "The manufacturer is the individual or the organization that produces the referenced iiRDS domain entity."@en .
+
+iirds:ManufacturerInformation a iirds:Formality ;
+  rdfs:label "Herstellerinformation"@de, "manufacturer information"@en ;
+  rdfs:comment "information subject that covers information on the manufacturer of the product"@en ;
+  iirds:description ""@en .
+
+iirds:Notice a iirds:WarningMessage ;
+  rdfs:label "Hinweis"@de, "notice"@en ;
+  rdfs:comment "message that contains information considered important but not related to personal injury"@en ;
+  iirds:description "See ANSI Z535.5"@en .
+
+iirds:ObjectInstanceURI a iirds:IdentityType ;
+  rdfs:label "Instanz einer Objekt-URI"@de, "instance of object URI"@en ;
+  rdfs:comment "identity type of the globally unique URI for the product instance"@en ;
+  iirds:description "A globally biunique serial number, for example, according to the stipulations made in DIN SPEC 91406."@en .
+
+iirds:OperatingElement a iirds:TechnicalOverview ;
+  rdfs:label "Bedienelement"@de, "control element"@en ;
+  rdfs:comment "information subject that covers interaction elements in user interface "@en ;
+  iirds:description ""@en .
+
+iirds:OperatingInstructions a iirds:DocumentType ;
+  rdfs:label "Betriebsanleitung"@de, "operating instructions"@en ;
+  rdfs:comment "document type that refers to information on the correct use of the product"@en ;
+  iirds:description "Anleitung, die den Anwender dazu befähigt, ein Gerät, eine Maschine oder eine Software so zu betreiben, dass das Gerät oder die Maschine die bestimmungsgemäße Verwendung erfüllt und die Sicherheit und Gesundheit von Personen nicht beeinträchtigt wird."@de, "The instructions in this document type enable the user to operate a device, machine, or software considering the reference use as well as the safety and health regulations for the product."@en .
+
+iirds:Operation a iirds:Use ;
+  rdfs:label "Betrieb"@de, "operation"@en ;
+  rdfs:comment "product life cycle phase in which a system carries out its designated functions"@en ;
+  iirds:description ""@en .
+
+iirds:OrderCode a iirds:IdentityType ;
+  rdfs:label "Bestellcode"@de, "order code"@en ;
+  rdfs:comment "identity type of the manufacturer's unique procurement key"@en ;
+  iirds:description "Examples of order code are configuration number, product number, or code."@en .
+
+iirds:PartsCatalog a iirds:DocumentType ;
+  rdfs:label "Teilekatalog"@de, "parts catalog"@en ;
+  rdfs:comment "document type that refers to a list-style arrangement of spare part information"@en ;
+  iirds:description ""@en .
+
+iirds:PerformedBy a iirds:PartyRole ;
+  rdfs:label "Durchgeführt von"@de, "performed by"@en ;
+  rdfs:comment "party role of the party that changes the content life cycle status"@en ;
+  iirds:description "Describes the actor that is involved in changing the content lifecycle status."@en .
+
+iirds:Plan a iirds:DocumentType ;
+  rdfs:label "Plan"@de, "plan"@en ;
+  rdfs:comment "document type that refers to technical plans for a component or machine"@en ;
+  iirds:description "Type of document (VDI 2770)."@en .
+
+iirds:ProductIdentification a iirds:Formality ;
+  rdfs:label "Produktidentifikation"@de, "product identification"@en ;
+  rdfs:comment "information subject that covers information on identity and characteristics of products"@en ;
+  iirds:description ""@en .
+
+iirds:ProductName a iirds:Formality ;
+  rdfs:label "Produktbezeichnung"@de, "product name"@en ;
+  rdfs:comment "information subject that covers the designation of a product"@en ;
+  iirds:description ""@en .
+
+iirds:ProductType a iirds:IdentityType ;
+  rdfs:label "Produkttyp"@de, "product type"@en ;
+  rdfs:comment "identity type for products of the same series"@en ;
+  iirds:description "Examples of product type are labels of product variants and type or model."@en .
+
+iirds:Production a iirds:DesignAndRealization ;
+  rdfs:label "Herstellung"@de, "production"@en ;
+  rdfs:comment "product life cycle phase of manufacturing products"@en ;
+  iirds:description ""@en .
+
+iirds:QuickGuide a iirds:DocumentType ;
+  rdfs:label "Kurzanleitung"@de, "quick reference guide"@en ;
+  rdfs:comment "document type that refers to selected information facilitating product use within a short period of time"@en ;
+  iirds:description ""@en .
+
+iirds:Released a iirds:ContentLifeCycleStatusValue ;
+  rdfs:label "Veröffentlicht"@de, "released"@en ;
+  rdfs:comment "content life cycle status value which indicates that the associated information of the resource has been approved and is ready for publishing"@en ;
+  iirds:description ""@en .
+
+iirds:Repair a iirds:Use ;
+  rdfs:label "Reparatur"@de, "repair"@en ;
+  rdfs:comment "product life cycle phase of rectification of damages and malfunctions"@en ;
+  iirds:description ""@en .
+
+iirds:RepairInstructions a iirds:DocumentType ;
+  rdfs:label "Reparaturanleitung"@de, "repair instructions"@en ;
+  rdfs:comment "document type that refers to information on how to fix a failure of a product "@en ;
+  iirds:description "Anleitung, die den Anwender dazu befähigt, ein Gerät oder eine Maschine so instandzusetzen, dass das Gerät oder die Maschine die bestimmungsgemäße Verwendung erfüllt und die Sicherheit und Gesundheit von Personen nicht beeinträchtigt wird."@de, "The instructions in this document type enable the user to repair a device, machine, or system considering the reference use as well as the safety and health regulations for the product."@en .
+
+iirds:RequirementsAnalysis a iirds:DesignAndRealization ;
+  rdfs:label "Anforderungsanalyse"@de, "requirement analysis"@en ;
+  rdfs:comment "product life cycle phase in which understanding and prioritisation of necessary product characteristics is achieved"@en ;
+  iirds:description ""@en .
+
+iirds:RestrictionOnUse a iirds:Safety ;
+  rdfs:label "Einsatzbeschränkungen"@de, "restriction on use"@en ;
+  rdfs:comment "information subject that covers information specifying under which conditions or in which manner the product shall not be used"@en ;
+  iirds:description ""@en .
+
+iirds:Reviewed a iirds:ContentLifeCycleStatusValue ;
+  rdfs:label "Review durchgeführt"@de, "reviewed"@en ;
+  rdfs:comment "content life cycle status value which indicates that the information of the resource has been checked"@en ;
+  iirds:description ""@en .
+
+iirds:RiskAssessment a iirds:Conformity ;
+  rdfs:label "Risikobewertung"@de, "risk assessment"@en ;
+  rdfs:comment "information subject covering a process comprising a risk analysis and risk evaluation of the product or their result"@en ;
+  iirds:description "A risk assessment determines the risks and hazards to life, environment, or machine functioning including a quantitative and qualitative estimate."@en .
+
+iirds:SafetyInstruction a iirds:Safety ;
+  rdfs:label "Sicherheitshinweis"@de, "safety instruction"@en ;
+  rdfs:comment "information subject covering general safety-related information applying to a range of information units"@en ;
+  iirds:description ""@en .
+
+iirds:SafetyInstructions a iirds:DocumentType ;
+  rdfs:label "Sicherheitsanleitung"@de, "safety instructions"@en ;
+  rdfs:comment "document type that refers to safety-related information"@en ;
+  iirds:description "Type of document (VDI 2770). Examples are documents about the intended use of the product, protection/safety measures, safety equipment, and explosion prevention. "@en .
+
+iirds:SalesCatalog a iirds:DocumentType ;
+  rdfs:label "Verkaufskatalog"@de, "sales catalog"@en ;
+  rdfs:comment "document type that refers to a list-style arrangement of information relevant for product selection and ordering"@en ;
+  iirds:description ""@en .
+
+iirds:ScopeOfDelivery a iirds:Formality ;
+  rdfs:label "Lieferumfang"@de, "scope of delivery"@en ;
+  rdfs:comment "information subject that covers all work, services, materials, completed products, and documentation that the supplier shall provide to the purchaser according to the purchase order"@en ;
+  iirds:description ""@en .
+
+iirds:SerialNumber a iirds:IdentityType ;
+  rdfs:label "Seriennummer"@de, "serial number"@en ;
+  rdfs:comment "identity type of the number used to identify an individual product instance"@en ;
+  iirds:description "A serial number, serial ID oder serial code identifying a single object instance."@en .
+
+iirds:Specification a iirds:DocumentType ;
+  rdfs:label "Spezifikation"@de, "specification"@en ;
+  rdfs:comment "document type that refers to information on technical properties of products"@en ;
+  iirds:description ""@en .
+
+iirds:Supplier a iirds:PartyRole ;
+  rdfs:label "Zulieferer"@de, "supplier"@en ;
+  rdfs:comment "party role of the party that provides products"@en ;
+  iirds:description "Describes the individual or the organization that provides the referenced iiRDS domain entity, e.g. a component."@en .
+
+iirds:Symbol a iirds:TechnicalOverview ;
+  rdfs:label "Symbol"@de, "symbol"@en ;
+  rdfs:comment "information subject that covers an assembly of visual designations, together with their names or explanations of their meaning"@en ;
+  iirds:description ""@en .
+
+iirds:TableOfContents a iirds:DirectoryNodeType ;
+  rdfs:label "Inhaltsverzeichnis"@de, "table of contents"@en ;
+  rdfs:comment "directory node type that refers to a list of information units in logical order"@en ;
+  iirds:description "Directory type"@en ;
+  iirds:synonym "TOC"@en .
+
+iirds:TechnicalDrawingDiagram a iirds:DocumentType ;
+  rdfs:label "Technische Zeichnung/Diagramm"@de, "technical drawing/diagram"@en ;
+  rdfs:comment "document type that refers to a visual that conveys information about how an object functions or is constructed"@en ;
+  iirds:description "A technical drawing or diagram."@en .
+
+iirds:TechnicalReport a iirds:Conformity ;
+  rdfs:label "Technischer Bericht"@de, "technical report"@en ;
+  rdfs:comment "information subject covering a report of product conformity with legislative or normative requirements"@en ;
+  iirds:description ""@en .
+
+iirds:TransportInstructions a iirds:DocumentType ;
+  rdfs:label "Transportanleitung"@de, "transport instructions"@en ;
+  rdfs:comment "document type that refers to instructions for the movement of products or their components from one location to another"@en ;
+  iirds:description ""@en .
+
+iirds:Warning a iirds:WarningMessage ;
+  rdfs:label "Warnung"@de, "warning"@en ;
+  rdfs:comment "warning message that describes a hazardous situation which, if not avoided, could result in death or serious injury"@en ;
+  iirds:description "See ANSI Z535.5"@en .
+
+iirds:WarrantyConditions a iirds:Formality ;
+  rdfs:label "Garantiebedingungen"@de, "warranty conditions"@en ;
+  rdfs:comment "information subject that covers the specific terms of a promise given by a manufacturer or supplier to a purchaser to properly repair, replace or refund a faulty product"@en ;
+  iirds:description ""@en .
+
+iirds:Withdrawn a iirds:ContentLifeCycleStatusValue ;
+  rdfs:label "Widerrufen"@de, "withdrawn"@en ;
+  rdfs:comment "content life cycle status value which indicates that an already released information of the resource is not valid anymore"@en ;
+  iirds:description ""@en .
+
+

@@ -1,0 +1,1062 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix iirds: <http://iirds.tekom.de/iirds#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+iirds:Action a rdfs:Class ;
+  skos:definition "atomic manipulation of an object by a participant"@en ;
+  skos:prefLabel "Handlung"@de, "action"@en .
+
+iirds:AdministrativeMetadata a rdfs:Class ;
+  skos:definition "information that allows the management of iiRDS resources"@en ;
+  skos:note "Administrative metadata can be divided into the following categories: - context or provenance metadata: describe the life cycle of a resource to a point, including the related entities and processes, e.g. configuration and log files, - technical metadata: describe the technical characteristics of a digital object, e g. its format, - rights metadata: define the ownership and the legally permitted usage of an object."@en ;
+  skos:prefLabel "Verwaltungsmetadaten"@de, "administrative metadata"@en .
+
+iirds:AfterUse a rdfs:Class ;
+  skos:definition "product life cycle phase that follows the active use of the product"@en ;
+  skos:prefLabel "Nutzungsende"@de, "after use"@en .
+
+iirds:ClassificationDomain a rdfs:Class ;
+  skos:definition "domain of an external classification that is assigned to an iiRDS entity"@en ;
+  skos:prefLabel "Externe Klassifikationsdomäne"@de, "external classification domain"@en .
+
+iirds:ClassificationType a rdfs:Class ;
+  skos:definition "type of a classification that is assigned to an iiRDS domain entity"@en ;
+  skos:prefLabel "Klassifikationstyp"@de, "classification type"@en .
+
+iirds:Collection a rdfs:Class ;
+  skos:definition "information subject that covers specific content in lists or overviews"@en ;
+  skos:prefLabel "Zusammenstellung"@de, "collection"@en .
+
+iirds:Component a rdfs:Class ;
+  skos:definition "part used as a constituent in an assembled product, system or plant"@en ;
+  skos:prefLabel "Komponente"@de, "component"@en .
+
+iirds:Concept a rdfs:Class ;
+  skos:definition "topic type that provides background information which helps users understand the structure or essential principles of a product, interface, or task"@en ;
+  skos:prefLabel "Beschreibung"@de, "concept"@en .
+
+iirds:Conformity a rdfs:Class ;
+  skos:definition "information subject that covers applicable standards or the fulfilment of a product requirement"@en ;
+  skos:prefLabel "Konformität"@de, "conformity"@en .
+
+iirds:ContentLifeCycleStatus a rdfs:Class ;
+  skos:definition "stage of an information unit in the information development process"@en ;
+  skos:prefLabel "Lebenszyklus-Status einer Informationseinheit"@de, "information unit life cycle status"@en .
+
+iirds:ContentLifeCycleStatusValue a rdfs:Class ;
+  skos:definition "categorical denomination of the information unit life cycle stage"@en ;
+  skos:prefLabel "Wert des Lebenszyklus-Status einer Informationseinheit"@de, "value of the information unit life cycle status"@en .
+
+iirds:DesignAndRealization a rdfs:Class ;
+  skos:altLabel "design and realization"@en ;
+  skos:definition "product life cycle phase from environment analysis and ideation through production"@en ;
+  skos:prefLabel "Produktentstehung"@de, "design and realization"@en .
+
+iirds:DirectoryNode a rdfs:Class ;
+  skos:definition "node in a tree-like, ordered collection"@en ;
+  skos:note "The directory node structure may provide users with information on the context of the topic they are reading, its position in a document, its predecessors, and successors."@en ;
+  skos:prefLabel "Verzeichnisknoten"@de, "administrative metadata"@en .
+
+iirds:DirectoryNodeType a rdfs:Class ;
+  skos:definition "type of information arranged in a hierarchically ordered list of elements built by a root node and its subordinate nodes"@en ;
+  skos:note "Directories help the user to navigate through the information units."@en ;
+  skos:prefLabel "Verzeichnistyp"@de, "directory node type"@en .
+
+iirds:Document a rdfs:Class ;
+  skos:definition "information unit that consists of an ordered set of information intended by the sender to be regarded as an entity"@en ;
+  skos:prefLabel "Dokument"@de, "document"@en .
+
+iirds:DocumentType a rdfs:Class ;
+  skos:definition "type of information arranged in a document defined with respect to its specified purpose, function, and form of presentation"@en ;
+  skos:hiddenLabel "Dokumenttyp"@en ;
+  skos:prefLabel "Dokumentart"@de, "document type"@en .
+
+iirds:DocumentationMetadata a rdfs:Class ;
+  skos:definition "information that describes the context to which iiRDS resources apply"@en ;
+  skos:note "Documentation metadata can be used for assigning or filtering content according to specific use cases."@en ;
+  skos:prefLabel "Metadaten der Dokumentation"@de, "documentation metadata"@en .
+
+iirds:DownTime a rdfs:Class ;
+  skos:definition "period of time during which an item is not in condition to perform its intended function"@en ;
+  skos:note "Down time consists of service time, modification time, supply delay time and administration time"@en ;
+  skos:prefLabel "Stillstandzeit"@de, "down time"@en .
+
+iirds:Event a rdfs:Class ;
+  skos:definition "something noticeable that takes place at a given location and point in time"@en ;
+  skos:prefLabel "Ereignis"@de, "event"@en .
+
+iirds:ExternalClassification a rdfs:Class ;
+  skos:definition "External classification of an iiRDS domain entity. Each classification must be related to the classification domain within which it is unambiguous."@en ;
+  skos:prefLabel "Externe Klassifikation"@de, "external classification"@en .
+
+iirds:Form a rdfs:Class ;
+  skos:definition "topic type that provides information in pre-defined fields"@en ;
+  skos:prefLabel "Formular"@de, "form"@en .
+
+iirds:Formality a rdfs:Class ;
+  skos:definition "information subject that covers contractually relevant elements"@en ;
+  skos:prefLabel "Formalität"@de, "formality"@en .
+
+iirds:Fragment a rdfs:Class ;
+  skos:definition "information unit that requires additional context"@en ;
+  skos:prefLabel "Fragment"@de, "fragment"@en .
+
+iirds:FragmentSelector a rdfs:Class ;
+  skos:definition "selector that defines a part of content by a single identifier"@en ;
+  skos:prefLabel "Fragmentselektor"@de, "fragment selector"@en .
+
+iirds:FunctionalMetadata a rdfs:Class ;
+  skos:definition "information used to implement advanced content delivery scenarios and content assemblies for specific purposes"@en ;
+  skos:prefLabel "Funktionale Metadaten"@de, "functional metadata"@en .
+
+iirds:Functionality a rdfs:Class ;
+  skos:definition "information subject that covers specific capabilities of the product"@en ;
+  skos:prefLabel "Funktionalität"@de, "functionality"@en .
+
+iirds:Identity a rdfs:Class ;
+  skos:definition "complex identifier of a resource in an external system"@en ;
+  skos:note "Each identity must be related to the identity domain within which its identifier is unambiguous."@en ;
+  skos:prefLabel "Identität"@de, "identity"@en .
+
+iirds:IdentityDomain a rdfs:Class ;
+  skos:definition "organizational origin of an identifier that is assigned to an iiRDS identity"@en ;
+  skos:note "An identity domain relates to an organization which owns or administers that domain."@en ;
+  skos:prefLabel "Identitäts-Domäne"@de, "identity domain"@en .
+
+iirds:IdentityType a rdfs:Class ;
+  skos:definition "distinguished set of identifiers that are assigned to an iiRDS identity"@en ;
+  skos:prefLabel "Identitäts-Typ"@de, "identity type"@en .
+
+iirds:InformationObject a rdfs:Class ;
+  skos:definition "version- and language-independent abstraction of an information unit"@en ;
+  skos:prefLabel "Informationsobjekt"@de, "information object"@en .
+
+iirds:InformationSubject a rdfs:Class ;
+  skos:definition "thematical characteristic of content"@en ;
+  skos:note "Information subjects represent typical information types and usage scenarios for technical documentation"@en ;
+  skos:prefLabel "Informationsthema"@de, "information subject"@en .
+
+iirds:InformationType a rdfs:Class ;
+  skos:definition "characteristic of content"@en ;
+  skos:hiddenLabel "Informationstyp"@en ;
+  skos:prefLabel "Informationsart"@de, "information type"@en .
+
+iirds:InformationUnit a rdfs:Class ;
+  skos:definition "piece of digitally encoded information"@en ;
+  skos:prefLabel "Informationseinheit"@de, "information unit"@en .
+
+iirds:Learning a rdfs:Class ;
+  skos:definition "topic type that provides learning content"@en ;
+  skos:prefLabel "Lernen"@de, "learning"@en .
+
+iirds:MaintenanceInterval a rdfs:Class ;
+  skos:definition "period of time between scheduled maintenance operations"@en ;
+  skos:prefLabel "Wartungsintervall"@de, "maintenance interval"@en .
+
+iirds:Package a rdfs:Class ;
+  skos:definition "information unit that bundles other information units for exchange"@en ;
+  skos:prefLabel "Paket"@de, "package"@en .
+
+iirds:Party a rdfs:Class ;
+  skos:definition "person, organization, or system"@en ;
+  skos:note "Detailed information about a party may be specified in a vCard."@en ;
+  skos:prefLabel "Akteur"@de, "party"@en .
+
+iirds:PartyRole a rdfs:Class ;
+  skos:definition "responsibility of a person or organization"@en ;
+  skos:prefLabel "Akteursrolle"@de, "party role"@en .
+
+iirds:PlanningTime a rdfs:Class ;
+  skos:definition "period of time required for or resulting from a specific task"@en ;
+  skos:prefLabel "Planungszeit"@de, "planning time"@en .
+
+iirds:Process a rdfs:Class ;
+  skos:definition "information subject that covers structured activities carried out to achieve a specific goal"@en ;
+  skos:prefLabel "Prozess"@de, "process"@en .
+
+iirds:ProductFeature a rdfs:Class ;
+  skos:definition "product characteristics"@en ;
+  skos:prefLabel "Produktmerkmal"@de, "product feature"@en .
+
+iirds:ProductFunction a rdfs:Class ;
+  skos:definition "capability of a product or a component which is specific or required for the intended product task"@en ;
+  skos:prefLabel "Produktfunktion"@de, "product function"@en .
+
+iirds:ProductLifeCyclePhase a rdfs:Class ;
+  skos:altLabel "phase of product life cycle"@en ;
+  skos:definition "defined period in the evolution of a product from the conceptual idea to its ultimate disposal"@en ;
+  skos:prefLabel "Produktlebenszyklusphase"@de, "product life cycle phase"@en .
+
+iirds:ProductMetadata a rdfs:Class ;
+  skos:definition "information about a product or component"@en ;
+  skos:prefLabel "Produktmetadaten"@de, "product metadata"@en .
+
+iirds:ProductProperty a rdfs:Class ;
+  skos:definition "invariable characteristic of a product whose value is fixed once the product is defined"@en ;
+  skos:prefLabel "Produkteigenschaft"@de, "product property"@en .
+
+iirds:ProductVariant a rdfs:Class ;
+  skos:definition "item or service offered on the market and designed to meet the needs or wishes of customers"@en ;
+  skos:prefLabel "Produktvariante"@de, "product variant"@en .
+
+iirds:PuttingToUse a rdfs:Class ;
+  skos:definition "product life cycle phase after production in which a product is set up for its intended use"@en ;
+  skos:hiddenLabel "putting to use"@en ;
+  skos:prefLabel "in Nutzung nehmen"@de, "putting into use"@en .
+
+iirds:Qualification a rdfs:Class ;
+  skos:definition "proficiency, competence, or expertise exhibited by an individual"@en ;
+  skos:prefLabel "Qualifikation"@de, "qualification"@en .
+
+iirds:RangeSelector a rdfs:Class ;
+  skos:definition "selector that defines the start point and the end point of a part of content"@en ;
+  skos:prefLabel "Bereichsselektor"@de, "range selector"@en .
+
+iirds:Reference a rdfs:Class ;
+  skos:definition "topic type that provides additional details for lookup"@en ;
+  skos:prefLabel "Referenz"@de, "reference"@en .
+
+iirds:Rendition a rdfs:Class ;
+  skos:definition "content of an information unit in a specific format"@en ;
+  skos:note "Content is information in any form, for example text, audio, and video."@en ;
+  skos:prefLabel "Inhaltsausprägung"@de, "rendition"@en .
+
+iirds:Role a rdfs:Class ;
+  skos:definition "set of connected behaviors, privileges, and obligations associated with a party"@en ;
+  skos:note "The 'Role' class serves as a docking point for custom roles for users of the technical system and the associated technical information. Users can be humans, software processes, or devices of a system."@en ;
+  skos:prefLabel "Rolle"@de, "role"@en .
+
+iirds:Safety a rdfs:Class ;
+  skos:definition "information subject that covers content which helps to avoid risk"@en ;
+  skos:prefLabel "Sicherheit"@de, "safety"@en .
+
+iirds:Selector a rdfs:Class ;
+  skos:definition "pointer to the content of a rendition"@en ;
+  skos:prefLabel "Selektor"@de, "selector"@en .
+
+iirds:SkillLevel a rdfs:Class ;
+  skos:definition "degree of qualification of an individual"@en ;
+  skos:note "The 'Skill level' class serves as a docking point for custom skill levels that the users of technical and the supported product require."@en ;
+  skos:prefLabel "Kenntnisstufe"@de, "skill level"@en .
+
+iirds:Supply a rdfs:Class ;
+  skos:definition "physical object used by an actor that performs work tasks described in technical documentation"@en ;
+  skos:prefLabel "Hilfsmittel"@de, "supply"@en .
+
+iirds:Task a rdfs:Class ;
+  skos:definition "topic type that provides procedures and action steps to be followed or considered"@en ;
+  skos:prefLabel "Aufgabe"@de, "task"@en .
+
+iirds:TechnicalData a rdfs:Class ;
+  skos:definition "information subject that covers qualitative and quantitative characteristics of technical objects"@en ;
+  skos:prefLabel "Technische Daten"@de, "technical data"@en .
+
+iirds:TechnicalOverview a rdfs:Class ;
+  skos:definition "information subject that covers the technical structure of a product"@en ;
+  skos:prefLabel "Technische Übersicht"@de, "technical overview"@en .
+
+iirds:Topic a rdfs:Class ;
+  skos:definition "information unit that covers a single subject"@en ;
+  skos:prefLabel "Topic"@de, "topic"@en .
+
+iirds:TopicType a rdfs:Class ;
+  skos:definition "type of information determined according to functional principles"@en ;
+  skos:prefLabel "Topictyp"@de, "topic type"@en .
+
+iirds:Troubleshooting a rdfs:Class ;
+  skos:definition "topic type that provides an explanation for symptoms, diagnosis, and resolution of problems"@en ;
+  skos:note "Typical troubleshooting topics contain sections with a description of the system's behavior or symptom, the cause of the error, and a corrective action information that helps to fix the error or remove the malfunction."@en ;
+  skos:prefLabel "Störungsbeseitigung"@de, "troubleshooting"@en .
+
+iirds:Use a rdfs:Class ;
+  skos:definition "product life cycle phase in which the product is supposed to realize its function"@en ;
+  skos:prefLabel "Nutzung"@de, "use"@en .
+
+iirds:WarningMessage a rdfs:Class ;
+  skos:definition "safety-related information that warns about hazards and instructs on how to avoid them"@en ;
+  skos:note "Warning messages are normally given within step-by-step instructions related to hazardous tasks."@en ;
+  skos:prefLabel "Warnhinweis"@de, "warning message"@en .
+
+iirds:WorkingTime a rdfs:Class ;
+  skos:definition "period of time that is required for conducting a specific task"@en ;
+  skos:hiddenLabel "working time"@en ;
+  skos:prefLabel "Arbeitszeit"@de, "work time"@en .
+
+iirds:iirdsDomainEntity a rdfs:Class ;
+  skos:definition "any resource within the iiRDS domain"@en ;
+  skos:prefLabel "Entität der iiRDS-Domäne"@de, "iiRDS domain entity"@en .
+
+iirds:nil a rdfs:Class ;
+  skos:definition "closing element in a chain of directory nodes"@en ;
+  skos:prefLabel "Ende einer Verzeichnisstruktur"@de, "end of directory node"@en .
+
+iirds:classificationIdentifier a rdf:Property ;
+  skos:definition "classification identifier of the resource within an external classification domain"@en ;
+  skos:prefLabel "Klassifikationsbezeichner"@de, "classification identifier"@en .
+
+iirds:classificationVersion a rdf:Property ;
+  skos:definition "version of the external classification"@en ;
+  skos:prefLabel "Klassifikationsversion"@de, "classification version"@en .
+
+iirds:dateOfCreation a rdf:Property ;
+  skos:definition "date of creation of the resource"@en ;
+  skos:prefLabel "Erstellungsdatum"@de, "date of creation"@en .
+
+iirds:dateOfEffect a rdf:Property ;
+  skos:definition "Datum und Uhrzeit, an dem der vergebene Status gültig wird."@de, "date and time on which the given content lifecycle status becomes valid"@en ;
+  skos:hiddenLabel "effective date"@en ;
+  skos:prefLabel "Gültigkeitsbeginn"@de, "validity start date"@en .
+
+iirds:dateOfExpiry a rdf:Property ;
+  skos:definition "Datum und Uhrzeit, an dem der vergebene Status ungültig wird."@de, "date and time on which the given content lifecycle status becomes invalid"@en ;
+  skos:prefLabel "Auslaufdatum"@de, "expiry date"@en .
+
+iirds:dateOfLastModification a rdf:Property ;
+  skos:definition "date and time of an information unit's last change "@en ;
+  skos:prefLabel "date of last modification"@en, "letztes Änderungsdatum"@de .
+
+iirds:dateOfStatus a rdf:Property ;
+  skos:definition "date and time of a lifecycle status's last change"@en ;
+  skos:prefLabel "Vergabedatum"@de, "status date"@en .
+
+iirds:description a rdf:Property ;
+  skos:definition "account of the resource"@en ;
+  skos:prefLabel "Beschreibung"@de, "description"@en .
+
+iirds:duration a rdf:Property ;
+  skos:definition "span of time"@en ;
+  skos:prefLabel "Dauer"@de, "duration"@en .
+
+iirds:format a rdf:Property ;
+  skos:definition "media type of the rendition"@en ;
+  skos:note "The media type is indicated as a MIME type according to iana.org."@en ;
+  skos:prefLabel "Format"@de, "format"@en .
+
+iirds:formatRestriction a rdf:Property ;
+  skos:definition "restriction of media formats allowed in an iiRDS package"@en ;
+  skos:prefLabel "Formateinschränkung"@de, "format restriction"@en .
+
+iirds:frequency a rdf:Property ;
+  skos:definition "intended interval between recurring maintanance tasks"@en ;
+  skos:prefLabel "Wartungsfrequenz"@de, "maintenance frequency"@en .
+
+iirds:has-abstract a rdf:Property ;
+  skos:definition "summary of the resource"@en ;
+  skos:prefLabel "has abstract"@en, "hat Zusammenfassung"@de .
+
+iirds:has-classification-domain a rdf:Property ;
+  skos:definition "references the domain that a classification refers to"@en ;
+  skos:prefLabel "has classification domain"@en, "hat Klassifikations-Domäne"@de .
+
+iirds:has-classification-type a rdf:Property ;
+  skos:definition "type of the classification or the class name"@en ;
+  skos:prefLabel "has classification type"@en, "hat Klassifikations-Typ"@de .
+
+iirds:has-component a rdf:Property ;
+  skos:definition "property that references a component"@en ;
+  skos:prefLabel "has component"@en, "hat Komponente"@de .
+
+iirds:has-content-lifecycle-status a rdf:Property ;
+  skos:definition "information unit's property that references its content lifecycle status"@en ;
+  skos:prefLabel "hat Beziehung zu Bearbeitungsstatus"@de, "relates to content lifecycle status"@en .
+
+iirds:has-content-lifecycle-status-value a rdf:Property ;
+  skos:definition "content lifecycle status's property that references its value"@en ;
+  skos:prefLabel "has status value"@en, "hat Statuswert"@de .
+
+iirds:has-directory-structure-type a rdf:Property ;
+  skos:definition "directory node's property that references its node type"@en ;
+  skos:prefLabel "has directory structure type"@en, "hat Verzeichnisstrukturtyp"@de .
+
+iirds:has-document-type a rdf:Property ;
+  skos:definition "document's property that references its document type"@en ;
+  skos:prefLabel "has document type"@en, "hat Dokumentart"@de .
+
+iirds:has-end-selector a rdf:Property ;
+  skos:definition "range selector's property that references the end of its  range"@en ;
+  skos:prefLabel "has end selector"@en, "hat Endselektor"@de .
+
+iirds:has-event-code a rdf:Property ;
+  skos:definition "property to identify an event"@en ;
+  skos:prefLabel "has event code"@en, "hat Ereigniscode"@de .
+
+iirds:has-event-type a rdf:Property ;
+  skos:definition "event's property that references its type"@en ;
+  skos:prefLabel "has event type"@en, "hat Ereignistyp"@de .
+
+iirds:has-external-classification a rdf:Property ;
+  skos:definition "references an external classification"@en ;
+  skos:prefLabel "has external classification"@en, "hat externe Klassifikation"@de .
+
+iirds:has-first-child a rdf:Property ;
+  skos:definition "directory node's property that references the first directory node on the next subordinate level in a directory structure"@en ;
+  skos:prefLabel "has first child"@en, "hat als erstes Kindelement"@de .
+
+iirds:has-identity a rdf:Property ;
+  skos:definition "iiRDS resource's property that references an identifier"@en ;
+  skos:prefLabel "has complex identifier"@en, "hat komplexen Identifier"@de .
+
+iirds:has-identity-domain a rdf:Property ;
+  skos:definition "identifier's property that references the domain in which it is unique"@en ;
+  skos:prefLabel "has identifier domain"@en, "hat Identifier-Domäne"@de .
+
+iirds:has-identity-type a rdf:Property ;
+  skos:definition "identity domain's property that references its identifier type"@en ;
+  skos:prefLabel "has identifier type"@en, "hat Identifier-Typ"@de .
+
+iirds:has-information-type a rdf:Property ;
+  skos:definition "information unit's property that references its nature or subject"@en ;
+  skos:prefLabel "has information type"@en, "hat Informationsart"@de .
+
+iirds:has-next-sibling a rdf:Property ;
+  skos:definition "directory node's property that references the following directory node on the same hierarchy level in a directory structure"@en ;
+  skos:prefLabel "has next sibling"@en, "hat als nächstes Element"@de .
+
+iirds:has-party-role a rdf:Property ;
+  skos:definition "party's property that references its role"@en ;
+  skos:prefLabel "has administrative role"@en, "hat administrative Rolle"@de .
+
+iirds:has-planning-time a rdf:Property ;
+  skos:definition "information unit's property that references the planning time"@en ;
+  skos:hiddenLabel "has time"@en, "hat Zeit"@de ;
+  skos:prefLabel "has planning time"@en, "hat Planungszeit"@de .
+
+iirds:has-rendition a rdf:Property ;
+  skos:definition "information unit's property that references its rendition"@en ;
+  skos:prefLabel "has rendition"@en, "hat Inhaltsausprägung"@de .
+
+iirds:has-selector a rdf:Property ;
+  skos:definition "rendition's property that references a selector"@en ;
+  skos:prefLabel "has selector"@en, "hat Selektor"@de .
+
+iirds:has-start-selector a rdf:Property ;
+  skos:definition "range selector's property that references the start of its  range"@en ;
+  skos:prefLabel "has start selector"@en, "hat Startselektor"@de .
+
+iirds:has-subject a rdf:Property ;
+  skos:definition "information unit's property that references its subject"@en ;
+  skos:prefLabel "has subject"@en, "hat Thema"@de .
+
+iirds:has-topic-type a rdf:Property ;
+  skos:definition "information unit's property that references its topic type"@en ;
+  skos:prefLabel "has topic type"@en, "hat Topictyp"@de .
+
+iirds:identifier a rdf:Property ;
+  skos:definition "unique name of the resource within a given domain"@en ;
+  skos:prefLabel "Bezeichner"@de, "identifier"@en .
+
+iirds:iiRDSVersion a rdf:Property ;
+  skos:definition "iiRDS version with which the iiRDS package complies"@en ;
+  skos:prefLabel "iiRDS Version"@de, "iirds version"@en .
+
+iirds:iirdsAttribute a rdf:Property ;
+  skos:definition "property with a literal value"@en ;
+  skos:prefLabel "iiRDS attribute"@en, "iirds-Attribut"@de .
+
+iirds:iirdsRelationConcept a rdf:Property ;
+  skos:definition "iiRDS resource's property that references an iiRDS resource"@en ;
+  skos:prefLabel "iiRDS relation concept"@en, "iiRDS-Relation"@de .
+
+iirds:is-applicable-for-document-type a rdf:Property ;
+  skos:definition "information unit's property that references a document type the information unit is suitable for"@en ;
+  skos:prefLabel "applicable for document type"@en, "geeignet für Dokumentart"@de .
+
+iirds:is-part-of-package a rdf:Property ;
+  skos:definition "information unit's property that references the package to which it belongs"@en ;
+  skos:prefLabel "is part of package"@en, "ist Teil von Paket"@de .
+
+iirds:is-replacement-of a rdf:Property ;
+  skos:definition "information unit's property that references the information unit to be replaced"@en ;
+  skos:prefLabel "ersetzt"@de, "replaces"@en .
+
+iirds:is-version-of a rdf:Property ;
+  skos:definition "information unit's property that references its information object"@en ;
+  skos:note "A related resource of which the described resource is a version, edition, or adaptation."@en ;
+  skos:prefLabel "is version of"@en, "ist Version von"@de .
+
+iirds:language a rdf:Property ;
+  skos:definition "identifier of the content's language"@en ;
+  skos:prefLabel "Sprache"@de, "language"@en .
+
+iirds:purpose a rdf:Property ;
+  skos:definition "reason for an information unit's lifecycle status"@en ;
+  skos:prefLabel "Zweck"@de, "purpose"@en .
+
+iirds:relates-to-action a rdf:Property ;
+  skos:definition "information unit's property that references an action"@en ;
+  skos:prefLabel "bezieht sich auf Handlung"@de, "relates to action"@en .
+
+iirds:relates-to-administrative-metadata a rdf:Property ;
+  skos:definition "iiRDS resource's property that references administrative metadata "@en ;
+  skos:prefLabel "bezieht sich auf administrative Metadaten"@de, "relates to administrative metadata"@en .
+
+iirds:relates-to-component a rdf:Property ;
+  skos:definition "information unit's property that references a component"@en ;
+  skos:prefLabel "bezieht sich auf Komponente"@de, "relates to component"@en .
+
+iirds:relates-to-event a rdf:Property ;
+  skos:definition "information unit's property that references an event"@en ;
+  skos:prefLabel "bezieht sich auf Ereignis"@de, "relates to event"@en .
+
+iirds:relates-to-functional-metadata a rdf:Property ;
+  skos:definition "information unit's property that references functional metadata"@en ;
+  skos:prefLabel "bezieht sich auf funktionale Metadaten"@de, "relates to functional metadata"@en .
+
+iirds:relates-to-information-unit a rdf:Property ;
+  skos:definition "directory node's property that references the corresponding information unit"@en ;
+  skos:note "The related information unit is part of the directory."@en ;
+  skos:prefLabel "bezieht sich auf Informationseinheit"@de, "relates to information unit"@en .
+
+iirds:relates-to-party a rdf:Property ;
+  skos:definition "iiRDS resource's property that references a party"@en ;
+  skos:note "A party can be a company or an organization."@en ;
+  skos:prefLabel "hat Beziehung zu Akteur"@de, "relates to party"@en .
+
+iirds:relates-to-product-feature a rdf:Property ;
+  skos:definition "information unit's property that references a product feature"@en ;
+  skos:prefLabel "bezieht sich auf Produkteigenschaft"@de, "relates to product feature"@en .
+
+iirds:relates-to-product-lifecycle-phase a rdf:Property ;
+  skos:definition "information unit's property that references a product lifecycle phase"@en ;
+  skos:prefLabel "bezieht sich auf Produktlebenszyklusphase"@de, "relates to phase of the product lifecycle"@en .
+
+iirds:relates-to-product-metadata a rdf:Property ;
+  skos:definition "information unit's property that references product metadata"@en ;
+  skos:prefLabel "bezieht sich auf Produktmetadaten"@de, "relates to product metadata"@en .
+
+iirds:relates-to-product-variant a rdf:Property ;
+  skos:definition "information unit's property that references a product variant"@en ;
+  skos:prefLabel "bezieht sich auf Produktvariante"@de, "relates to product variant"@en .
+
+iirds:relates-to-qualification a rdf:Property ;
+  skos:definition "information unit's property that references a qualification "@en ;
+  skos:prefLabel "bezieht sich auf Qualifikation"@de, "relates to qualification"@en .
+
+iirds:relates-to-supply a rdf:Property ;
+  skos:definition "information unit's property that references a supply"@en ;
+  skos:prefLabel "bezieht sich auf Hilfsmittel"@de, "relates to supply"@en .
+
+iirds:relates-to-vcard a rdf:Property ;
+  skos:definition "party's property that references an organization or person"@en ;
+  skos:prefLabel "bezieht sich auf vCard"@de, "relates to vCard"@en .
+
+iirds:revision a rdf:Property ;
+  rdfs:label "revision"@en ;
+  skos:definition "version of an information unit"@en ;
+  skos:prefLabel "Revision"@de, "revision"@en .
+
+iirds:rights a rdf:Property ;
+  skos:definition "declaration of specific rights regarding the usage of the information"@en ;
+  skos:example "copyright information"@en ;
+  skos:prefLabel "Rechte"@de, "rights"@en .
+
+iirds:source a rdf:Property ;
+  skos:definition "relative path of a file in an iiRDS package that contains the content of a rendition"@en ;
+  skos:note "The path is relative to the root directory of the package, e.g., 'content/overview.html'."@en ;
+  skos:prefLabel "Quelle"@de, "source"@en .
+
+iirds:statusComment a rdf:Property ;
+  skos:definition "note on a content lifecycle status"@en ;
+  skos:prefLabel "Kommentar zum Status"@de, "status comment"@en .
+
+iirds:synonym a rdf:Property ;
+  rdfs:label "synonym"@en ;
+  skos:definition "word or phrase that means exactly or nearly the same as another word or phrase in the same language"@en ;
+  skos:prefLabel "Synonym"@de, "synonym"@en .
+
+iirds:title a rdf:Property ;
+  skos:definition "name of the information unit"@en ;
+  skos:prefLabel "Titel"@de, "title"@en .
+
+iirds:Acquisition a iirds:DesignAndRealization ;
+  skos:definition "product life cycle phase of obtaining systems, products, or services as part of design and realization"@en ;
+  skos:prefLabel "Beschaffung"@de, "acquisition"@en .
+
+iirds:AdministratorGuide a iirds:DocumentType ;
+  skos:definition "document type that refers to information on the management of a technical system"@en ;
+  skos:prefLabel "Administrationsanleitung"@de, "administrator guide"@en .
+
+iirds:ApplicableStandards a iirds:Conformity ;
+  skos:definition "information subject covering rules, guidelines, or definitions of product characteristics that need to comply with normative or legislative requirements"@en ;
+  skos:prefLabel "applicable standard"@en, "geltende Norm oder Richtlinie"@de .
+
+iirds:Approved a iirds:ContentLifeCycleStatusValue ;
+  skos:definition "content life cycle status value which indicates that the information of the resource is correct"@en ;
+  skos:prefLabel "approved"@en, "freigegeben"@de .
+
+iirds:ArticleCode a iirds:IdentityType ;
+  skos:definition "identity type of the manufacturer's reference number or other identifier for products or for parts of a product"@en ;
+  skos:prefLabel "Artikelcode"@de, "article code"@en .
+
+iirds:AssemblyInstructions a iirds:DocumentType ;
+  skos:definition "document type that refers to information on how parts are put together to complete a specific product so that it fulfils its intended use"@en ;
+  skos:prefLabel "Montageanleitung"@de, "assembly instructions"@en .
+
+iirds:Author a iirds:PartyRole ;
+  skos:definition "party role of the party that edited the referenced information unit"@en ;
+  skos:prefLabel "Autor"@de, "author"@en .
+
+iirds:BillOfMaterials a iirds:DocumentType ;
+  skos:definition "document type that refers to formal listing of the physical assemblies, subassemblies, and components needed to manufacture a product"@en ;
+  skos:prefLabel "Stückliste"@de, "bill of materials"@en .
+
+iirds:CDD a iirds:ClassificationType ;
+  skos:definition "classification type that references a product classification in the Common Data Dictionary (CDD, IEC 61360)"@en ;
+  skos:prefLabel "CDD Identifikator"@de, "CDD identifier"@en .
+
+iirds:CEDeclarationOfConformity a iirds:DocumentType ;
+  skos:definition "document type that refers to a confirmation that a product complies with the applicable CE marking directives or regulations"@en ;
+  skos:prefLabel "CE declaration of conformity"@en, "CE-Konformitätserklärung"@de .
+
+iirds:Caution a iirds:WarningMessage ;
+  skos:definition "warning message that describes a hazardous situation which, if not avoided, could result in minor or moderate injury"@en ;
+  skos:prefLabel "Vorsicht"@de, "caution"@en .
+
+iirds:Certificate a iirds:DocumentType ;
+  skos:definition "document type that refers to a document attesting conformity with applicable regulations"@en ;
+  skos:prefLabel "Zertifikat"@de, "certificate"@en .
+
+iirds:Configuration a iirds:PuttingToUse ;
+  skos:definition "product life cycle phase of adapting settings to achieve the desired functionality of a product"@en ;
+  skos:prefLabel "Einrichtung"@de, "configuration"@en .
+
+iirds:ContactInformation a iirds:Formality ;
+  skos:definition "information subject that covers information on how to contact a party"@en ;
+  skos:prefLabel "Kontaktdaten"@de, "contact information"@en .
+
+iirds:ContractualDocument a iirds:DocumentType ;
+  skos:definition "document type that refers to a binding agreement between parties"@en ;
+  skos:prefLabel "Vertragsdokument"@de, "contractual document"@en .
+
+iirds:Contributor a iirds:PartyRole ;
+  skos:definition "party role of the party that provides input to the making of an information unit"@en ;
+  skos:prefLabel "Beteiligter"@de, "contributor"@en .
+
+iirds:Creator a iirds:PartyRole ;
+  skos:definition "party role of the party from which an information unit originated"@en ;
+  skos:prefLabel "Ersteller"@de, "creator"@en .
+
+iirds:Customer a iirds:PartyRole ;
+  skos:definition "party role of the party that purchases or receives a product"@en ;
+  skos:prefLabel "Kunde"@de, "customer"@en .
+
+iirds:Danger a iirds:WarningMessage ;
+  skos:definition "warning message that describes a hazardous situation which, if not avoided, will result in death or serious injury"@en ;
+  skos:prefLabel "Gefahr"@de, "danger"@en .
+
+iirds:DeclarationOfConformity a iirds:Conformity ;
+  skos:definition "information subject covering an assurance that the product complies  with the EU Declaration of Conformity for CE marking"@en ;
+  skos:prefLabel "Declaration of Conformity"@en, "Konformitätserklärung"@de .
+
+iirds:Decommissioning a iirds:Use ;
+  skos:definition "product life cycle phase of shutting down a system at the end of its usage period"@en ;
+  skos:prefLabel "Außerbetriebnahme"@de, "decommissioning"@en .
+
+iirds:Deleted a iirds:ContentLifeCycleStatusValue ;
+  skos:definition "content life cycle status value which indicates that the information of the resource has been revoked"@en ;
+  skos:note "An information object version tagged with a 'deleted' status is no longer available."@en ;
+  skos:prefLabel "deleted"@en, "gelöscht"@de .
+
+iirds:Design a iirds:DesignAndRealization ;
+  skos:definition "product life cycle phase of designing systems, products, or services"@en ;
+  skos:prefLabel "Design"@de, "design"@en .
+
+iirds:Development a iirds:DesignAndRealization ;
+  skos:definition "product life cycle phase of transfoming from design into a production-ready functional system, product or service"@en ;
+  skos:prefLabel "Entwicklung"@de, "development"@en .
+
+iirds:Diagnostics a iirds:Use ;
+  skos:definition "product life cycle phase of identifying a fault and its cause whitin the use phase"@en ;
+  skos:hiddenLabel "diagnostics"@en ;
+  skos:prefLabel "Fehlerdiagnose"@de, "fault diagnosis"@en .
+
+iirds:Disposal a iirds:AfterUse ;
+  skos:definition "product life cycle phase spanning the process of elimination of a product or component"@en ;
+  skos:prefLabel "Entsorgung"@de, "disposal"@en .
+
+iirds:EclassCodedName a iirds:ClassificationType ;
+  skos:definition "8-digit class code that references an ECLASS product classification"@en ;
+  skos:prefLabel "ECLASS Coded Name"@de, "ECLASS Coded Name"@en .
+
+iirds:EclassIRDI a iirds:ClassificationType ;
+  skos:definition "classification type that references an ECLASS product classification by an international registration data identifier (IRDI) path"@en ;
+  skos:prefLabel "ECLASS IRDI"@de, "ECLASS IRDI"@en .
+
+iirds:ElectronicIdentificationPlate a iirds:DocumentType ;
+  skos:definition "document type that referes to an electronically readable label on a product or component that provides information on its identity and characteristics"@en ;
+  skos:prefLabel "electronic identification plate"@en, "elektronisches Typenschild"@de .
+
+iirds:EmergencyOperation a iirds:Use ;
+  skos:definition "product life cycle of restricted operation of a system to protect it from damage"@en ;
+  skos:prefLabel "Notbetrieb"@de, "emergency operation"@en .
+
+iirds:EuropeanArticleNumber a iirds:IdentityType ;
+  skos:definition "identity type of the European article number according to ISO/IEC 15420"@en ;
+  skos:prefLabel "EAN"@de, "EAN"@en .
+
+iirds:Fault a iirds:Use ;
+  skos:definition "product life cycle that spans the interruption of the intended operation of a system due to malfunction"@en ;
+  skos:prefLabel "Störung"@de, "fault"@en .
+
+iirds:ForeseeableMisuse a iirds:Safety ;
+  skos:definition "information subject that covers the use of a product or system in a way not intended by the supplier, but which can result from readily predictable human behaviour"@en ;
+  skos:hiddenLabel "foreseeable misuse"@en, "vorhersehbarer Fehlgebrauch"@de ;
+  skos:prefLabel "reasonably foreseeable misuse"@en, "vernünftigerweise vorhersehbare Fehlanwendung"@de .
+
+iirds:GenericAction a iirds:Action ;
+  skos:definition "atomic manipulation of an object by a participant"@en ;
+  skos:prefLabel "Handlung"@de, "action"@en .
+
+iirds:GenericAfterUse a iirds:AfterUse ;
+  skos:definition "product life cycle phase following the active use of the product"@en ;
+  skos:prefLabel "Nutzungsende"@de, "after use"@en .
+
+iirds:GenericCollection a iirds:Collection ;
+  skos:definition "information subject covering specific content in lists or overviews"@en ;
+  skos:prefLabel "Zusammenstellung"@de, "collection"@en .
+
+iirds:GenericConcept a iirds:Concept ;
+  skos:definition "topic type providing background information that helps users understand the structure or essential principles of a product, interface, or task"@en ;
+  skos:prefLabel "Beschreibung"@de, "concept"@en .
+
+iirds:GenericConformity a iirds:Conformity ;
+  skos:definition "information subject covering applicable law, standards, or the fulfilment of a product requirement"@en ;
+  skos:prefLabel "Konformität"@de, "conformity"@en .
+
+iirds:GenericDesignAndRealization a iirds:DesignAndRealization ;
+  skos:definition "product life cycle phase from ideation through production"@en ;
+  skos:prefLabel "Produktentstehung"@de, "design and realization"@en .
+
+iirds:GenericDownTime a iirds:DownTime ;
+  skos:definition "period of time during which an item is not in condition to perform its intended function"@en ;
+  skos:prefLabel "Stillstandszeit"@de, "down time"@en .
+
+iirds:GenericEvent a iirds:Event ;
+  skos:definition "something noticeable that takes place at a given location and point in time"@en ;
+  skos:prefLabel "Ereignis"@de, "event"@en .
+
+iirds:GenericForm a iirds:Form ;
+  skos:definition "topic type that provides information in pre-defined fields"@en ;
+  skos:prefLabel "Formular"@de, "form"@en .
+
+iirds:GenericFormality a iirds:Formality ;
+  skos:definition "information subject that covers contractually relevant elements"@en ;
+  skos:prefLabel "Formalie"@de, "formality"@en .
+
+iirds:GenericFunctionality a iirds:Functionality ;
+  skos:definition "information subject that covers specific capabilities of the product"@en ;
+  skos:prefLabel "Funktionalität"@de, "functionality"@en .
+
+iirds:GenericLearning a iirds:Learning ;
+  skos:definition "topic type that provides learning content"@en ;
+  skos:prefLabel "Lernen"@de, "learning"@en .
+
+iirds:GenericMaintenanceInterval a iirds:MaintenanceInterval ;
+  skos:definition "period of time between scheduled maintenance operations"@en ;
+  skos:prefLabel "Wartungsintervall"@de, "maintenance interval"@en .
+
+iirds:GenericPlanningTime a iirds:PlanningTime ;
+  skos:definition "period of time that is required for conducting a specific task"@en ;
+  skos:prefLabel "Planungszeit"@de, "planning time"@en .
+
+iirds:GenericProcess a iirds:Process ;
+  skos:definition "information subject that covers structured activities which are carried out to achieve a specific goal"@en ;
+  skos:prefLabel "Prozess"@de, "process"@en .
+
+iirds:GenericProductFeature a iirds:ProductFeature ;
+  skos:definition "product characteristics"@en ;
+  skos:prefLabel "Produktmerkmal"@de, "product feature"@en .
+
+iirds:GenericProductFunction a iirds:ProductFunction ;
+  skos:definition "capability of a product or a component which is specific or required for the intended product task"@en ;
+  skos:prefLabel "Produktfunktion"@de, "product function"@en .
+
+iirds:GenericProductProperty a iirds:ProductProperty ;
+  skos:definition "invariable characteristic of a product whose value is fixed once the product is defined"@en ;
+  skos:prefLabel "Produkteigenschaft"@de, "product property"@en .
+
+iirds:GenericPuttingToUse a iirds:PuttingToUse ;
+  skos:definition "product life cycle phase after production in which a product is set up for its intended use"@en ;
+  skos:hiddenLabel "putting to use"@en ;
+  skos:prefLabel "in Nutzung nehmen"@de, "putting into use"@en .
+
+iirds:GenericReference a iirds:Reference ;
+  skos:definition "topic type that provides additional details for lookup"@en ;
+  skos:prefLabel "Referenz"@de, "reference"@en .
+
+iirds:GenericRole a iirds:Role ;
+  skos:definition "set of connected behaviors, privileges and obligations associated with a party"@en ;
+  skos:prefLabel "Rolle"@de, "role"@en .
+
+iirds:GenericSafety a iirds:Safety ;
+  skos:definition "information subject that covers content which helps to avoid risk"@en ;
+  skos:prefLabel "Sicherheit"@de, "safety"@en .
+
+iirds:GenericSkillLevel a iirds:SkillLevel ;
+  skos:definition "degree of qualification of an individual"@en ;
+  skos:prefLabel "Kenntnisstufe"@de, "skill level"@en .
+
+iirds:GenericSupply a iirds:Supply ;
+  skos:definition "physical object used by an actor performing work tasks described in technical documentation"@en ;
+  skos:hiddenLabel "generic supply"@en ;
+  skos:prefLabel "Hilfsmittel"@de, "supply"@en .
+
+iirds:GenericTask a iirds:Task ;
+  skos:definition "topic type that provides procedures and action steps to be followed or considered"@en ;
+  skos:prefLabel "Aufgabe"@de, "task"@en .
+
+iirds:GenericTechnicalData a iirds:TechnicalData ;
+  skos:definition "information subject that covers qualitative and quantitative characteristics  of technical objects"@en ;
+  skos:prefLabel "Technische Daten"@de, "technical data"@en .
+
+iirds:GenericTechnicalOverview a iirds:TechnicalOverview ;
+  skos:definition "information subject that covers the technical structure of a product"@en ;
+  skos:prefLabel "technical overview"@en, "technische Übersicht"@de .
+
+iirds:GenericTroubleshooting a iirds:Troubleshooting ;
+  skos:definition "topic type that provides an explanation on symptoms, diagnosis, and resolution of problems"@en ;
+  skos:prefLabel "Störungsbeseitigung"@de, "troubleshooting"@en .
+
+iirds:GenericUse a iirds:Use ;
+  skos:definition "product life cycle phase in which the product is supposed to realize its function"@en ;
+  skos:prefLabel "Nutzung"@de, "use"@en .
+
+iirds:GenericWarningMessage a iirds:WarningMessage ;
+  skos:definition "safety-related information that warns about hazards and instructs on how to avoid them"@en ;
+  skos:prefLabel "Warnhinweis"@de, "warning message"@en .
+
+iirds:GenericWorkingTime a iirds:WorkingTime ;
+  skos:definition "period of time that is required for conducting a specific task"@en ;
+  skos:hiddenLabel "generic work time"@de, "generic working time"@de ;
+  skos:prefLabel "Arbeitszeit"@de, "work time"@de .
+
+iirds:GlobalTradeItemNumber a iirds:IdentityType ;
+  skos:definition "identity type of internationally coordinated, uniform, and globally unique article numbers for products and services"@en ;
+  skos:note "GTIN replaces the former EAN."@en ;
+  skos:prefLabel "GTIN"@de, "GTIN"@en .
+
+iirds:IdentificationDocument a iirds:DocumentType ;
+  skos:definition "document type that refers to information on the identity and characteristics of a product"@en ;
+  skos:prefLabel "Identifikationsdokument"@de, "identification document"@en .
+
+iirds:InPreparation a iirds:ContentLifeCycleStatusValue ;
+  skos:definition "content life cycle status value which indicates that the information of the resource is still being edited"@en ;
+  skos:note "An information object version tagged with an 'under preparation' status may be edited."@en ;
+  skos:prefLabel "in Arbeit"@de, "under preparation"@en .
+
+iirds:InReview a iirds:ContentLifeCycleStatusValue ;
+  skos:definition "content life cycle status value which indicates that the information of the resource is being checked for correctness"@en ;
+  skos:prefLabel "in Review"@de, "in review"@en .
+
+iirds:Index a iirds:DirectoryNodeType ;
+  skos:definition "directory node type that refers to an  ordered arrangement of entries, designed to enable users to locate information in information units"@en ;
+  skos:prefLabel "Index"@de, "index"@en .
+
+iirds:Inspector a iirds:PartyRole ;
+  skos:definition "party role of the party that evaluates conformity with the requirements"@en ;
+  skos:prefLabel "Prüfer"@de, "inspector"@en .
+
+iirds:Installation a iirds:PuttingToUse ;
+  skos:definition "product life cycle phase of setting up a product in the designated target environment so that it fulfils its intended use"@en ;
+  skos:prefLabel "Installation"@de, "installation"@en .
+
+iirds:InstallationInstructions a iirds:DocumentType ;
+  skos:definition "document type that refers to information on how to set up a product in the designated target environment so that it fulfils its intended use"@en ;
+  skos:prefLabel "Installationsanleitung"@de, "installation instructions"@en .
+
+iirds:IntendedUse a iirds:Safety ;
+  skos:definition "information subject that covers information which states the range of functions or foreseen applications defined and designed by the supplier of the product"@en ;
+  skos:prefLabel "bestimmungsgemäße Verwendung"@de, "intended use"@en .
+
+iirds:LegalInformation a iirds:Formality ;
+  skos:definition "information subject that covers supplementary information referencing laws or regulations"@en ;
+  skos:prefLabel "legal information"@en, "rechtlicher Hinweis"@de .
+
+iirds:LicenceTerm a iirds:Formality ;
+  skos:definition "information subject that covers a legal contract between two parties wherein the property owner gives permission to another party to use its intellectual properties"@en ;
+  skos:prefLabel "Lizenzbedingung"@de, "license terms"@en .
+
+iirds:ListOfFigures a iirds:DirectoryNodeType ;
+  skos:definition "directory node type that refers to a list of visuals and their location within information units, generally in order of appearance"@en ;
+  skos:prefLabel "Abbildungsverzeichnis"@de, "list of figures"@en .
+
+iirds:ListOfListings a iirds:DirectoryNodeType ;
+  skos:definition "directory node type that refers to a list of code snippets and their location within information units, generally in order of appearance"@en ;
+  skos:prefLabel "Codeverzeichnis"@de, "list of listings"@en .
+
+iirds:ListOfTables a iirds:DirectoryNodeType ;
+  skos:definition "directory node type that refers to a list of tables and their location within information units, generally in order of appearance"@en ;
+  skos:prefLabel "Tabellenverzeichnis"@de, "list of tables"@en .
+
+iirds:Maintenance a iirds:Use ;
+  skos:definition "product life cycle phase of activities intended  to retain or restore a system in or to operational state"@en ;
+  skos:prefLabel "Wartung"@de, "maintenance"@en .
+
+iirds:MaintenanceInstructions a iirds:DocumentType ;
+  skos:definition "document type that refers to information on procedures to be followed to ensure that a product remains in good working order"@en ;
+  skos:prefLabel "Wartungsanleitung"@de, "maintenance instructions"@en .
+
+iirds:Manufacturer a iirds:PartyRole ;
+  skos:definition "party role of the party that designs or produces a product"@en ;
+  skos:note "In process industry environments, the manufacturer has the role of a provider with regard to the user of the product."@en ;
+  skos:prefLabel "Hersteller"@de, "manufacturer"@en .
+
+iirds:ManufacturerInformation a iirds:Formality ;
+  skos:definition "information subject that covers information on the manufacturer of the product"@en ;
+  skos:prefLabel "Herstellerinformation"@de, "manufacturer information"@en .
+
+iirds:Notice a iirds:WarningMessage ;
+  skos:definition "message that contains information considered important but not related to personal injury"@en ;
+  skos:prefLabel "Hinweis"@de, "notice"@en .
+
+iirds:ObjectInstanceURI a iirds:IdentityType ;
+  skos:definition "identity type of the globally unique URI for a product instance"@en ;
+  skos:prefLabel "Instanz einer Objekt-URI"@de, "instance of object uri"@en .
+
+iirds:OperatingElement a iirds:TechnicalOverview ;
+  skos:definition "information subject that covers interaction elements in a user interface"@en ;
+  skos:prefLabel "Bedienelement"@de, "control element"@en .
+
+iirds:OperatingInstructions a iirds:DocumentType ;
+  skos:definition "document type that refers to information on the correct use of the product"@en ;
+  skos:prefLabel "Betriebsanleitung"@de, "operating instructions"@en .
+
+iirds:Operation a iirds:Use ;
+  skos:altLabel "normal operation"@en ;
+  skos:definition "product life cycle phase in which a system carries out its designated functions"@en ;
+  skos:prefLabel "Betrieb"@de, "operation"@en .
+
+iirds:OrderCode a iirds:IdentityType ;
+  skos:definition "identity type of the manufacturer's unique procurement key"@en ;
+  skos:prefLabel "Bestellcode"@de, "order code"@en .
+
+iirds:PartsCatalog a iirds:DocumentType ;
+  skos:definition "document type that refers to a list-style arrangement of spare part information"@en ;
+  skos:prefLabel "Teilekatalog"@de, "parts catalog"@en .
+
+iirds:PerformedBy a iirds:PartyRole ;
+  skos:definition "party role of the party that changes the content life cycle status"@en ;
+  skos:prefLabel "durchgeführt von"@de, "performed by"@en .
+
+iirds:Plan a iirds:DocumentType ;
+  skos:definition "document type that refers to technical plans for a component or machine"@en ;
+  skos:prefLabel "Plan"@de, "plan"@en .
+
+iirds:ProductIdentification a iirds:Formality ;
+  skos:definition "information subject that covers information on the identity and characteristics of a product"@en ;
+  skos:note "The unique set of data values can be comprised of product name, version, variant, serial number, and date information."@en ;
+  skos:prefLabel "Produktidentifikation"@de, "product identification"@en .
+
+iirds:ProductName a iirds:Formality ;
+  skos:definition "information subject that covers the designation of a product"@en ;
+  skos:prefLabel "Produktbezeichnung"@de, "product name"@en .
+
+iirds:ProductType a iirds:IdentityType ;
+  skos:definition "identity type for products of the same series"@en ;
+  skos:prefLabel "Produkttyp"@de, "product type"@en .
+
+iirds:Production a iirds:DesignAndRealization ;
+  skos:definition "product life cycle phase of manufacturing products"@en ;
+  skos:prefLabel "Herstellung"@de, "production"@en .
+
+iirds:QuickGuide a iirds:DocumentType ;
+  skos:definition "document type that refers to selected information facilitating product use within a short period of time"@en ;
+  skos:prefLabel "Kurzanleitung"@de, "quick reference guide"@en .
+
+iirds:Released a iirds:ContentLifeCycleStatusValue ;
+  skos:definition "content life cycle status value which indicates that the associated information of the resource has been approved and is ready for publishing"@en ;
+  skos:prefLabel "released"@en, "veröffentlicht"@de .
+
+iirds:Repair a iirds:Use ;
+  skos:definition "product life cycle phase of rectification of damages and malfunctions"@en ;
+  skos:prefLabel "Reparatur"@de, "repair"@en .
+
+iirds:RepairInstructions a iirds:DocumentType ;
+  skos:definition "document type that refers to information on how to fix a failure of a product "@en ;
+  skos:prefLabel "Reparaturanleitung"@de, "repair instructions"@en .
+
+iirds:RequirementsAnalysis a iirds:DesignAndRealization ;
+  skos:definition "product life cycle phase in which understanding and prioritisation of necessary product characteristics is achieved"@en ;
+  skos:hiddenLabel "requirement analysis"@en ;
+  skos:prefLabel "Anforderungsanalyse"@de, "requirements analysis"@en .
+
+iirds:RestrictionOnUse a iirds:Safety ;
+  skos:definition "information subject that covers information specifying under which conditions or in which manner the product shall not be used"@en ;
+  skos:prefLabel "Einsatzbeschränkungen"@de, "restriction on use"@en .
+
+iirds:Reviewed a iirds:ContentLifeCycleStatusValue ;
+  skos:definition "content life cycle status value which indicates that the information of the resource has been checked"@en ;
+  skos:prefLabel "Review durchgeführt"@de, "reviewed"@en .
+
+iirds:RiskAssessment a iirds:Conformity ;
+  skos:definition "information subject covering a process comprising a risk analysis and risk evaluation of the product or their result"@en ;
+  skos:note "Risk assessment information is created in the product safety engineering process."@en ;
+  skos:prefLabel "Risikobewertung"@de, "risk assessment"@en .
+
+iirds:SafetyInstruction a iirds:Safety ;
+  skos:definition "information subject that covers general safety-related information applying to a range of information units"@en ;
+  skos:note "Safety instructions are collected or grouped in an information unit in a meaningful organizational system to explain safety measures, raise safety awareness, and provide a basis for safety-related training of persons."@en ;
+  skos:prefLabel "Sicherheitshinweise"@de, "safety instruction"@en .
+
+iirds:SafetyInstructions a iirds:DocumentType ;
+  skos:definition "document type that refers to safety-related information"@en ;
+  skos:note "Safety instructions contain general safety-related information provided by the manufacturer that must be considered during assembly, operation, maintenance, repair, and disassembly of the product. Safety information related to individual tasks is provided in the tasks."@en ;
+  skos:prefLabel "Sicherheitsanleitung"@de, "safety instructions"@en .
+
+iirds:SalesCatalog a iirds:DocumentType ;
+  skos:definition "document type that refers to a list-style arrangement of information relevant for product selection and ordering"@en ;
+  skos:note "A sales catalog supports customers in ordering products according to their requirements."@en ;
+  skos:prefLabel "Verkaufskatalog"@de, "sales catalog"@en .
+
+iirds:ScopeOfDelivery a iirds:Formality ;
+  skos:definition "information subject that covers all work, services, materials, completed products, and documentation that the supplier shall provide to the purchaser according to the purchase order"@en ;
+  skos:prefLabel "Lieferumfang"@de, "scope of delivery"@en .
+
+iirds:SerialNumber a iirds:IdentityType ;
+  skos:definition "identity type of the number used to identify an individual product instance"@en ;
+  skos:prefLabel "Seriennummer"@de, "serial number"@en .
+
+iirds:Specification a iirds:DocumentType ;
+  skos:definition "document type that refers to information on technical properties of a product"@en ;
+  skos:prefLabel "Spezifikation"@de, "technical specification"@en .
+
+iirds:Supplier a iirds:PartyRole ;
+  skos:definition "party role of the party that provides a product"@en ;
+  skos:note "'Supplier' includes producer, manufacturer, integrator, vendor, distributor, retailer, agency, provider of information, or their authorized representatives."@en ;
+  skos:prefLabel "Zulieferer"@de, "supplier"@en .
+
+iirds:Symbol a iirds:TechnicalOverview ;
+  skos:definition "information subject that covers an assembly of visual designations, together with their names or explanations of their meaning"@en ;
+  skos:prefLabel "Symbol"@de, "symbol"@en .
+
+iirds:TableOfContents a iirds:DirectoryNodeType ;
+  skos:definition "directory node type that refers to a list of information units in logical order"@en ;
+  skos:prefLabel "Inhaltsverzeichnis"@de, "table of contents"@en .
+
+iirds:TechnicalDrawingDiagram a iirds:DocumentType ;
+  skos:definition "document type that refers to a visual that conveys information about how an object functions or is constructed"@en ;
+  skos:prefLabel "diagram"@en, "technische Zeichnung/Diagramm"@de .
+
+iirds:TechnicalReport a iirds:Conformity ;
+  skos:definition "information subject covering a report of product conformity with legislative or normative requirements"@en ;
+  skos:note "Producer-internal processes regarding product conformity comprise activities and working tasks related to the product."@en ;
+  skos:prefLabel "Technischer Bericht"@de, "technical report"@en .
+
+iirds:TransportInstructions a iirds:DocumentType ;
+  skos:definition "document type that refers to instructions for the movement of products or their components from one location to another"@en ;
+  skos:prefLabel "Transportanleitung"@de, "transport instructions"@en .
+
+iirds:Warning a iirds:WarningMessage ;
+  skos:definition "warning message that describes a hazardous situation which, if not avoided, could result in death or serious injury"@en ;
+  skos:prefLabel "Warnung"@de, "warning"@en .
+
+iirds:WarrantyConditions a iirds:Formality ;
+  skos:definition "information subject that covers the specific terms of a promise given by a manufacturer or supplier to a purchaser to properly repair, replace or refund a faulty product"@en ;
+  skos:prefLabel "Garantiebedingungen"@de, "warranty conditions"@en .
+
+iirds:Withdrawn a iirds:ContentLifeCycleStatusValue ;
+  skos:definition "content life cycle status value which indicates that an already released information of the resource is not valid anymore"@en ;
+  skos:prefLabel "withdrawn"@en, "zurückgezogen"@de .
+
+

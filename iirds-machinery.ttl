@@ -1,0 +1,241 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix iirds: <http://iirds.tekom.de/iirds#> .
+@prefix iirdsMch: <http://iirds.tekom.de/iirds/domain/machinery#> .
+
+iirdsMch:ConsumableSupply a rdfs:Class ;
+  rdfs:label "Verbrauchsmaterial"@de, "consumable supply"@en ;
+  rdfs:comment "type of supply: Goods or material that is consumed, meaning dissipated or spent, in the lifecycle of a technical system. Examples are batteries, sanding discs, and magnets."@en ;
+  iirds:description "Consumable supplies may be referenced in the description of working tasks in technical documentation."@en, "IRI: required"@en ;
+  rdfs:subClassOf iirds:Supply, iirdsMch:iirdsMachineryDomainEntity .
+
+iirdsMch:HardwareTool a rdfs:Class ;
+  rdfs:label "Werkzeug"@de, "hardware tool"@en ;
+  rdfs:comment "type of supply: A device or implement, used to carry out a particular function or a working task."@en ;
+  iirds:description "Hardware tools may be referenced in the description of working tasks in technical documentation."@en, "IRI: required"@en ;
+  rdfs:subClassOf iirds:Supply, iirdsMch:iirdsMachineryDomainEntity .
+
+iirdsMch:Lubricant a rdfs:Class ;
+  rdfs:label "Schmierstoff"@de, "lubricant"@en ;
+  rdfs:comment "Schmierstoff"@de, "type of supply: Lubricant, meaning a substance used for lubricating an engine or component, such as oil or grease."@en ;
+  iirds:description "IRI: required"@en, "Lubricants may be referenced in the description of working tasks in technical documentation."@en ;
+  rdfs:subClassOf iirds:Supply, iirdsMch:iirdsMachineryDomainEntity .
+
+iirdsMch:OperatingSupply a rdfs:Class ;
+  rdfs:label "Betriebsstoff"@de, "operating supply"@en ;
+  rdfs:comment "type of supply: Physical items required for the running of a manufacturing production or service facility."@en ;
+  iirds:description "IRI: required"@en, "Operating supplies may be referenced in the description of working tasks in technical documentation."@en ;
+  rdfs:subClassOf iirds:Supply, iirdsMch:iirdsMachineryDomainEntity .
+
+iirdsMch:ProtectiveEquipment a rdfs:Class ;
+  rdfs:label "Schutzausrüstung"@de, "protective equipment"@en ;
+  rdfs:comment "type of supply: Physical items required for protection of a manufacturing product or personnel."@en ;
+  iirds:description "IRI: required"@en, "Protective supplies may be referenced in the description of working tasks in technical documentation."@en ;
+  rdfs:subClassOf iirds:Supply, iirdsMch:iirdsMachineryDomainEntity .
+
+iirdsMch:SetupTime a rdfs:Class ;
+  rdfs:label "Rüstzeit"@de, "setup time"@en ;
+  rdfs:comment "type of planning time: Period of time required to prepare a technical system for a specific function or job."@en ;
+  iirds:description ""@en, "IRI: optional"@en ;
+  rdfs:subClassOf iirds:PlanningTime, iirdsMch:iirdsMachineryDomainEntity .
+
+iirdsMch:SparePart a rdfs:Class ;
+  rdfs:label "Ersatzteil"@de, "spare part"@en ;
+  rdfs:comment "type of supply: A spare part is an interchangeable part that is kept in an inventory and used for the repair or replacement of failed units of a technical system."@en ;
+  iirds:description "IRI: required"@en, "Spare parts may be referenced in the description of working tasks in technical documentation."@en ;
+  rdfs:subClassOf iirds:Supply, iirdsMch:iirdsMachineryDomainEntity .
+
+iirdsMch:iirdsMachineryDomainEntity a rdfs:Class ;
+  rdfs:label "iirdsMachineryDomainEntity"@de, "iirdsMachineryDomainEntity"@en ;
+  rdfs:comment "entity of the machinery domain"@en ;
+  iirds:description ""@en ;
+  rdfs:subClassOf iirds:iirdsDomainEntity .
+
+iirdsMch:Assembly a iirds:PuttingToUse, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Einbau"@de, "assembly"@en ;
+  rdfs:comment "lifecycle phase of a product in which the product or its components are assembled for use."@en ;
+  iirds:description ""@en .
+
+iirdsMch:CircuitDiagram a iirds:TechnicalOverview, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Schaltplan"@de, "circuit diagram"@en ;
+  rdfs:comment "In der (Elektro)Technik gebräuchliche Art der Darstellung für eine elektrische Schaltung. Stromlaufplan wird wohl auch synonym verwendet."@de, "typical representation of an electrical circuit in (electrical) technology."@en ;
+  iirds:description ""@en .
+
+iirdsMch:Cleaning a iirds:Use, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Reinigung"@de, "cleaning"@en ;
+  rdfs:comment "product lifecycle phase of a technical system in which unwanted substances, such as dirt, are removed from the system."@en ;
+  iirds:description ""@en .
+
+iirdsMch:CloseDown a iirds:AfterUse, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Stilllegung"@de, "close down"@en ;
+  rdfs:comment "lifecycle phase of a product in which a plant, technical system, or facility is shut down permanently."@en ;
+  iirds:description ""@en .
+
+iirdsMch:Commissioning a iirds:Use, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Inbetriebnahme"@de, "commissioning"@en ;
+  rdfs:comment "Maßnahmen vor oder im Zusammenhang mit der Übergabe eines Produkts einschließlich Endabnahmeprüfungen, Übergabe der gesamten Dokumentation, welche relevant ist für die Produktnutzung und falls erforderlich für die Anweisung von Personal (DIN EN 82079-1)."@de, "product lifecycle phase containing activities related to transferring a product into active use and instructing personnel on the use. Activities include final inspection tests and handover of documentation, among others (DIN EN 82079-1)."@en ;
+  iirds:description ""@en .
+
+iirdsMch:Construction a iirds:DesignAndRealization, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Konstruktion"@de, "construction"@en ;
+  rdfs:comment "product lifecycle phase containing activities for constructing a technical system."@en ;
+  iirds:description "Construction is a design phase which prepares the product for mass manufacturing."@en .
+
+iirdsMch:Disassembly a iirds:AfterUse, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Demontage"@de, "disassembly"@en ;
+  rdfs:comment "product lifecycle phase containing activities related to separating a machine or technical system into its different parts."@en ;
+  iirds:description ""@en .
+
+iirdsMch:EnvironmentalNote a iirds:Safety ;
+  rdfs:label "Umweltschutzhinweis"@de, "environmental note"@en ;
+  rdfs:comment "information subject. Notes in technical documentation regarding environmental protection."@en ;
+  iirds:description ""@en .
+
+iirdsMch:EnvironmentalProtectionInstruction a iirds:Safety ;
+  rdfs:label "Umweltschutzanweisung"@de, "environmental protection instruction"@en ;
+  rdfs:comment "information subject. Instructions in technical documentation for working in an environmentally compatible way."@en ;
+  iirds:description ""@en .
+
+iirdsMch:ExplosionProtection a iirds:Safety, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Explosionsschutz"@de, "explosion protection"@en ;
+  rdfs:comment "information subject. Information in technical documentation how to avoid explosions when working with the product."@en ;
+  iirds:description ""@en .
+
+iirdsMch:FirstUse a iirds:PuttingToUse, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Erstinbetriebnahme"@de, "first use"@en ;
+  rdfs:comment "product lifecycle phase describing the very first operation of a machine according to its intended use."@en ;
+  iirds:description ""@en .
+
+iirdsMch:FlowDiagram a iirds:TechnicalOverview, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Stromlaufplan"@de, "flow diagram"@en ;
+  rdfs:comment "In der (Elektro)Technik gebräuchliche Art der Darstellung für eine elektrische Schaltung. Schaltplan wird wohl auch synonym verwendet."@de, "typical representation of a technical process."@en ;
+  iirds:description ""@en .
+
+iirdsMch:GenericConsumableSupply a iirdsMch:ConsumableSupply, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Verbrauchsmaterial"@de, "consumable supply"@en ;
+  rdfs:comment "generic instance of the ConsumableSupply class."@en ;
+  iirds:description "Consumable supplies may be referenced in the description of working tasks in technical documentation."@en, "The ConsumableSupply class describes goods or material that is consumed, meaning dissipated or spent, in the lifecycle of a technical system. Examples of consumables are batteries, sanding discs, and magnets."@en .
+
+iirdsMch:GenericHardwareTool a iirdsMch:HardwareTool, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Werkzeug"@de, "hardware tool"@en ;
+  rdfs:comment "generic instance of the HardwareTool class."@en ;
+  iirds:description "The HardwareTool class describes tools for a working task."@en .
+
+iirdsMch:GenericLubricant a iirdsMch:Lubricant, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Schmierstoff"@de, "lubricant"@en ;
+  rdfs:comment "Schmierstoff"@de, "generic instance of the Lubricant class."@en ;
+  iirds:description """The Lubricant class describes lubricants, meaning a substance used for lubricating an engine or component, such as oil or grease. Lubricants may be referenced in the description of working tasks in technical documentation.
+"""@en .
+
+iirdsMch:GenericOperatingSupply a iirdsMch:OperatingSupply, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Betriebsstoff"@de, "operating supply"@en ;
+  rdfs:comment "generic instance of the OperatingSupply class."@en ;
+  iirds:description "The OperatingSupply class describes operating supplies, meaning physical items required for the running of a manufacturing production or service facility. Operating supplies may be referenced in the description of working tasks in technical documentation."@en .
+
+iirdsMch:GenericProtectiveEquipment a iirdsMch:ProtectiveEquipment, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Schutzausrüstung"@de, "protective equipment"@en ;
+  rdfs:comment "generic instance of the ProtectiveEquipment class."@en ;
+  iirds:description "The ProtectiveEquipment class describes protective equipment, meaning physical items that protect machinery or personnel. Protective equipment may be referenced in the description of working tasks in technical documentation."@en .
+
+iirdsMch:GenericSetupTime a iirdsMch:SetupTime, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Rüstzeit"@de, "setup time"@en ;
+  rdfs:comment "generic instance of the SetupTime class."@en ;
+  iirds:description "The SetupTime class describes time periods required to prepare a technical system for a specific function or job."@en ;
+  iirds:duration "PT0M"^^<http://www.w3.org/2001/XMLSchema#duration> .
+
+iirdsMch:GenericSparePart a iirdsMch:SparePart, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Ersatzteil"@de, "spare part"@en ;
+  rdfs:comment "Ersatzteil"@de, "generic instance of the SparePart class."@en ;
+  iirds:description "The SparePart class describes spare parts, meaning interchangeable parts that are kept in an inventory and are used for the repair or replacement of failed units of a technical system. Spare parts may be referenced in the description of working tasks in technical documentation."@en .
+
+iirdsMch:HydraulicDiagram a iirds:TechnicalOverview, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Hydraulikplan"@de, "hydraulic diagram"@en ;
+  rdfs:comment "Grafische Darstellung der Strömungen von Flüssigkeiten für Steuer-, Regel-, Antriebs- und Bremsvorrichtungen von Fahrzeugen, Flugzeugen oder Geräten, deren Kräfte mithilfe des Drucks einer Flüssigkeit erzeugt oder übertragen werden."@de, "graphical representation of flows of liquids for control, regulating, driving and braking devices of vehicles, airplanes or devices, whose forces are generated or transmitted by the pressure of a liquid."@en ;
+  iirds:description ""@en .
+
+iirdsMch:InstallationError a iirds:Safety, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Montagefehler"@de, "installation error"@en ;
+  rdfs:comment "information subject. Describes installation errors."@en ;
+  iirds:description ""@en .
+
+iirdsMch:Layout a iirds:TechnicalOverview, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Aufbau"@de, "layout"@en ;
+  rdfs:comment "information subject. Describes the technical structure of the component/machine."@en ;
+  iirds:description ""@en .
+
+iirdsMch:ListOfLubricants a iirds:Collection, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Schmiermittelliste"@de, "list of lubricants"@en ;
+  rdfs:comment "information subject. Collection of lubricants required for working tasks described in specific information units. The information is usually assembled from different information units."@en ;
+  iirds:description ""@en .
+
+iirdsMch:ListOfOperatingSupplies a iirds:Collection, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Betriebsmittelliste"@de, "list of operating supplies"@en ;
+  rdfs:comment "information subject. Collection of operating supplies; the information is usually assembled from different information units."@en ;
+  iirds:description ""@en .
+
+iirdsMch:ListOfProtectiveEquipment a iirds:Collection, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Liste mit Schutzausrüstung"@de, "list of protective equipment"@en ;
+  rdfs:comment "information subject. Collection of protective equipment required for working tasks described in specific information units. The information is usually assembled from different information units."@en ;
+  iirds:description ""@en .
+
+iirdsMch:ListOfSpareParts a iirds:Collection, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Ersatzteilliste"@de, "list of spare parts"@en ;
+  rdfs:comment "information subject. Collection of spare parts required for working tasks described in specific information units. The information is usually assembled from different information units."@en ;
+  iirds:description ""@en .
+
+iirdsMch:ListOfTools a iirds:Collection, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Werkzeugliste"@de, "list of tools"@en ;
+  rdfs:comment "information subject. Collection of tools required for working tasks described in specific information units. The information is usually assembled from different information units."@en ;
+  iirds:description ""@en .
+
+iirdsMch:LubricationPlan a iirds:Collection, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Schmierplan"@de, "lubrication plan"@en ;
+  rdfs:comment "Thema der Informationseinheit. Auf einem Schmierplan werden die einzelnen Schmierstellen einer Maschine/Komponente und die benötigten Schmiermittel angegeben."@de, "information subject. A lubrication plan shows the lubrication points of a machine/component and the required lubricants. "@en ;
+  iirds:description "Kann aus verschiedenen Informationseinheiten zusammengestellt werden."@de, "May be assembled from different information units."@en .
+
+iirdsMch:MaintenancePlan a iirds:Collection, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Wartungsplan"@de, "maintenance plan"@en ;
+  rdfs:comment "Wartungsplan. Zusammenstellung von Informationen für die geplante Wartung. Wird in der Regel aus verschiedenen InformationUnits zusammengestellt."@de, "maintenance plan. Collection of information required for scheduled maintenance. The information is usually assembled from different information units."@en ;
+  iirds:description ""@en .
+
+iirdsMch:Modification a iirds:Use, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Umrüstung"@de, "modification"@en ;
+  rdfs:comment "lifecycle phase of a product during which it is modified."@en ;
+  iirds:description ""@en .
+
+iirdsMch:PartsList a iirds:Collection ;
+  rdfs:label "Stückliste"@de, "list of parts"@en ;
+  rdfs:comment "information subject. Collection of parts."@en ;
+  iirds:description ""@en .
+
+iirdsMch:PneumaticDiagram a iirds:TechnicalOverview, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Pneumatikplan"@de, "pneumatic diagram"@en ;
+  rdfs:comment "information subject. Contains a technical diagram of a pneumatic system."@en ;
+  iirds:description ""@en .
+
+iirdsMch:Reuse a iirds:AfterUse, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Recycling"@de, "recycling"@en ;
+  rdfs:comment "lifecycle phase after the active use of a product; contains activities for recycling and reusing machine components and materials."@en ;
+  iirds:description "Bezieht sich auf die Wiederverwendung von Materialien, nicht von Informationen."@de, "Refers to reuse of materials, not of information."@en .
+
+iirdsMch:SafetyEquipment a iirds:Safety, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Schutzeinrichtung"@de, "safety equipment"@en ;
+  rdfs:comment "information subject. Describes equipment that is used for the protection of life and to avoid injuries or casualties."@en ;
+  iirds:description ""@en .
+
+iirdsMch:SafetyMeasure a iirds:Safety, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Schutzmaßnahme"@de, "safety measure"@en ;
+  rdfs:comment "information subject. Describes safety measures for work tasks."@en ;
+  iirds:description ""@en .
+
+iirdsMch:Storage a iirds:AfterUse, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Lagerung"@de, "storage"@en ;
+  rdfs:comment "lifecycle phase of a product that describes the process of keeping physical products available or in an adequate environment in order to bridge the time gap between arrival and use."@en ;
+  iirds:description ""@en .
+
+iirdsMch:Transport a iirds:PuttingToUse, iirdsMch:iirdsMachineryDomainEntity ;
+  rdfs:label "Transport"@de, "transport"@en ;
+  rdfs:comment "lifecycle phase of a product containing activities for transporting a technical system or its components from one location to the other."@en ;
+  iirds:description ""@en .
+
+
