@@ -31,7 +31,7 @@ This work is licensed under a Creative Commons Attribution-NoDerivatives 4.0 Int
 		<rdfs:label xml:lang="de">Zusammenstellung</rdfs:label>
 		<rdfs:label xml:lang="en">collection</rdfs:label>
 		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#InformationSubject"/>
-		<iirds:description xml:lang="en">Not intented to be used directly. Use the subclasses instead. For collection subjects not covered by the iiRDS standard subclasses, define custom subclasses.</iirds:description>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses instead. For collection subjects not covered by the iiRDS standard subclasses, define custom subclasses.</iirds:description>
 		<rdfs:comment xml:lang="en">information subject that covers specific content in lists or overviews</rdfs:comment>
 		<iirds:description xml:lang="en">IRI: required</iirds:description>
 	</rdfs:Class>
@@ -254,7 +254,7 @@ Use the relates-to-event property to create a reference from an information unit
 		<rdfs:label xml:lang="de">Informationsthema</rdfs:label>
 		<rdfs:label xml:lang="en">information subject</rdfs:label>
 		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#InformationType"/>
-		<iirds:description xml:lang="en">Not intented to be used directly. Use the subclasses instead.</iirds:description>
+		<iirds:description xml:lang="en">Not intended to be used directly. Use the subclasses instead.</iirds:description>
 		<rdfs:comment xml:lang="en">thematical characteristic of content</rdfs:comment>
 		<iirds:description xml:lang="en">IRI: required</iirds:description>
 	</rdfs:Class>
@@ -262,7 +262,7 @@ Use the relates-to-event property to create a reference from an information unit
 		<rdfs:label xml:lang="de">Informationsart</rdfs:label>
 		<rdfs:label xml:lang="en">information type</rdfs:label>
 		<rdfs:subClassOf rdf:resource="http://iirds.tekom.de/iirds#iirdsDomainEntity"/>
-		<iirds:description xml:lang="en">Not intented to be used directly.</iirds:description>
+		<iirds:description xml:lang="en">Not intended to be used directly.</iirds:description>
 		<rdfs:comment xml:lang="en">characteristic of content</rdfs:comment>
 		<iirds:description xml:lang="en">IRI: required</iirds:description>
 	</rdfs:Class>
